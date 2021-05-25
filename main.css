@@ -32,6 +32,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
+    z-index: 1000;
 }
 
 section {
@@ -462,12 +464,15 @@ section.hero-section {
         padding: 30px 20px;
     }
     
+    .hero-subtext {
+        font-size: 20px;
+    }
+    
     .container-1200px.hero-content-container {
         padding-right: 30vw;
     }
     
     .hero-content-link {
-        font-size: 20px;
         background-color: white;
     }
     
