@@ -47,19 +47,20 @@ document.querySelectorAll(".hero-content-link").forEach(item => {
 });
 
 document.getElementById("ui-ux-design").addEventListener("mouseover", () => {
-    document.getElementById("color-overlay").style.backgroundColor = "#A5E6BA";
+    
+    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#A5E6BA";}, 400);
 });
 
 document.getElementById("web-design").addEventListener("mouseover", () => {
-    document.getElementById("color-overlay").style.backgroundColor = "#5B2A86";
+    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#5B2A86";}, 400);    
 });
 
 document.getElementById("frontend-dev").addEventListener("mouseover", () => {
-    document.getElementById("color-overlay").style.backgroundColor = "#7785AC";
+    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#7785AC";}, 400);    
 });
 
 document.getElementById("graphic-design").addEventListener("mouseover", () => {
-    document.getElementById("color-overlay").style.backgroundColor = "#9AC6C5";
+    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#9AC6C5";}, 400);    
 });
 
 
