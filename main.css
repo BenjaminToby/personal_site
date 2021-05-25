@@ -39,6 +39,7 @@ section {
     align-items: center;
     justify-content: center;
     padding: 60px 40px;
+    position: relative;
 }
 
 
@@ -168,6 +169,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     width: 50%;
+    position: relative;
 }
 
 section.hero-section {
@@ -241,6 +243,41 @@ section.hero-section {
 
 .hero-content-container {
     align-items: center;
+}
+
+.hero-ctas-block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.main-cta-button {
+    margin: 0;
+    border: 3px solid #333;
+    background-color: white;
+    color: #222;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all .3s ease-out;
+    padding: 15px 40px;
+}
+
+.main-cta-button:hover {
+    background-color: #222;
+    color: white;
+    padding: 15px 50px;
+}
+
+.linkedin-link {
+    border: none;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 10px;
+}
+
+.linkedin-link:hover {
+    border: none;
 }
 
 .my-name {
@@ -342,19 +379,7 @@ section.hero-section {
 
 /*.................................................................................................................. Mobile Styles */
 
-@media (max-width: 800px) {
-    
-    .column-50 {
-        width: 100%;
-    }
-    
-    .container-1200px {
-        flex-direction: column;
-    }
-    
-    nav {
-        display: none;
-    }
+@media (max-width: 950px) {
     
     .hamburger {
         display: flex;
@@ -364,6 +389,7 @@ section.hero-section {
         padding: 10px;
         width: 40px;
         height: 40px;
+        background-color: white;
     }
     
     .hamburger:hover {
@@ -373,8 +399,8 @@ section.hero-section {
     .hamburger-line {
     }
     
-    #my-face {
-        right: -20vw;
+    nav {
+        display: none;
     }
     
 }
@@ -383,7 +409,31 @@ section.hero-section {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+    
+    .column-50 {
+        width: 100%;
+    }
+    
+    .container-1200px {
+        flex-direction: column;
+    }       
+    
+    #my-face {
+        right: -20vw;
+    }
+    
+    .face-wrapper {
+        margin-top: -10vw;
+    }
+    
+}
+
+
+
+
+
+@media (max-width: 550px) {
     
     h1 {
         font-size: 44px;
@@ -394,11 +444,21 @@ section.hero-section {
     }
     
     section.hero-section {
-        padding: 0px 20px;
+        padding: 30px 20px;
+    }
+    
+    .container-1200px.hero-content-container {
+        padding-right: 30vw;
     }
     
     .hero-content-link {
         font-size: 20px;
+        background-color: white;
+    }
+    
+    .hero-ctas-block {
+        flex-direction: column;
+        align-items: flex-start;
     }
     
     .linkedin-cta-text {
@@ -407,15 +467,32 @@ section.hero-section {
     
     .linkedin-block {
         padding: 7px 15px 7px 7px;
+        margin-bottom: 15px;
     }
     
     #my-face {
-        right: -20vw;
+        right: -60vw;
         margin-top: 0;
     }
     
     .face-wrapper {
-        
+        top: 0;
+        right: 0;
+        width: auto;
+        height: auto;
+        margin-top: -65vh;
+    }
+    
+}
+
+
+
+
+
+@media (max-width: 380px) {
+    
+    .face-wrapper {
+        margin-top: -160vw;
     }
     
 }
