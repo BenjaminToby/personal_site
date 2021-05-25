@@ -1,7 +1,3 @@
-var uiUXLink = document.getElementById("ui-ux-design");
-var webDesignLink = document.getElementById("web-design");
-var frontentDevLink = document.getElementById("frontend-dev");
-var graphicDesignLink = document.getElementById("graphic-design");
 var faceWrapper = document.getElementById("my-face-wrapper");
 
 lottie.setQuality("low");
@@ -38,7 +34,36 @@ window.addEventListener("load", () => {
 
 
 
+//--------------------------------------------------------------------------- Services mouseover
+document.querySelectorAll(".hero-content-link").forEach(item => {
+   item.addEventListener("mouseover", () => {
+       
+       clearTimeout(startSteadyState);
+       myFace.loop = false;
+       myFace.playSegments([210, 249], true);
+       faceWrapper.style.transform = "rotate3d(20,-20,0,20deg) translateZ(-50px)";
+       
+   }); 
+});
 
+
+//--------------------------------------------------------------------------- Services mouseout
+document.querySelectorAll(".hero-content-link").forEach(item => {
+   item.addEventListener("mouseout", () => {
+       
+       startSteadyState = setTimeout(() => {
+           
+           steadyState();
+           faceWrapper.style.transform = "none";
+                                        
+       }, 500);
+       
+       
+   }); 
+});
+
+
+/*
 //--------------------------------------------------------------------------- UI UX
 uiUXLink.addEventListener("mouseover", () => {
     clearTimeout(startSteadyState);
@@ -91,7 +116,7 @@ graphicDesignLink.addEventListener("mouseout", () => {
     faceWrapper.style.transform = "none";
 });
 
-
+*/
 
 
 
