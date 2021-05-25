@@ -170,8 +170,8 @@ input:focus {
     width: 50%;
 }
 
-.hero-section {
-    
+section.hero-section {
+    padding: 0px 40px 40px 40px;
 }
 
 
@@ -201,7 +201,8 @@ input:focus {
 }
 
 .hero-content-link {
-    color: #888;    
+    color: #888;
+    transition: all .3s ease-out;
 }
 
 .hero-content-link:hover {
@@ -212,6 +213,7 @@ input:focus {
 
 .nav-cta-button {
     border: 3px solid transparent;
+    transition: all .3s ease-out;
 }
 
 .nav-cta-button:hover {
@@ -236,6 +238,11 @@ input:focus {
 
 
 /*................................................... Hero Section */
+
+.hero-content-container {
+    align-items: center;
+}
+
 .my-name {
     color: #3C60DE;
     background-color: #E6EDFF;
@@ -249,6 +256,7 @@ input:focus {
     display: flex;
     align-items: center;
     border-radius: 100px;
+    transition: all .3s ease-out;
 }
 
 .linkedin-block:hover {
@@ -272,7 +280,6 @@ input:focus {
     width: 500px;
     height: 500px;
     position: relative;
-    margin-top: -40px;
 }
 
 .face-wrapper {
@@ -366,10 +373,6 @@ input:focus {
     .hamburger-line {
     }
     
-    .hero-section {
-        padding-top: 40px;
-    }
-    
     #my-face {
         right: -20vw;
     }
@@ -390,8 +393,8 @@ input:focus {
         padding: 20px;
     }
     
-    .hero-section {
-        padding: 20px;
+    section.hero-section {
+        padding: 0px 20px;
     }
     
     .hero-content-link {
