@@ -387,6 +387,10 @@ input:focus {
         font-size: 40px;
     }
     
+    .hero-section {
+        padding: 40px 20px 20px 20px;
+    }
+    
     .hero-content-link {
         font-size: 20px;
     }
