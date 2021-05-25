@@ -10,7 +10,7 @@
 	<title>Tben Design</title>
     <meta name="description" content="Web/Graphic/Motion Designer, UI UX Designer, Frontend Web Developer">
     <link rel="shortcut icon" type="image/x-icon" href="/images-dw/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800|Satisfy|Niconne|Rancho" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800|Satisfy" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 
 </head>
@@ -21,7 +21,7 @@
     
     <header>
         <a class="nav-link-block" style="border: none;"><span style="font-family:'Satisfy'">Tben</span>design</a>
-        <nav style="float:right;">
+        <nav>
             <ul>
                 <li class="navlink-li"><a href="#" class="navlink">About Me</a></li>
                 <li class="navlink-li"><a href="#" class="navlink">My Work</a></li>
@@ -29,6 +29,11 @@
                 <li class="navlink-li"><button class="nav-cta-button">Let's Talk</button></li>
             </ul>
         </nav>
+        
+        <div class="hamburger">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
     </header>
     
     
@@ -37,7 +42,7 @@
     <section class="hero-section">
         <div class="container-1200px">
             <div class="column-50">
-                <h1>Hi. I'm <span class="my-name">Benjamin Toby</span>&nbsp;.<br>And I design great stuff.</h1>
+                <h1>Hi. I'm <span class="my-name">Benjamin&nbsp;Toby</span>&nbsp;.<br>And I design great stuff.</h1>
                 <h2 class="hero-subtext">
                     <a href="#" class="hero-content-link" id="ui-ux-design">UI UX Design</a>,
                     <a href="#" class="hero-content-link" id="web-design">Web Design</a>,
@@ -52,14 +57,14 @@
                         </div>
                         
                         <div>
-                            <h3 style="font-size:16px;font-weight:500;color:white;margin:0;">Find me on Linkedin</h3>
+                            <h3 class="linkedin-cta-text">Find me on Linkedin</h3>
                         </div>
                     </div>
                 </a>
             </div>
             
-            <div class="column-50 centered-content" style="perspective:600px;">
-                <div class="face-wrapper" id="my-face-wrapper"> <div id="my-face"></div> </div>                
+            <div class="column-50 centered-content" style="perspective:600px;z-index:-1;">
+                <div class="face-wrapper" id="my-face-wrapper"> <div id="my-face"></div> </div>
             </div>
         </div>
     </section>

@@ -156,9 +156,7 @@ input:focus {
 
 
 
-/*................................................... classes and IDs */
-
-
+/*................................................... General classes and IDs */
 .container-1200px {
     width: 100%;
     max-width: 1200px;
@@ -177,6 +175,9 @@ input:focus {
     
 }
 
+
+
+/*................................................... Nav */
 .nav-link-block {
     font-size: 30px;
     font-weight: 800;
@@ -221,6 +222,21 @@ input:focus {
     padding: 10px 25px;
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+}
+
+
+
+
+/*................................................... Hero Section */
 .my-name {
     font-family: "Satisfy";
     color: #3C60DE;
@@ -281,6 +297,117 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.linkedin-cta-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.................................................................................................................. Mobile Styles */
+
+@media (max-width: 800px) {
+    
+    .column-50 {
+        width: 100%;
+    }
+    
+    .container-1200px {
+        flex-direction: column;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .hamburger:hover {
+        padding: 18px 10px;
+    }
+    
+    .hamburger-line {
+    }
+    
+    .hero-section {
+        padding-top: 40px;
+    }
+    
+    #my-face {
+        right: -20vw;
+    }
+    
+}
+
+
+
+
+
+@media (max-width: 600px) {
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    .hero-content-link {
+        font-size: 20px;
+    }
+    
+    .linkedin-cta-text {
+        font-size: 14px;
+    }
+    
+    .linkedin-block {
+        padding: 7px 15px 7px 7px;
+    }
+    
+    #my-face {
+        right: -20vw;
+        margin-top: 0;
+    }
+    
+    .face-wrapper {
+        
+    }
+    
 }
 
 
