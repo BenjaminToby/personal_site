@@ -46,6 +46,22 @@ document.querySelectorAll(".hero-content-link").forEach(item => {
    }); 
 });
 
+document.getElementById("ui-ux-design").addEventListener("mouseover", () => {
+    document.getElementById("color-overlay").style.backgroundColor = "#A5E6BA";
+});
+
+document.getElementById("web-design").addEventListener("mouseover", () => {
+    document.getElementById("color-overlay").style.backgroundColor = "#5B2A86";
+});
+
+document.getElementById("frontend-dev").addEventListener("mouseover", () => {
+    document.getElementById("color-overlay").style.backgroundColor = "#7785AC";
+});
+
+document.getElementById("graphic-design").addEventListener("mouseover", () => {
+    document.getElementById("color-overlay").style.backgroundColor = "#9AC6C5";
+});
+
 
 //--------------------------------------------------------------------------- Services mouseout
 document.querySelectorAll(".hero-content-link").forEach(item => {
@@ -55,9 +71,9 @@ document.querySelectorAll(".hero-content-link").forEach(item => {
            
            steadyState();
            faceWrapper.style.transform = "none";
+           document.getElementById("color-overlay").style.backgroundColor = "transparent";
                                         
        }, 500);
-       
        
    }); 
 });

@@ -205,6 +205,7 @@ section.hero-section {
 .hero-content-link {
     color: #888;
     transition: all .3s ease-out;
+    border-bottom: 2px solid #aaa;
 }
 
 .hero-content-link:hover {
@@ -273,7 +274,7 @@ section.hero-section {
     border: none;
     display: flex;
     justify-content: flex-start;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .linkedin-link:hover {
@@ -349,6 +350,16 @@ section.hero-section {
     margin: 0;
 }
 
+#color-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    transition: all .3s ease-out;
+}
+
 
 
 
@@ -420,11 +431,12 @@ section.hero-section {
     }       
     
     #my-face {
-        right: -20vw;
+        
     }
     
     .face-wrapper {
         margin-top: -10vw;
+        right: -20vw;
     }
     
 }
@@ -471,16 +483,15 @@ section.hero-section {
     }
     
     #my-face {
-        right: -60vw;
         margin-top: 0;
     }
     
     .face-wrapper {
         top: 0;
-        right: 0;
         width: auto;
         height: auto;
         margin-top: -65vh;
+        right: -60vw;
     }
     
 }
