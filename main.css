@@ -374,7 +374,7 @@ section.hero-section {
 .hero-image-blur {
     width: 500px;
     height: 500px;
-    background-color: rgba(0,0,0,0.1);
+    background-color: #0D2659;
     border-radius: 1000px;
     position: absolute;
     top: 0;
@@ -382,6 +382,7 @@ section.hero-section {
     transform: translateZ(-400px);
     filter: blur(50px);
     z-index: -1;
+    opacity: .2;
 }
 
 .scroll-down-icon {
@@ -396,17 +397,18 @@ section.hero-section {
     transition: all .3s ease-out;
     position: relative;
     animation: scrolldownicon 2s infinite;
-    animation-timing-function: ease-out;
+    animation-timing-function: ease-in-out;
 }
 
 .scroll-down-link-block:hover {
     border: none;
     opacity: 1;
+    animation-play-state: paused;
 }
 
 @keyframes scrolldownicon {
     0% {top: 0;}
-    50% {top: 10px;}
+    50% {top: 20px;}
     100% {top: 0;}
 }
 
