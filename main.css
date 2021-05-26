@@ -573,7 +573,7 @@ section.hero-section {
     }
     
     .face-wrapper {
-        margin-top: -10vw;
+        margin-top: 0;
         right: -20vw;
     }
     
@@ -583,8 +583,25 @@ section.hero-section {
     }
     
     #morph-shape-1 {
-        top: 20px;
-        left: 60px;
+        top: 40px;
+        left: -100px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    #morph-shape-2 {
+        top: auto;
+        bottom: 50px;
+        left: 0px;
+        width: 100px;
+        height: 100px;
+    }
+    
+    #morph-shape-3 {
+        top: 250px;
+        left: -150px;
+        width: 120px;
+        height: 120px;
     }
     
 }
@@ -612,7 +629,7 @@ section.hero-section {
     }
     
     .container-1200px.hero-content-container {
-        padding-right: 30vw;
+        padding-right: 40vw;
     }
     
     .hero-content-link {
@@ -639,8 +656,23 @@ section.hero-section {
     
     .face-wrapper {
         top: 0;
-        margin-top: -80vw;
-        right: -50vw;
+        margin-top: -500px;
+        right: -60vw;
+    }
+    
+    #morph-shape-1 {
+        top: 100px;
+        left: 40px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    #morph-shape-2 {
+        display: none;
+    }
+    
+    #morph-shape-3 {
+        display: none;
     }
     
 }
@@ -662,7 +694,7 @@ section.hero-section {
     }
     
     .face-wrapper {
-        margin-top: -100vw;
+        margin-top: -530px;
         width: 400px;
         height: 400px;
         right: -50vw;
@@ -674,8 +706,8 @@ section.hero-section {
     }
     
     #morph-shape-1 {
-        top: 40px;
-        left: 50px;
+        top: 80px;
+        left: 40px;
         width: 50px;
         height: 50px;
     }
@@ -694,7 +726,7 @@ section.hero-section {
     }
     
     .face-wrapper {
-        margin-top: -130vw;
+        margin-top: -550px;
         width: 400px;
         height: 400px;
         right: -50vw;
