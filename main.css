@@ -24,7 +24,6 @@ body {
 	display: block;
 	margin: 0px;
 	overflow: hidden;
-    background-color: #B8FFE1;
     /*background-color: #B8FFE1;*/
 }
 
@@ -209,18 +208,6 @@ section.hero-section {
     font-weight: 500;
 }
 
-.hero-content-link {
-    color: rgba(0,0,0,0.4);
-    transition: all .3s ease-out;
-    border-bottom: 2px solid rgba(0,0,0,0.4);
-}
-
-.hero-content-link:hover {
-    background-color: #222222;
-    color: white;
-    padding: 5px;
-}
-
 .nav-cta-button {
     border: 3px solid transparent;
     transition: all .3s ease-out;
@@ -260,10 +247,22 @@ section.hero-section {
     margin-top: 15px;
 }
 
+.hero-content-link {
+    color: rgba(0,0,0,0.4);
+    transition: all .3s ease-out;
+    border-bottom: 2px solid rgba(0,0,0,0.4);
+}
+
+.hero-content-link:hover {
+    background-color: #222222;
+    color: white;
+    padding: 5px;
+}
+
 .main-cta-button {
     margin: 0;
     border: 3px solid #333;
-    background-color: #B8FFE1;
+    background-color: #fff;
     color: #222;
     font-size: 18px;
     font-weight: 600;
@@ -449,7 +448,7 @@ section.hero-section {
         padding: 10px;
         width: 40px;
         height: 40px;
-        background-color: #B8FFE1;
+        background-color: #fff;
     }
     
     .hamburger:hover {
@@ -517,7 +516,7 @@ section.hero-section {
     }
     
     .hero-content-link {
-        background-color: #B8FFE1;
+        background-color: #fff;
     }
     
     .hero-ctas-block {
