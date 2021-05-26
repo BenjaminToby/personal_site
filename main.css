@@ -382,7 +382,7 @@ section.hero-section {
     transform: translateZ(-400px);
     filter: blur(50px);
     z-index: -1;
-    opacity: .2;
+    opacity: .05;
 }
 
 .scroll-down-icon {
