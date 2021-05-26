@@ -24,6 +24,8 @@ body {
 	display: block;
 	margin: 0px;
 	overflow: hidden;
+    background-color: #B8FFE1;
+    /*background-color: #B8FFE1;*/
 }
 
 header {
@@ -38,6 +40,7 @@ header {
 
 section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 60px 40px;
@@ -184,6 +187,8 @@ section.hero-section {
 .nav-link-block {
     font-size: 30px;
     font-weight: 800;
+    color: rgba(0,0,0,0.8);
+    
 }
 
 .nav-link-block:hover {
@@ -205,9 +210,9 @@ section.hero-section {
 }
 
 .hero-content-link {
-    color: #888;
+    color: rgba(0,0,0,0.4);
     transition: all .3s ease-out;
-    border-bottom: 2px solid #aaa;
+    border-bottom: 2px solid rgba(0,0,0,0.4);
 }
 
 .hero-content-link:hover {
@@ -258,7 +263,7 @@ section.hero-section {
 .main-cta-button {
     margin: 0;
     border: 3px solid #333;
-    background-color: white;
+    background-color: #B8FFE1;
     color: #222;
     font-size: 18px;
     font-weight: 600;
@@ -365,6 +370,45 @@ section.hero-section {
     z-index: 0;
 }
 
+.hero-image-blur {
+    width: 500px;
+    height: 500px;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateZ(-400px);
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.scroll-down-icon {
+    font-size:80px;
+    font-weight:400;
+    transform:rotate(90deg);
+}
+
+.scroll-down-link-block {
+    border: none;
+    opacity: .5;
+    transition: all .3s ease-out;
+    position: relative;
+    animation: scrolldownicon 2s infinite;
+    animation-timing-function: ease-out;
+}
+
+.scroll-down-link-block:hover {
+    border: none;
+    opacity: 1;
+}
+
+@keyframes scrolldownicon {
+    0% {top: 0;}
+    50% {top: 10px;}
+    100% {top: 0;}
+}
+
 
 
 
@@ -405,7 +449,7 @@ section.hero-section {
         padding: 10px;
         width: 40px;
         height: 40px;
-        background-color: white;
+        background-color: #B8FFE1;
     }
     
     .hamburger:hover {
@@ -473,7 +517,7 @@ section.hero-section {
     }
     
     .hero-content-link {
-        background-color: white;
+        background-color: #B8FFE1;
     }
     
     .hero-ctas-block {
@@ -496,10 +540,8 @@ section.hero-section {
     
     .face-wrapper {
         top: 0;
-        width: auto;
-        height: auto;
-        margin-top: -65vh;
-        right: -60vw;
+        margin-top: -80vw;
+        right: -50vw;
     }
     
 }
@@ -508,10 +550,19 @@ section.hero-section {
 
 
 
-@media (max-width: 380px) {
+@media (max-width: 450px) {
+    
+    #my-face {
+        margin-top: 0;
+        width: 400px;
+        height: 400px;
+    }
     
     .face-wrapper {
-        margin-top: -160vw;
+        margin-top: -130vw;
+        width: 400px;
+        height: 400px;
+        right: -50vw;
     }
     
 }
