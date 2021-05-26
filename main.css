@@ -186,12 +186,13 @@ section.hero-section {
 .nav-link-block {
     font-size: 30px;
     font-weight: 800;
-    color: rgba(0,0,0,0.8);
+    opacity: .6;
+    transition: all .3s ease-out;
     
 }
 
 .nav-link-block:hover {
-    opacity: .5;
+    opacity: 1;
 }
 
 .navlink-li {
@@ -223,6 +224,7 @@ section.hero-section {
 .hamburger {
     display: none;
     cursor: pointer;
+    transition: all .3s ease-out;
 }
 
 .hamburger-line {
