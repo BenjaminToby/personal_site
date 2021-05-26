@@ -176,10 +176,6 @@ input:focus {
     position: relative;
 }
 
-section.hero-section {
-    padding: 0px 40px 40px 40px;
-}
-
 
 
 /*................................................... Nav */
@@ -238,6 +234,40 @@ section.hero-section {
 
 /*................................................... Hero Section */
 
+section.hero-section {
+    padding: 0px 40px 40px 40px;
+}
+
+.my-name {
+    color: #222;
+    padding: 0px;
+    font-size: 60px;
+}
+
+.body-bg {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    opacity: .5;
+    min-height: 100vh;    
+    background-image: url("images/stone-wall-bg.jpg");
+    background-size: cover;
+}
+
+#wavy-line {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 350px;
+    left: 0;
+    opacity: .5;
+    display: none;
+}
+
+.body-bg.gradient {
+    /*background-image: linear-gradient(rgba(0,0,0,0.05), rgba(0,0,0,0));*/
+}
+
 .hero-content-container {
     align-items: center;
 }
@@ -289,12 +319,7 @@ section.hero-section {
     border: none;
 }
 
-.my-name {
-    color: #3C60DE;
-    background-color: #E6EDFF;
-    padding: 0 10px;
-    font-size: 1.5em;
-}
+
 
 .linkedin-block {
     padding: 10px 20px 10px 10px;
@@ -322,6 +347,11 @@ section.hero-section {
     border: 3px solid rgba(255,255,255,0.5);
 }
 
+#animation-half-column {
+    perspective: 600px;
+    z-index: -1;
+}
+
 #my-face {
     width: 500px;
     height: 500px;
@@ -336,8 +366,8 @@ section.hero-section {
     position: relative;
     animation: facehover 3s infinite;
     animation-timing-function: ease;
-    transform-style: preserve-3d;
     transition: all .4s ease-out;
+    perspective: 600px;
     /* transform:  rotate3d(20,-20,0,20deg); rotateX(60deg) rotateY(60deg)*/
 }
 
@@ -384,6 +414,62 @@ section.hero-section {
     z-index: -1;
     opacity: .05;
 }
+
+.paint-spatter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("images/pain-splatter-1.png");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    transform: scale(1.5);
+    mix-blend-mode: lighten;
+    opacity: .1;
+}
+
+.morphing-shapes-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+    z-index: -10;
+    transition: all .3s ease;
+}
+
+#morph-shape-1 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#morph-shape-2 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    bottom: 120px;
+    right: -60px;
+    z-index: -10;
+}
+
+#morph-shape-3 {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    opacity: .5;
+    z-index: -10;
+}
+
+
+
+
 
 .scroll-down-icon {
     font-size:80px;
@@ -491,6 +577,16 @@ section.hero-section {
         right: -20vw;
     }
     
+    #wavy-line {
+        width: 300%;
+        top: 500px;
+    }
+    
+    #morph-shape-1 {
+        top: 20px;
+        left: 60px;
+    }
+    
 }
 
 
@@ -562,10 +658,45 @@ section.hero-section {
     }
     
     .face-wrapper {
+        margin-top: -100vw;
+        width: 400px;
+        height: 400px;
+        right: -50vw;
+    }
+    
+    #wavy-line {
+        width: 300%;
+        top: 450px;
+    }
+    
+    #morph-shape-1 {
+        top: 20px;
+        left: 60px;
+        width: 50px;
+        height: 50px;
+    }
+    
+}
+
+
+
+
+
+
+@media (max-width: 350px) {
+    
+    .face-wrapper {
         margin-top: -130vw;
         width: 400px;
         height: 400px;
         right: -50vw;
+    }
+    
+    #morph-shape-1 {
+        top: 10px;
+        left: 90px;
+        width: 50px;
+        height: 50px;
     }
     
 }

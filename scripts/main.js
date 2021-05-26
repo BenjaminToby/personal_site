@@ -3,6 +3,9 @@ var faceWrapper = document.getElementById("my-face-wrapper");
 lottie.setQuality("low");
         
 var myFaceContainer = document.getElementById("my-face");
+var morphShape1Container = document.getElementById("morph-shape-1");
+var morphShape2Container = document.getElementById("morph-shape-2");
+var morphShape3Container = document.getElementById("morph-shape-3");
 
 var myFace = lottie.loadAnimation({
     container: myFaceContainer,
@@ -12,7 +15,36 @@ var myFace = lottie.loadAnimation({
     autoplay: false,
 });
 
-myFace.setSpeed(1);
+var morphShape1 = lottie.loadAnimation({
+    container: morphShape1Container,
+    path: "scripts/morphing-shape-1.json",
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+});
+
+var morphShape2 = lottie.loadAnimation({
+    container: morphShape2Container,
+    path: "scripts/morphing-shape-1.json",
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+});
+
+morphShape1.setSpeed(1.5);
+
+var morphShape3 = lottie.loadAnimation({
+    container: morphShape3Container,
+    path: "scripts/morphing-shape-1.json",
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+});
+
+morphShape3.setSpeed(2);
+
+
+
 
 function steadyState() {
     myFace.playSegments([44, 205], true);
