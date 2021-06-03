@@ -356,8 +356,7 @@ section.hero-section {
     width: 500px;
     height: 500px;
     position: relative;
-    z-index: 10;
-    mix-blend-mode: screen;
+    z-index: 10;    
 }
 
 .face-wrapper {
@@ -367,7 +366,7 @@ section.hero-section {
     animation: facehover 3s infinite;
     animation-timing-function: ease;
     transition: all .4s ease-out;
-    perspective: 600px;
+    transform-style: preserve-3d;
     /* transform:  rotate3d(20,-20,0,20deg); rotateX(60deg) rotateY(60deg)*/
 }
 
@@ -466,6 +465,24 @@ section.hero-section {
     opacity: .5;
     z-index: -10;
 }
+
+#bg-circle {
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background-color: #ddd;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-55%,-300px);
+    z-index: -1000;
+    position: absolute;   
+    transition: all .5s ease;
+}
+
+
+
+
+
 
 
 

@@ -74,6 +74,8 @@ document.querySelectorAll(".hero-content-link").forEach(item => {
        myFace.loop = false;
        myFace.playSegments([210, 249], true);
        faceWrapper.style.transform = "rotate3d(20,-20,0,20deg) translateZ(-50px)";
+       document.getElementById("bg-circle").style.transform = "rotate3d(20,-20,0,20deg) translate3d(-50%,-55%,-300px)";
+       myFaceContainer.style.mixBlendMode = "screen";
        
    }); 
 });
@@ -105,6 +107,8 @@ document.querySelectorAll(".hero-content-link").forEach(item => {
            steadyState();
            faceWrapper.style.transform = "none";
            document.getElementById("color-overlay").style.backgroundColor = "transparent";
+           document.getElementById("bg-circle").style.transform = "translate3d(-50%,-55%,-300px)";
+           myFaceContainer.style.mixBlendMode = "normal";
                                         
        }, 500);
        
