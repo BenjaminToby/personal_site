@@ -14,6 +14,7 @@ html {
     font-size: 18px;
     line-height: 1.5;
     color: #222;
+    position: relative;
 }
 
 :root {
@@ -222,7 +223,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 50px;
+    margin-right: -20px;
 }
 
 #benjamin-hero-text {
@@ -260,7 +261,7 @@ input:focus {
 }
 
 .hero-text-wrapper {
-    width: 300px;
+    width: 200px;
     padding-top: 100px;
     align-items: flex-start;
     margin-left: 50px;
@@ -278,6 +279,38 @@ input:focus {
 .hero-text-wrapper > a:hover {
     background-color: #393051;
     padding: 12px 23px;
+}
+
+.scroll-down-link-block {
+    position: absolute;
+    background-color: white;
+    color: #222;
+    font-size: 36px;
+    font-weight: 700;
+    top: -200px;;
+    right: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 80px;
+    border-radius: 10px;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
+.scroll-link-icon {
+    transform: rotate(90deg);
+    font-size: inherit;
+    font-weight: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+    left: 3px;
 }
 
 .hero-text-block {
@@ -339,6 +372,22 @@ input:focus {
     text-align: right;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/*Animations*/
+
+.translate {
+    
+}
 
 
 
