@@ -287,8 +287,8 @@ input:focus {
     color: #222;
     font-size: 36px;
     font-weight: 700;
-    top: -200px;;
-    right: 40vw;
+    top: 480px;;
+    right: 30vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -297,6 +297,7 @@ input:focus {
     border-radius: 10px;
     padding-top: 20px;
     cursor: pointer;
+    z-index: 100;
 }
 
 .scroll-link-icon {
@@ -355,6 +356,12 @@ input:focus {
     color: rgba(0,0,0,0.05)
 }
 
+.below-fold {
+    background-color: var(--main-color);
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
 .skewed-bg {
     position: absolute;
     width: 100%;
@@ -386,7 +393,7 @@ input:focus {
 /*Animations*/
 
 .translate {
-    
+    transition: all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 );
 }
 
 
