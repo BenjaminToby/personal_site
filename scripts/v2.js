@@ -21,3 +21,13 @@ window.addEventListener("scroll", () => {
     watermark.style.transform = "translateY(" + (scroll * watermark.dataset.speed) + "px) translateX(-50%)";
     
 });
+
+//window.scrollBy({
+//	top: -100,
+//	behavior: "smooth"
+//});
+
+window.addEventListener("load", () => {
+    document.getElementById("skewed-bg").classList.add("skewed-bg");
+    document.getElementById("preloader").className = "preloader";
+});
