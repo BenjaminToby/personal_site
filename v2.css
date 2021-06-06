@@ -45,7 +45,7 @@ header {
 }
 
 header > a {
-    font-family: "hennigar";
+    font-family: "Anton";
     font-size: 36px;
     text-transform: uppercase;
     border: none;
@@ -123,7 +123,7 @@ a:hover {
 }
 
 h1, h2, h3, h4 {
-    font-family: "hennigar";
+    font-family: "Anton";
 	margin-top: 0px;
 	margin-bottom: 15px; 
 	width: 100%;    
@@ -350,7 +350,7 @@ input:focus {
     align-content: center;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 2000;
+    z-index: 1000;
     border-radius: 5px;
 }
 
@@ -422,7 +422,7 @@ input:focus {
 }
 
 #toby-hero-text {
-    font-family: "hennigar";
+    font-family: "Anton";
     font-size: 205px;
     text-transform: uppercase;
     letter-spacing: 0px;
@@ -552,11 +552,11 @@ input:focus {
 .hero-watermark {
     position: absolute;
     font-size: 40em;
-    font-family: "hennigar";
+    font-family: "Anton";
     z-index: -1;
     top: -20px;
     color: rgba(0,0,0,0.05);
-    letter-spacing: 20px;
+    letter-spacing: -5px;
     white-space: nowrap;
 }
 
@@ -612,7 +612,7 @@ input:focus {
 }
 
 .section-watermark {
-    font-family: "hennigar";
+    font-family: "Anton";
     position: absolute;
     color: rgba(0,0,0,0.05);
     font-size: 15em;
