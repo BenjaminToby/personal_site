@@ -38,20 +38,22 @@
         <a class="social-media-link-block"></a>
     </div>
     
-    <section style="z-index:1;">
-        <div>
-            <div class="hero-graphic-wrapper translate" data-speed=".25">
-                <div id="benjamin-hero-text">Benjamin</div>
-                <div id="toby-hero-text">Toby</div>
-                <div class="hero-graphic-block">
-                    <img src="images/placeholder-portrait.png" alt="" width="380px" height="auto">
-                </div>
+    <section style="z-index:1;perspective:400px;">
+        <div style="perspective:400px;transform-style:preserve-3d;">
+            <div class="hero-graphic-wrapper-init" id="hero-graphic-container">
+                <div class="translate" data-speed=".25">
+                    <div id="benjamin-hero-text">Benjamin</div>
+                    <div id="toby-hero-text">Toby</div>
+                    <div class="hero-graphic-block">
+                        <img src="images/placeholder-portrait.png" alt="" width="380px" height="auto">
+                    </div>
+                </div>                
             </div>
             
             <div class="hero-text-wrapper translate" data-speed=".15">
                 <div class="hero-text-block">
                     Hi. I'm a
-                    <h1>
+                    <h1 style="font-family:inherit;">
                         <span>UI/UX Designer</span>, 
                         <span>Web Designer</span>, 
                         <span>Frontend Web Developer</span>, 
@@ -69,11 +71,11 @@
     
     
     
-    <div class="hero-watermark" data-speed=".6">T-BEN</div>
+    <div class="hero-watermark"><span class="translate" data-speed=".6">T-BEN</span></div>
     
-    <div  class="scroll-down-link-block">
+    <a href="#section-2" class="scroll-down-link-block">
             <div class="scroll-link-icon">&rsaquo;</div>
-    </div>
+    </a>
     
     
     
@@ -81,13 +83,31 @@
     
     
     
-    <section class="below-fold translate" data-speed=".1">        
-        <div>
-            <div class="container-darkbg translate" data-speed="0">
-                <h2>Some of my Work</h2>
-                <p style="width: 350px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+    <section class="below-fold translate" data-speed=".1" id="section-2" style="perspective:600px;">        
+        <div style="perspective:400px;transform-style:preserve-3d;">
+            <div class="container-darkbg translate" data-speed="0" style="transform-style:preserve-3d;">
+                <h2 class="scroll-into-view">Some of my Work</h2>
+                <p style="width: 350px;" class="scroll-into-view">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
             </div>
-            <div></div>
+            
+            <div class="right-column" style="transform-style:preserve-3d;">
+                <a class="portfolio-item scroll-into-view">
+                    <div><img src="images/portfolio-item-3.jpg" alt=""></div>
+                    <h4>Portfolio Item Title</h4>
+                </a>
+                
+                <a class="portfolio-item scroll-into-view">
+                    <div><img src="images/portfolio-item-2.jpg" alt=""></div>
+                    <h4>Portfolio Item Title</h4>
+                </a>
+                
+                <a class="portfolio-item scroll-into-view">
+                    <div><img src="images/portfolio-item-1.jpg" alt=""></div>
+                    <h4>Portfolio Item Title</h4>
+                </a>
+            </div>
+            
+            <div class="section-watermark scroll-into-view"><span class="translate" data-speed=".05">My&nbsp;Work</span></div>
         </div>
         <div id="skewed-bg"></div>
     </section>
@@ -98,7 +118,7 @@
     
     
     
-    <section style="height: 2000px"></section>
+    <section style="height: 2000px;z-index: -100;"></section>
     
     
     

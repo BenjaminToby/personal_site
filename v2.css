@@ -39,14 +39,16 @@ header {
     top: 40px;
     width: 200px;
     z-index: 1000;
+    color: inherit;
 }
 
 header > a {
-    font-family: hennigar;
+    font-family: "hennigar";
     font-size: 24px;
     text-transform: uppercase;
     border: none;
     letter-spacing: 1px;
+    color: inherit;
 }
 
 nav {
@@ -54,11 +56,13 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    color: inherit;
 }
 
 nav > a {
     margin-bottom: 10px;
     font-size: 14px;
+    color: inherit;
 }
 
 nav > a:hover {
@@ -105,7 +109,7 @@ a:hover {
 }
 
 h1, h2, h3, h4 {
-    font-family: hennigar;
+    font-family: "hennigar";
 	margin-top: 0px;
 	margin-bottom: 15px; 
 	width: 100%;    
@@ -130,7 +134,9 @@ h3 {
 }
 
 h4 {
-    
+    font-family: "Lato";
+    text-transform: none;
+    width: auto;
 }
 
 p {
@@ -145,6 +151,9 @@ p {
 
 span {
     font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    color: inherit;
 }
 
 
@@ -249,6 +258,16 @@ input:focus {
     margin-top: 10px;
 }
 
+.hero-graphic-wrapper-init {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: -20px;
+    opacity: 0;
+}
+
 .hero-graphic-wrapper {
     width: 400px;
     height: 600px;
@@ -256,10 +275,20 @@ input:focus {
     flex-direction: column;
     align-items: center;
     margin-right: -20px;
+    animation: herographicintro 1.5s;
+/*    animation-fill-mode: both;*/
+    animation-delay: 1.3s;
+    animation-timing-function: cubic-bezier( 0.215, 0.61, 0.355, 1 );
+    transition: all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 );
+}
+
+@keyframes herographicintro {
+    0% {transform: translateY(100px) rotateX(5deg); opacity: 0;}
+    100% {transform: none; opacity: 1;}
 }
 
 #benjamin-hero-text {
-    font-family: hennigar;
+    font-family: "hennigar";
     font-size: 105px;
     text-transform: uppercase;
     letter-spacing: 0px;
@@ -267,7 +296,7 @@ input:focus {
 }
 
 #toby-hero-text {
-    font-family: hennigar;
+    font-family: "hennigar";
     font-size: 205px;
     text-transform: uppercase;
     letter-spacing: 0px;
@@ -293,7 +322,7 @@ input:focus {
 }
 
 .hero-text-wrapper {
-    width: 200px;
+    width: 240px;
     padding-top: 100px;
     align-items: flex-start;
     margin-left: 50px;
@@ -380,13 +409,13 @@ input:focus {
 .hero-watermark {
     position: absolute;
     font-size: 35em;
-    font-family: hennigar;
+    font-family: "hennigar";
     z-index: -1;
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
     color: rgba(0,0,0,0.05);
-    letter-spacing: 2px;
+    letter-spacing: 5px;
 }
 
 .below-fold {
@@ -419,7 +448,108 @@ input:focus {
     display: flex;
     align-items: flex-end;
     text-align: right;
+    position: relative;
+    z-index: 10;
 }
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 10;
+}
+
+.section-watermark {
+    font-family: "hennigar";
+    position: absolute;
+    color: rgba(0,0,0,0.05);
+    font-size: 15em;
+    top: -350px;
+    left: auto;
+    right: auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+.portfolio-item {
+    margin-left: 100px;    
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: all .5s ease-out;
+    border: none;
+}
+
+.portfolio-item:hover {
+    border: none;
+}
+
+.portfolio-item:first-child {
+    margin-top: -100px;
+}
+
+.portfolio-item:last-child {
+    margin-bottom: -300px;
+    color: #222;
+}
+
+.portfolio-item > h4 {
+    transition: all .5s ease-out;
+    border-bottom: 2px solid transparent;
+}
+
+.portfolio-item > div {
+    width: 350px;
+    height: 250px;
+    background-color: #222;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .3s ease-out;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.portfolio-item img {
+    position: absolute;
+    width: 100%;
+    transition: all .4s ease-out;
+}
+
+.portfolio-item:hover img {
+    width: 110%;
+    transform: rotate(5deg);
+    filter: brightness(105%);
+}
+
+.portfolio-item:hover > h4 {
+    border-bottom: 2px solid white;
+}
+.portfolio-item:hover > div {
+    box-shadow: 0px 0px 35px -5px rgba(0,0,0,0.4);
+    background-size: 120%;
+}
+
+.portfolio-item:last-child:hover > h4 {
+    border-bottom: 2px solid var(--main-color);
+}
+
+.portfolio-item-image {
+}
+
+
+
 
 
 
@@ -438,6 +568,20 @@ input:focus {
     transition: all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 );
 }
 
+.fade-in-bottom {
+    animation: fadeinbottom 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+}
+
+@keyframes fadeinbottom {
+    0% {transform: translateY(100px) rotateX(5deg); opacity: 0;}
+    100% {transform: none; opacity: 1;}
+}
+
+.scroll-into-view {
+    opacity: 0;
+}
 
 
 
