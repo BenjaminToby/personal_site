@@ -27,9 +27,11 @@ html {
 
 body {
 	width: 100%;
-	display: block;
 	margin: 0px;
 	overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /*background-color: #B8FFE1;*/
 }
 
@@ -44,7 +46,7 @@ header {
 
 header > a {
     font-family: "hennigar";
-    font-size: 24px;
+    font-size: 36px;
     text-transform: uppercase;
     border: none;
     letter-spacing: 1px;
@@ -76,6 +78,7 @@ section {
     justify-content: center;
     padding: 60px 40px;
     position: relative;
+    width: 100%;
 }
 
 section > div {
@@ -90,6 +93,17 @@ section > div > div{
     display: flex;
     flex-direction: column;
 }
+
+/*
+div {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-size: inherit;
+    color: inherit;
+}
+*/
 
 
 
@@ -126,7 +140,7 @@ h1 {
 }
 
 h2 {
-	font-size: 30px;
+	font-size: 36px;
 }
 
 h3 {
@@ -140,11 +154,11 @@ h4 {
 }
 
 p {
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 1.5;
 	margin-top: 0px;
 	margin-bottom: 20px;
-	color: inherit;
+	color: rgba(0,0,0,0.6);
 	width: 100%;
 	font-weight: 400;
 }
@@ -154,6 +168,8 @@ span {
     font-weight: inherit;
     font-family: inherit;
     color: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
 }
 
 
@@ -201,7 +217,7 @@ input:focus {
 
 
 
-/*................................................... General classes and IDs */
+/*############################################################# -- General classes and IDs -- */
 
 .preloader-init {
     position: fixed;
@@ -243,8 +259,71 @@ input:focus {
     z-index: 1000;
 }
 
+.aside-header-mobile {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000;
+}
+
 .aside-header > a {
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: all .3s ease-out;
+    position: relative;
+}
+
+.email-link-block {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: var(--main-color);
+    margin-top: 10px;
+    color: white;
+    border: none;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.email-link-block > div:first-child {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+}
+
+.email-link-block:hover {
+    background-color: #222;
+    border: none;
+    width: 180px;
+}
+
+.aside-mail-anim {
+    position: absolute;
+    width: 140%;
+    height: 140%;
+    background-color: var(--main-color);
+    opacity: .2;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -100;
+    animation: asidecta 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes asidecta {
+    0% {width: 20px; height: 20px; opacity: .5;}
+    100% {width: 80px; height: 80px; opacity: 0;}
 }
 
 .social-media-link-block {
@@ -256,6 +335,51 @@ input:focus {
     border-radius: 50%;
     background-color: var(--main-color);
     margin-top: 10px;
+}
+
+.hamburger-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-color);
+    padding: 12px 10px;
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 2000;
+    border-radius: 5px;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.hamburger-show {
+    display: flex;
+    animation: hamburgershow 1s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier( 0.215, 0.61, 0.355, 1 );
+}
+
+@keyframes hamburgershow {
+    0% {display: flex; opacity: 0; transform: translateX(-100);}
+    100% {display: flex; opacity: 1; transform: none;}
+}
+
+
+
+
+
+/* ################################################### Body*/
+
+.hero-section {
+    
 }
 
 .hero-graphic-wrapper-init {
@@ -275,11 +399,12 @@ input:focus {
     flex-direction: column;
     align-items: center;
     margin-right: -20px;
-    animation: herographicintro 1.5s;
-/*    animation-fill-mode: both;*/
-    animation-delay: 1.3s;
+    animation: herographicintro 1.3s;
+    animation-delay: 1.6s;
     animation-timing-function: cubic-bezier( 0.215, 0.61, 0.355, 1 );
     transition: all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 );
+    opacity: 0;
+    animation-fill-mode: both;
 }
 
 @keyframes herographicintro {
@@ -288,11 +413,12 @@ input:focus {
 }
 
 #benjamin-hero-text {
-    font-family: "hennigar";
-    font-size: 105px;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    color: var(--main-color);
+    background-image: url("images/art-logo-4.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 250px;
 }
 
 #toby-hero-text {
@@ -322,8 +448,8 @@ input:focus {
 }
 
 .hero-text-wrapper {
-    width: 240px;
-    padding-top: 100px;
+    width: 350px;
+    padding-top: 50px;
     align-items: flex-start;
     margin-left: 50px;
 }
@@ -335,6 +461,7 @@ input:focus {
     border-radius: 5px;
     border: none;
     transition: all .3s ease;
+    opacity: 0;
 }
 
 .hero-text-wrapper > a:hover {
@@ -348,7 +475,7 @@ input:focus {
     color: #222;
     font-size: 36px;
     font-weight: 700;
-    top: 480px;;
+    top: 480px;
     right: 30vw;
     display: flex;
     align-items: center;
@@ -375,10 +502,26 @@ input:focus {
     left: 3px;
 }
 
-.hero-text-block {
-    font-size: 24px;
+.hero-text-block-init {
+    font-size: 36px;
     font-weight: 500;
     margin-bottom: 40px;
+    opacity: 0;
+}
+
+.hero-text-block {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    animation: herotextintro 1.2s;
+    animation-fill-mode: both;
+    animation-delay: 1.8s;
+    animation-timing-function: cubic-bezier( 0.39, 0.575, 0.565, 1 );
+}
+
+@keyframes herotextintro {
+    0% {transform: translateY(50px) rotateX(5deg); opacity: 0;}
+    100% {transform: none; opacity: 1;}
 }
 
 .hero-text-block > h1 {
@@ -408,14 +551,13 @@ input:focus {
 
 .hero-watermark {
     position: absolute;
-    font-size: 35em;
+    font-size: 40em;
     font-family: "hennigar";
     z-index: -1;
     top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
     color: rgba(0,0,0,0.05);
-    letter-spacing: 5px;
+    letter-spacing: 20px;
+    white-space: nowrap;
 }
 
 .below-fold {
@@ -426,7 +568,7 @@ input:focus {
 
 .skewed-bg {
     position: absolute;
-    width: 100%;
+    width: 100% !important;
     height: 400px;
     transform: skewY(-3deg);
     background-color: var(--main-color);
@@ -439,8 +581,17 @@ input:focus {
 }
 
 @keyframes skewintro {
-    0%{transform: none; top: 0;}
-    100%{transform: skewY(-3deg); top: -200px;}
+    0%{transform: none; top: 0; width: 100%;}
+    100%{transform: skewY(-3deg); top: -200px; width: 100%;}
+}
+
+.container {
+    color: #222;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
+    position: relative;
+    z-index: 10;
 }
 
 .container-darkbg {
@@ -545,7 +696,14 @@ input:focus {
     border-bottom: 2px solid var(--main-color);
 }
 
-.portfolio-item-image {
+.about-me-img-block {
+    width: 300px;
+    height: 500px;
+    background-color: aqua;
+    margin: -50px 80px 0px 0px;
+    border-radius: 20px;
+    background-image: url("images/portfolio-item-1.jpg");
+    background-size: cover;
 }
 
 
@@ -562,16 +720,16 @@ input:focus {
 
 
 
-/*Animations*/
+/* ################################################### Animations*/
 
 .translate {
-    transition: all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 );
+    transition: all .4s cubic-bezier( 0.39, 0.575, 0.565, 1 );
 }
 
 .fade-in-bottom {
     animation: fadeinbottom 1s;
     animation-fill-mode: both;
-    animation-timing-function: ease-out;
+    animation-timing-function: cubic-bezier( 0.39, 0.575, 0.565, 1 );
 }
 
 @keyframes fadeinbottom {
@@ -581,6 +739,22 @@ input:focus {
 
 .scroll-into-view {
     opacity: 0;
+}
+
+.scroll-into-view-intro {
+    opacity: 0;
+    animation: fadeinbottom 1s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier( 0.39, 0.575, 0.565, 1 );
+    animation-delay: 1.5s;
+}
+
+.scroll-into-view-intro-2 {
+    opacity: 0;
+    animation: fadeinbottom 1s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier( 0.39, 0.575, 0.565, 1 );
+    animation-delay: 2s;
 }
 
 
@@ -617,7 +791,314 @@ input:focus {
 
 @media (max-width: 800px) {
     
+    header {
+        left: 20px;
+        top: 20px;
+        width: 200px;
+        z-index: 1000;
+        color: inherit;
+    }
+
+    header > a {
+        
+    }
+
+    nav {
+        margin-top: 10px;
+        display: none;
+    }
     
+    .nav-mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+        display: flex;
+        background-color: white;
+        padding: 20px 20px 140px 20px;
+        width: 150px;
+        box-shadow: 0 0 40px -10px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        color: #222;
+    }
+
+    nav > a {
+        margin-bottom: 8px;
+    }
+
+    section {
+        padding: 60px 30px;
+    }
+
+    section > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin: 0;
+        top: 0;
+    }
+    
+    section > div.mobile-flip {
+        flex-direction: column-reverse;
+    }
+
+    section > div > div{
+        flex-grow: 1;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 0;
+        top: 0;
+    }
+
+
+
+    /*................................................... Text */
+
+    a {
+        
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+
+    }
+
+    h4 {
+        
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+
+
+
+
+
+
+
+    /*................................................... General classes and IDs */
+
+    .aside-header {
+        display: none;
+    }
+    
+    .aside-header-mobile {
+        position: fixed;
+        top: 240px;
+        right: auto;
+        left: 20px;
+        display: flex;
+        align-items: flex-start;
+        padding: 20px;
+        border-top: 1px solid #ddd;
+        flex-direction: column;
+        z-index: 1000;
+        width: 150px;
+    }
+
+    .aside-header-mobile > a {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        transition: all .3s ease-out;
+        position: relative;
+    }
+    
+    .hamburger-wrapper {
+        display: flex;
+    }
+    
+    
+    
+    /*###################################*/
+    
+    .hero-section {
+        padding: 40px 40px;
+    }
+    
+    .hero-container {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .hero-graphic-wrapper-init {
+        width: 50%;
+        height: 600px;
+        margin-right: none;
+        margin-left: -20px;
+    }
+
+    .hero-graphic-wrapper {
+        width: 50%;
+        height: 600px;
+        margin-right: none;
+        margin-left: 0px;
+        margin-top: 50px;
+    }
+    
+    #benjamin-hero-text {
+        margin-bottom: 10px;
+        width: 100%;
+        height: 180px;
+    }
+
+    .hero-graphic-block {
+        width: 100%;
+        height: auto;
+        margin-top: -25px;
+    }
+
+    .hero-graphic-block > img {
+        width: 100%;
+    }
+
+    .hero-text-wrapper {
+        width: 50%;
+        padding-top: 40px;
+        margin-left: 80px;
+    }
+
+    .scroll-down-link-block {
+        top: 520px;
+        right: auto;
+        width: 70px;
+        height: 80px;
+        background-color: transparent;
+    }
+    
+    .scroll-link-icon {
+        color: white;
+    }
+
+    .hero-text-block-init {
+        font-size: 36px;
+        font-weight: 500;
+        margin-bottom: 40px;
+        opacity: 0;
+    }
+
+    .hero-text-block {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .hero-text-block > h1 {
+        
+    }
+
+    .hero-text-block > h1 > span {
+        
+    }
+
+    .hero-text-block > h1 > span:hover {
+        padding: 3px 7px;
+    }
+
+    .hero-watermark {
+        font-size: 60vw;
+        line-height: 10px;
+        top: 25vw;
+    }
+
+    .below-fold {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+
+    .skewed-bg {
+        height: 400px;
+        margin-top: -100px;
+    }
+
+    section > div.container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
+        color: #222;
+        transform: none;
+        margin: 0;
+        top: 0;
+    }
+
+    .container-darkbg {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
+        transform: none;
+        margin-bottom: 40px;
+    }
+
+    .right-column {
+        justify-content: flex-start;
+        width: 100%;
+        transform: none;
+        margin-bottom: 40px;
+    }
+
+    .section-watermark {
+        font-size: 30vw;
+        top: -250px;
+        left: auto;
+        right: auto;
+    }
+
+    .portfolio-item {
+        margin-left: 0; 
+        top: 0;
+        margin-bottom: 20px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .portfolio-item:hover {
+        border: none;
+    }
+
+    .portfolio-item:first-child {
+        margin-top: 0px;
+        top: 0;
+    }
+
+    .portfolio-item:last-child {
+        
+    }
+
+    .portfolio-item > div {
+        width: 100%;
+        height: 350px;
+    }
+
+    .portfolio-item img {
+        
+    }
+
+    .about-me-img-block {
+        width: 80%;
+        height: 500px;
+        margin: 0;
+        align-self: center;
+    }
     
 }
 
@@ -625,9 +1106,140 @@ input:focus {
 
 
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
+    
+    header {
+        
+    }
     
     
+    
+    /*###################################*/
+    
+    .hero-section {
+        padding: 100px 20px 0px 20px;
+    }
+    
+    .hero-container {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .hero-graphic-wrapper-init {
+        width: 50%;
+        height: 600px;
+        margin-right: none;
+        margin-left: -20px;
+    }
+
+    .hero-graphic-wrapper {
+        widows: 40%;
+        min-width: 200px;
+        height: 600px;
+        margin-left: -20px;
+        margin-bottom: -40px;
+        top: 0;
+        margin-top: 0;
+        justify-content: flex-start;
+    }
+    
+    #benjamin-hero-text {
+        margin-bottom: 0;
+        width: 100%;
+        height: 180px;
+    }
+
+    .hero-graphic-block {
+        width: 100%;
+        height: auto;
+        margin-top: -25px;
+    }
+
+    .hero-graphic-block > img {
+        width: 100%;
+    }
+
+    .hero-text-wrapper {
+        width: 50%;
+        padding-top: 20px;
+        margin-left: 40px;
+    }
+    
+    .hero-text-wrapper > a {
+        font-size: 14px;
+    }
+
+    .scroll-down-link-block {
+        top: 420px;
+        right: auto;
+        width: 70px;
+        height: 80px;
+        background-color: transparent;
+    }
+    
+    .scroll-link-icon {
+        color: white;
+    }
+
+    .hero-text-block-init {
+        font-size: 24px;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+
+    .hero-text-block {
+        font-size: 24px;
+        margin-bottom: 20px;
+        line-height: 1;
+    }
+
+    .hero-text-block > h1 {
+        
+    }
+
+    .hero-text-block > h1 > span {
+        
+    }
+
+    .hero-text-block > h1 > span:hover {
+        padding: 3px 7px;
+    }
+
+    .hero-watermark {
+        top: 60vw;
+    }
+
+    .below-fold {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+
+    .skewed-bg {
+        height: 400px;
+        margin-top: -70px;
+    }
+
+    .section-watermark {
+        font-size: 30vw;
+        top: -200px;
+        left: auto;
+        right: auto;
+    }
+
+    .portfolio-item > div {
+        width: 100%;
+        height: 250px;
+    }
+
+    .portfolio-item img {
+        
+    }
+
+    .about-me-img-block {
+        width: 100%;
+        height: 500px;
+        margin: 0;
+    }
     
 }
 
@@ -635,10 +1247,103 @@ input:focus {
 
 
 
-@media (max-width: 450px) {
+@media (max-width: 430px) {
     
     
+    /*###################################*/
     
+    .hero-section {
+        padding: 17vw 20px 0px 20px;
+    }
+    
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .hero-graphic-wrapper-init {
+        width: 100%;
+        height: 600px;
+        margin-right: none;
+        margin-left: -20px;
+    }
+
+    .hero-graphic-wrapper {
+        width: 80%;
+        position: relative;
+        height: auto;
+        margin: 0;
+        top: 0;
+        justify-content: flex-start;
+        align-self: center;
+    }
+    
+    #benjamin-hero-text {
+        margin-bottom: -50px;
+        width: 100%;
+        height: 250px;
+    }
+
+    .hero-graphic-block {
+        width: 100%;
+        height: auto;
+        margin-top: -25px;
+    }
+
+    .hero-graphic-block > img {
+        width: 100%;
+    }
+
+    .hero-text-wrapper {
+        width: 100%;
+        padding-top: 20px;
+        margin-left: 0;
+        margin-bottom: 250px;
+        margin-top: -10px;
+        position: relative;
+    }
+
+    .scroll-down-link-block {
+        top: 750px;
+    }
+    
+    .hero-watermark {
+        top: 400px;
+    }
+
+    .below-fold {
+        padding-top: 40px;
+        padding-bottom: 100px;
+        margin: 0;
+    }
+
+    .skewed-bg {
+        height: 400px;
+        margin-top: 0px;
+    }
+
+    .section-watermark {
+        font-size: 30vw;
+        top: -200px;
+        left: auto;
+        right: auto;
+    }
+
+    .portfolio-item > div {
+        width: 100%;
+        height: 250px;
+    }
+
+    .portfolio-item img {
+        
+    }
+
+    .about-me-img-block {
+        width: 100%;
+        height: 500px;
+        margin: 0;
+    }
+    
+
 }
 
 

@@ -17,6 +17,11 @@ window.addEventListener("scroll", () => {
         element.style.transform = "translateY(" + (scroll * speed) + "px)";
     });
     
+    if(window.innerWidth < 500) {
+        
+        translate[0].style.transform = "translateY(" + (scroll * 0.1) + "px)";
+    }
+    
 //    skewedBg.style.transform = "translateY(" + (scroll * skewedBg.dataset.speed) + "px) skewY(-3deg)";
     watermark.style.transform = "translateY(" + (scroll * watermark.dataset.speed) + "px) translateX(-50%)";
     
@@ -28,9 +33,12 @@ window.addEventListener("scroll", () => {
 //});
 
 window.addEventListener("load", () => {
-    document.getElementById("skewed-bg").classList.add("skewed-bg");
+    document.getElementById("skewed-bg-block").classList.add("skewed-bg");
     document.getElementById("preloader").className = "preloader";
     document.getElementById("hero-graphic-container").className = "hero-graphic-wrapper";
+    document.getElementById("hero-text-controller").className = "hero-text-block";
+    document.querySelector(".hero-text-wrapper > a").classList.add("scroll-into-view-intro-2");
+    document.querySelector(".hero-watermark").classList.add("scroll-into-view-intro-2");
 });
 
 
@@ -41,7 +49,7 @@ window.addEventListener("load", () => {
 
 //##########################################################################################################
 
-var targets = document.querySelector("#section-2");
+var targets = document.querySelectorAll(".menu-color-change");
 var windowRect = {
     rootMargin: "0px 0px -400px 0px",
     delay: 100,
@@ -56,15 +64,21 @@ function navColorFunction(entries, navColors) {
         if(entry.isIntersecting) {
             document.querySelector("header").style.color = "white";
             document.querySelector(".hero-graphic-wrapper").style.opacity = "0";
+            document.querySelector(".aside-header > a").style.color = "white";
 //            translate[3].dataset.speed = .2;
         } else {
             document.querySelector("header").style.color = "#222";
+            document.querySelector(".aside-header > a").style.color = "#222";
             document.querySelector(".hero-graphic-wrapper").style.opacity = "1";
         }
     });
 }
 
-navColors.observe(targets);
+targets.forEach(entry => {
+    navColors.observe(entry);
+});
+
+
 
 
 //##########################################################################################################
@@ -88,6 +102,11 @@ scrollIntoViewItems.forEach(item => {
 });
 
 
+
+
+
+
+
 //##########################################################################################################
 
 //var sectionOneText = document.querySelector("#section-2");
@@ -106,17 +125,66 @@ function sect1Function(entries, sectionOneIo) {
 //            } else if (windowRect.thresholds > 0.5 && windowRect.thresholds < 1) {
 //                translate[3].dataset.speed = .3;
 //            }
-            translate[4].dataset.speed = .2;
-            translate[4].style.transition = "all 1.8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
+            
+            if(window.innerWidth > 800) {
+                translate[4].dataset.speed = .2;
+                translate[4].style.transition = "all 1.8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
+            }            
+            
         } else {
-            translate[4].style.transition = "all 1.8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
-            translate[4].dataset.speed = 0;
-            setTimeout(()=> {translate[4].style.transition = "all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";}, 1000);
+            if(window.innerWidth > 800) {  
+                translate[4].style.transition = "all 1.8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
+                translate[4].dataset.speed = 0;
+                setTimeout(()=> {translate[4].style.transition = "all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";}, 1000);
+            }
         }
     });
 }
 
 sectionOneIo.observe(translate[4]);
+
+
+
+
+
+
+
+
+
+
+//############################################################################## -- Hamburger
+
+document.querySelector(".hamburger-wrapper").addEventListener("click", hamburgerMenuToggle);
+//document.querySelector(".hamburger-wrapper").addEventListener("blur", hamburgerCLickOut);
+
+let hc = 0;
+
+function hamburgerMenuToggle() {
+    if (hc == 0) {
+        document.querySelector("nav").className = "nav-mobile";
+        document.querySelector("#aside-heder-block").className = "aside-header-mobile";
+    } else {
+        document.querySelector("nav").className = "none";
+        document.querySelector("#aside-heder-block").className = "aside-header";
+        hc = -1;
+    }   
+    hc++;
+}
+
+
+window.addEventListener("resize", () => {
+    if(window.innerWidth > 800) {
+        document.querySelector("nav").className = "none";
+        document.querySelector("#aside-heder-block").className = "aside-header";
+        hc = 0;
+    }
+});
+
+//function hamburgerCLickOut() {
+//    document.querySelector("nav").className = "none";
+//    document.querySelector("#aside-heder-block").className = "aside-header";
+//    hc = 0;
+//}
 
 
 
