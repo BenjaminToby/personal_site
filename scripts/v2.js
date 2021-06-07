@@ -155,7 +155,6 @@ sectionOneIo.observe(translate[4]);
 //############################################################################## -- Hamburger
 
 document.querySelector(".hamburger-wrapper").addEventListener("click", hamburgerMenuToggle);
-//document.querySelector(".hamburger-wrapper").addEventListener("blur", hamburgerCLickOut);
 
 let hc = 0;
 
@@ -180,11 +179,12 @@ window.addEventListener("resize", () => {
     }
 });
 
-//function hamburgerCLickOut() {
-//    document.querySelector("nav").className = "none";
-//    document.querySelector("#aside-heder-block").className = "aside-header";
-//    hc = 0;
-//}
+
+document.querySelector(".hamburger-wrapper").onblur = () => {
+    document.querySelector("nav").className = "none";
+    document.querySelector("#aside-heder-block").className = "aside-header";
+    hc = 0;
+}
 
 
 
