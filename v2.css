@@ -98,6 +98,14 @@ section > div > div{
     flex-direction: column;
 }
 
+section > div > div > p{
+    width: 350px;
+    color: inherit;
+}
+
+
+
+
 /*
 div {
     display: flex;
@@ -805,17 +813,7 @@ input:focus {
 
 /*.................................................................................................................. Mobile Styles */
 
-@media (max-width: 950px) {
-    
-    
-    
-}
-
-
-
-
-
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
     
     header {
         left: 20px;
@@ -862,72 +860,7 @@ input:focus {
     nav > a {
         margin-bottom: 8px;
     }
-
-    section {
-        padding: 60px 30px;
-    }
-
-    section > div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 0;
-        top: 0;
-    }
     
-    section > div.mobile-flip {
-        flex-direction: column-reverse;
-    }
-
-    section > div > div{
-        flex-grow: 1;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin: 0;
-        top: 0;
-    }
-
-
-
-    /*................................................... Text */
-
-    a {
-        
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 30px;
-    }
-
-    h3 {
-
-    }
-
-    h4 {
-        
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-
-
-
-
-
-
-
-    /*................................................... General classes and IDs */
-
     .aside-header {
         display: none;
     }
@@ -963,6 +896,76 @@ input:focus {
         display: flex;
     }
     
+}
+
+
+
+
+
+@media (max-width: 800px) {
+    
+    
+
+    section {
+        padding: 60px 30px;
+        margin: 0;
+        position: relative;
+    }
+
+    section > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    section > div.mobile-flip {
+        flex-direction: column-reverse;
+    }
+
+    section > div > div{
+        flex-grow: 1;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    
+    section > div > div > p{
+        width: 100%;
+    }
+
+
+
+    /*................................................... Text */
+
+    a {
+        
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+
+    }
+
+    h4 {
+        
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    
+    
     
     
     /*###################################*/
@@ -984,11 +987,12 @@ input:focus {
     }
 
     .hero-graphic-wrapper {
-        width: 40%;
-        height: 600px;
+        width: 300px;
+        height: 300px;
         margin-right: none;
-        margin-left: 20px;
+        margin-left: -20px;
         margin-top: 50px;
+        margin-bottom: 50px;
     }
     
     #benjamin-hero-text {
@@ -999,19 +1003,20 @@ input:focus {
 
     .hero-graphic-block {
         width: 100%;
-        height: auto;
+        height: 250px;
         margin-top: -25px;
     }
 
     .hero-graphic-block > img {
         width: 300px;
-        top: -100px;
+        top: -20px;
     }
 
     .hero-text-wrapper {
         width: 60%;
         padding-top: 40px;
-        margin-left: 80px;
+        margin-left: 40px;
+        min-width: 250px;
     }
 
     .scroll-down-link-block {
@@ -1057,13 +1062,15 @@ input:focus {
     }
 
     .below-fold {
-        padding-top: 20px;
+        padding-top: 250px;
         padding-bottom: 100px;
+        margin: 0;
     }
 
     .skewed-bg {
-        height: 400px;
-        margin-top: -80px;
+        height: 200px;
+        margin-top: 150px;
+        top: 0;
     }
 
     section > div.container {
@@ -1205,6 +1212,8 @@ input:focus {
     .hero-graphic-block > img {
         position: absolute;
         width: 300px;
+        top: -100px;
+        margin: 0;
     }
 
     .hero-text-wrapper {
