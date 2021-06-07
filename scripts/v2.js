@@ -155,6 +155,7 @@ sectionOneIo.observe(translate[4]);
 //############################################################################## -- Hamburger
 
 document.querySelector(".hamburger-wrapper").addEventListener("click", hamburgerMenuToggle);
+var logo = document.querySelector("header > a");
 
 let hc = 0;
 
@@ -162,9 +163,12 @@ function hamburgerMenuToggle() {
     if (hc == 0) {
         document.querySelector("nav").className = "nav-mobile";
         document.querySelector("#aside-heder-block").className = "aside-header-mobile";
+        logo.style.color = "#222";
+        document.querySelector(".aside-header-mobile > a:first-child").style.color = "#222";
     } else {
         document.querySelector("nav").className = "none";
         document.querySelector("#aside-heder-block").className = "aside-header";
+        logo.style.color = "inherit";
         hc = -1;
     }   
     hc++;
@@ -172,7 +176,7 @@ function hamburgerMenuToggle() {
 
 
 window.addEventListener("resize", () => {
-    if(window.innerWidth > 800) {
+    if(window.innerWidth > 1200) {
         document.querySelector("nav").className = "none";
         document.querySelector("#aside-heder-block").className = "aside-header";
         hc = 0;

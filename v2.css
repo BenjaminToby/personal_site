@@ -892,6 +892,10 @@ input:focus {
         text-align: center;
     }
     
+    .aside-header-mobile > a:first-child {
+        color: #222;
+    }
+    
     .hamburger-wrapper {
         display: flex;
     }
