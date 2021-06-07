@@ -83,12 +83,15 @@ section {
     padding: 60px 40px;
     position: relative;
     width: 100%;
+    perspective: 500px;
 }
 
 section > div {
     width: 960px;
     display: flex;
     justify-content: center;
+    perspective: 500px;
+    transform-style: preserve-3d;
 }
 
 section > div > div{
@@ -411,7 +414,7 @@ input:focus {
 /* ################################################### Body*/
 
 .hero-section {
-    
+    z-index: 1;
 }
 
 .hero-graphic-wrapper-init {
@@ -423,6 +426,12 @@ input:focus {
     margin-right: -20px;
     opacity: 0;
 }
+
+/*
+#hero-graphic-container {
+    opacity: 0;
+}
+*/
 
 .hero-graphic-wrapper {
     width: 400px;
@@ -601,7 +610,7 @@ input:focus {
 
 .skewed-bg {
     position: absolute;
-    width: 100% !important;
+    width: 100%;
     height: 400px;
     transform: skewY(-3deg);
     background-color: var(--main-color);
@@ -611,11 +620,18 @@ input:focus {
     animation-fill-mode: both;
     animation-delay: 1s;
     animation-timing-function: cubic-bezier( 0.39, 0.575, 0.565, 1 );
+    perspective: none;
+    transform-style: flat;
 }
 
 @keyframes skewintro {
     0%{transform: none; top: 0; width: 100%;}
     100%{transform: skewY(-3deg); top: -200px; width: 100%;}
+}
+
+#my-work-text-section {
+    perspective: 500px;
+    transform-style: preserve-3d;
 }
 
 .container {
@@ -996,7 +1012,7 @@ input:focus {
         margin-right: none;
         margin-left: -20px;
         margin-top: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
     
     #benjamin-hero-text {
@@ -1021,6 +1037,7 @@ input:focus {
         padding-top: 40px;
         margin-left: 40px;
         min-width: 250px;
+        max-height: 300px;
     }
 
     .scroll-down-link-block {
@@ -1066,14 +1083,14 @@ input:focus {
     }
 
     .below-fold {
-        padding-top: 250px;
+        padding-top: 150px;
         padding-bottom: 100px;
         margin: 0;
     }
 
     .skewed-bg {
         height: 200px;
-        margin-top: 150px;
+        margin-top: 130px;
         top: 0;
     }
 
@@ -1272,13 +1289,13 @@ input:focus {
     }
 
     .below-fold {
-        padding-top: 20px;
+        padding-top: 100px;
         padding-bottom: 100px;
     }
 
     .skewed-bg {
         height: 400px;
-        margin-top: -70px;
+        margin-top: -50px;
     }
 
     .section-watermark {
@@ -1376,14 +1393,14 @@ input:focus {
     }
 
     .below-fold {
-        padding-top: 40px;
+        padding-top: 100px;
         padding-bottom: 100px;
         margin: 0;
     }
 
     .skewed-bg {
         height: 400px;
-        margin-top: 0px;
+        margin-top: -60px;
     }
 
     .section-watermark {

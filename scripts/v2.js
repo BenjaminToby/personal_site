@@ -27,10 +27,8 @@ window.addEventListener("scroll", () => {
     
 });
 
-//window.scrollBy({
-//	top: -100,
-//	behavior: "smooth"
-//});
+
+
 
 window.addEventListener("load", () => {
     document.getElementById("skewed-bg-block").classList.add("skewed-bg");
@@ -52,8 +50,10 @@ window.addEventListener("load", () => {
 var targets = document.querySelectorAll(".menu-color-change");
 var windowRect = {
     rootMargin: "0px 0px -400px 0px",
-    delay: 100,
-    trackVisibility: true,
+//    delay: 100,
+//    trackVisibility: true,
+//    thresholds: [0, 0.25, 0.5, 0.75, 1],
+//    threshold: [...Array(100).keys()].map(x => x / 100),
 };
 
 var navColors = new IntersectionObserver(navColorFunction, windowRect);
@@ -63,13 +63,13 @@ function navColorFunction(entries, navColors) {
     entries.forEach(entry => {
         if(entry.isIntersecting) {
             document.querySelector("header").style.color = "white";
-            document.querySelector(".hero-graphic-wrapper").style.opacity = "0";
+//            document.querySelector(".hero-graphic-controller").style.opacity = "0";
             document.querySelector(".aside-header > a").style.color = "white";
 //            translate[3].dataset.speed = .2;
         } else {
             document.querySelector("header").style.color = "#222";
             document.querySelector(".aside-header > a").style.color = "#222";
-            document.querySelector(".hero-graphic-wrapper").style.opacity = "1";
+//            document.querySelector(".hero-graphic-controller").style.opacity = "1";
         }
     });
 }
@@ -115,33 +115,61 @@ var sectionOneIo = new IntersectionObserver(sect1Function, windowRect);
 
 function sect1Function(entries, sectionOneIo) {
     
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-//            windowRect.thresholds = [0, 0.25, 0.5, 0.75, 1];
-//            if (windowRect.thresholds < 0.25) {
-//                translate[3].dataset.speed = .1;
-//            } else if (windowRect.thresholds > 0.25 && windowRect.thresholds < 0.5) {
-//                translate[3].dataset.speed = .2;
-//            } else if (windowRect.thresholds > 0.5 && windowRect.thresholds < 1) {
-//                translate[3].dataset.speed = .3;
+//    entries.forEach(entry => {
+//        if(entry.isIntersecting) {
+////            windowRect.thresholds = [0, 0.25, 0.5, 0.75, 1];
+////            if (windowRect.thresholds == 0.5) {
+////                translate[4].dataset.speed = 1;
+////            }
+//            
+//            if(window.innerWidth > 800) {                
+//                
+////                translate[4].dataset.speed = .05;
+//                translate[4].style.transition = "all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
+////                translate[4].style.position = "sticky";
+//            }            
+//            
+//        } else {
+//            if(window.innerWidth > 800) {  
+//                translate[4].style.transition = "all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
+//                translate[4].dataset.speed = 0;
+////                setTimeout(()=> {translate[4].style.transition = "all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";}, 1000);
 //            }
+//        }
+//        
+////        if(entry.intersectionRatio == 0.5) {
+////            translate[4].dataset.speed = 1;
+////        }
+////        
+//    });
+    
+    if(entries[0].isIntersecting) {
+        
+        if(window.innerWidth > 800) {     
             
-            if(window.innerWidth > 800) {
-                translate[4].dataset.speed = .2;
-                translate[4].style.transition = "all 1.8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
-            }            
+            translate[3].dataset.speed = .2;
+            translate[3].style.transition = "all .7s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
             
         } else {
-            if(window.innerWidth > 800) {  
-                translate[4].style.transition = "all 1.8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";
-                translate[4].dataset.speed = 0;
-                setTimeout(()=> {translate[4].style.transition = "all .8s cubic-bezier( 0.39, 0.575, 0.565, 1 )";}, 1000);
-            }
+            translate[3].dataset.speed = 0;
         }
-    });
+        
+    } else {
+        
+        if(window.innerWidth > 800) {     
+            
+            translate[3].dataset.speed = 0.1;
+            
+        } else {
+            translate[3].dataset.speed = 0;
+        }
+            
+            
+            
+    }
 }
 
-sectionOneIo.observe(translate[4]);
+sectionOneIo.observe(translate[3]);
 
 
 
@@ -179,6 +207,7 @@ window.addEventListener("resize", () => {
     if(window.innerWidth > 1200) {
         document.querySelector("nav").className = "none";
         document.querySelector("#aside-heder-block").className = "aside-header";
+        logo.style.color = "inherit";
         hc = 0;
     }
 });
@@ -187,6 +216,7 @@ window.addEventListener("resize", () => {
 document.querySelector(".hamburger-wrapper").onblur = () => {
     document.querySelector("nav").className = "none";
     document.querySelector("#aside-heder-block").className = "aside-header";
+    logo.style.color = "inherit";
     hc = 0;
 }
 
