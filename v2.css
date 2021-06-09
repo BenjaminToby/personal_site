@@ -632,6 +632,10 @@ input:focus {
 #my-work-text-section {
     perspective: 500px;
     transform-style: preserve-3d;
+/*
+    position: sticky;
+    top: 0px;
+*/
 }
 
 .container {
