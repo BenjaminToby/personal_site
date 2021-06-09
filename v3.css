@@ -167,7 +167,7 @@ a {
 	border: none;
     cursor: pointer;
     font-size: inherit;
-/*    transition: all .3s ease-out;*/
+    transition: all .3s ease-out;
 }
 
 a:hover {
@@ -247,7 +247,7 @@ button {
 	padding: 10px 20px;
 	color: white;
 	cursor: pointer;
-/*    transition: all .2s ease-out;    */
+    transition: all .2s ease-out;    
     background-image: linear-gradient(var(--main-color),var(--main-color));
     background-repeat: no-repeat;
     background-position: 0px 67px;
@@ -376,6 +376,7 @@ input:focus {
     min-height: 100vh;
     left: 0px;
     top: 0px;
+    opacity: 0.2;
 }
 
 #mountains {
@@ -420,6 +421,24 @@ input:focus {
     background-position: 0px 0px;
     background-repeat: no-repeat;
     background-color: var(--dark-color);
+}
+
+
+
+
+
+
+
+
+
+/*############################################################# -- My Work -- */
+
+.my-work-section {
+    
+}
+
+.my-work-section > div:nth-child(2) {
+    background-color: var(--sec-color-1);
 }
 
 

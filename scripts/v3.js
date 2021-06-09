@@ -11,6 +11,8 @@ const myBigTextBlock = document.querySelector(".benjamin-big-text-block");
 const mainTextBlock = document.querySelector(".main-text-block");
 const mainCTA = document.querySelector(".main-cta-button");
 const allHeaderElements = document.querySelectorAll("header *");
+const mountains = document.querySelectorAll("#mountains");
+const clouds = document.querySelectorAll("#clouds");
 
 
 function intro() {
@@ -18,10 +20,10 @@ function intro() {
     anime({
         targets: heroTextSection,
         width: [0, "50%"],
-        opacity: [0, 1],
-        easing: "cubicBezier(0, 0.72, 0.355, 1)",
-        duration: 800,
-        delay: 1400,
+        translateX: [200, 0],
+        easing: "cubicBezier( 0.93, 0, 0.09, 1 )",
+        duration: 1500,
+        delay: 1000,
     });
     
     anime({
@@ -57,8 +59,8 @@ function intro() {
         translateX: [-50, 0],
         opacity: [0, 1],
         easing: "cubicBezier( 0.1, 0.63, 0.355, 1 )",
-        duration: 800,
-        delay: 2800,
+        duration: 1200,
+        delay: 2500,
     });
     
     anime({
@@ -66,13 +68,84 @@ function intro() {
         translateX: [-50, 0],
         opacity: [0, 1],
         easing: "cubicBezier( 0.1, 0.63, 0.355, 1 )",
-        duration: 800,
-        delay: 2900,
+        duration: 1200,
+        delay: 2600,
+    });
+    
+    anime({
+        targets: mountains,
+        translateY: [200, 0],
+        opacity: [0, 1],
+        easing: "cubicBezier(0.1, 0.63, 0.355, 1)",
+        duration: 1500,
+        delay: 1000,
+    });
+    
+    anime({
+        targets: clouds,
+        opacity: [0.2, 1],
+        easing: "easeOutQuad",
+        duration: 1200,
+        delay: 800,
     });
     
 }
 
-intro();
+// Intro Initialization
+
+function introInit() {
+    
+    anime({
+        targets: heroTextSection,
+        width: [0],
+        translateX: 200,
+        duration: 0
+    });
+    
+    anime({
+        targets: allHeaderElements,
+        translateX: [-20],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: myBigTextBlock,
+        translateY: [100],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: myImageBlock,
+        translateY: [100],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: mainTextBlock,
+        translateX: [-50],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: mainCTA,
+        translateX: [-50],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: mountains,
+        opacity: 0,
+        duration: 0
+    });
+    
+}
+
+introInit();
 
 
 
@@ -127,9 +200,55 @@ function changeHeader(entry) {
     }
 }
 
+
+
+
+//############################################# -- Window Load
+
 setTimeout(() => {
     headerObserver.observe(headerController);
-}, 2000);
+}, 3000);
+
+
+window.addEventListener("load", () => {
+    setTimeout(() => {intro();}, 1000);
+
+});
+
+
+
+
+
+
+
+//############################################# -- Secitons intersection Observer
+
+const sections = document.querySelectorAll("section");
+var sectionContainer = document.querySelector("#samp-div");
+
+var windowRect2 = {
+    rootMargin: "0px",
+};
+
+var sectionsIntersectionObserver = new IntersectionObserver(sectionsObserverFn, windowRect);
+
+function sectionsObserverFn(entries) {
+   if(entries[1].isInersecting) {
+       anime({
+           targets: sectionContainer,
+           width: [0, 500],
+           delay: 1000,
+       });
+   } 
+}
+
+
+
+sections.forEach(entry => {
+    sectionsIntersectionObserver.observe(entry);
+});
+
+
 
 
 
