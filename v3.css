@@ -15,6 +15,10 @@ html {
     line-height: 1.5;
     color: #222;
     position: relative;
+/*
+    animation-timing-function: linear;
+    transition-timing-function: linear;
+*/
 }
 
 :root {
@@ -48,9 +52,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all .3s ease;
     height: 140px;
     overflow: hidden;
+    perspective: 500;
+    transition: all .3s ease;
+}
+
+header * {
+/*    transition: all .5s ease;*/
 }
 
 header.scrolled {
@@ -72,7 +81,7 @@ header.scrolled {
 header img {
     width: 40px;
     margin-right: 10px;
-    transition: all .3s ease;
+/*    transition: all .3s ease;*/
     position: relative;
     top: 0;
 }
@@ -85,18 +94,15 @@ header > a {
     align-items: center;
     font-weight: 900;
     position: relative;
+    perspective: 500px;
+    transform-style: preserve-3d;
 }
 
 header > a > div {
     line-height: 16px;
     font-size: 24px;
     color: var(--dark-color);
-    transition: all .3s ease;
-}
-
-.logo-text-dissapear {
-    transform: translateX(-50px);
-    opacity: 0;
+/*    transition: all .3s ease;*/
 }
 
 nav {
@@ -161,7 +167,7 @@ a {
 	border: none;
     cursor: pointer;
     font-size: inherit;
-    transition: all .3s ease-out;
+/*    transition: all .3s ease-out;*/
 }
 
 a:hover {
@@ -241,7 +247,7 @@ button {
 	padding: 10px 20px;
 	color: white;
 	cursor: pointer;
-    transition: all .2s ease-out;    
+/*    transition: all .2s ease-out;    */
     background-image: linear-gradient(var(--main-color),var(--main-color));
     background-repeat: no-repeat;
     background-position: 0px 67px;
@@ -321,6 +327,7 @@ input:focus {
 
 .hero-section {
     background-color: #1b239b;
+    justify-content: space-between;
 }
 
 .hero-section > div:nth-child(1) {
@@ -332,6 +339,7 @@ input:focus {
     padding: 25vh 40px 40px 6.2vw;
     font-size: 2.5vw;
     display: inline;
+/*    opacity: 0;*/
 }
 
 .main-text-block {
@@ -371,10 +379,9 @@ input:focus {
 }
 
 #mountains {
-    min-width: 70%;
-    height: 100vh;
-    left: -200px;
-    bottom: -20px;
+    width: 100%;
+    min-height: 100vh;
+    bottom: -20vh;
 }
 
 .benjamin-image-block {
@@ -387,6 +394,7 @@ input:focus {
     background-image: url("images/hero-image-ben.jpg");
     background-size: cover;
     opacity: .8;
+    padding: 0;
 }
 
 .benjamin-big-text-block {
