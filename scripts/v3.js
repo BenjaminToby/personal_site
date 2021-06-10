@@ -31,7 +31,7 @@ function intro() {
         translateX: [-20, 0],
 //        rotateY: [50, 0],
         opacity: [0, 1],
-        easing: "easeInOutQuad",
+        easing: "easeOutQuad",
         duration: 800,
         delay: anime.stagger(100, {start: 1000}/* , {easing: 'easeOutQuad'} */),
     });
@@ -48,7 +48,7 @@ function intro() {
     anime({
         targets: myImageBlock,
         translateY: [100, 0],
-        opacity: [0, 1],
+        opacity: [0, 0.8],
         easing: "cubicBezier( 0.1, 0.63, 0.355, 1 )",
         duration: 1500,
         delay: 2200,
@@ -223,29 +223,61 @@ window.addEventListener("load", () => {
 
 //############################################# -- Secitons intersection Observer
 
-const sections = document.querySelectorAll("section");
-var sectionContainer = document.querySelector("#samp-div");
+var sections = document.querySelectorAll(".scroll-into-view");
+//var sectionContainer = document.querySelector(".my-work-section > div:nth-child(2)");
 
 var windowRect2 = {
-    rootMargin: "0px",
+    rootMargin: "0px 0px -200px 0px",
 };
 
-var sectionsIntersectionObserver = new IntersectionObserver(sectionsObserverFn, windowRect);
+var sectionsIO = new IntersectionObserver(sectionsObserverFn, windowRect2);
 
 function sectionsObserverFn(entries) {
-   if(entries[1].isInersecting) {
-       anime({
-           targets: sectionContainer,
-           width: [0, 500],
-           delay: 1000,
-       });
-   } 
+    
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("scrolled-into-view");
+            
+//            anime({
+//                targets: contents[entry.target.firstElementChild],
+//                width: [0, "50%"],
+//                easing: "cubicBezier( 0.93, 0, 0.09, 1 )",
+//                opacity: [0, 1],
+//                duration: 1200,
+//            });
+       } 
+    });
+   
 }
 
 
 
-sections.forEach(entry => {
-    sectionsIntersectionObserver.observe(entry);
+sections.forEach(item => {
+    sectionsIO.observe(item);
+});
+
+
+
+//############################################# -- Content intersection Observer
+
+var contents = document.querySelectorAll(".scroll-into-view-content");
+
+var contentsIO = new IntersectionObserver(contentsObserverFn, windowRect2);
+
+function contentsObserverFn(entries) {
+    
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("scrolled-into-view-content");
+       } 
+    });
+   
+}
+
+
+
+contents.forEach(item => {
+    contentsIO.observe(item);
 });
 
 

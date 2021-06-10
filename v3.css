@@ -25,8 +25,8 @@ html {
     --main-color: #747bef;
     --base-color: #222;
     --sec-color-1: #ed7d71;
-    --sec-color-2: #d67772;
-    --sec-color-3: #f5b9eb;
+    --sec-color-2: #faa096;
+    --sec-color-3: #75F0E6;
     --dark-color: #1c3766;
 }
 
@@ -120,6 +120,7 @@ nav > a:not(.social-media-links) {
     background-position: -200px 41px;
     background-image: linear-gradient(90deg, var(--main-color), var(--sec-color-1));
     color: inherit;
+    transition: background .3s ease;
 }
 
 nav > a:not(.social-media-links):hover {
@@ -136,6 +137,7 @@ section {
     margin: 0;
     height: 100vh;
     overflow: hidden;
+    align-items: stretch;
 }
 
 section > div {
@@ -143,9 +145,10 @@ section > div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     perspective: 500px;
     transform-style: preserve-3d;
-    padding: 60px;
+    padding: 15%;
     position: relative;
 }
 
@@ -167,7 +170,7 @@ a {
 	border: none;
     cursor: pointer;
     font-size: inherit;
-    transition: all .3s ease-out;
+/*    transition: all .3s ease-out;*/
 }
 
 a:hover {
@@ -190,7 +193,8 @@ h1 {
 }
 
 h2 {
-	font-size: 36px;
+	font-size: 32px;
+    width: auto;
 }
 
 h3 {
@@ -206,9 +210,8 @@ p {
 	line-height: 1.5;
 	margin-top: 0px;
 	margin-bottom: 20px;
-	color: rgba(0,0,0,0.8);
 	width: 100%;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 span {
@@ -246,8 +249,7 @@ button {
 	background-color: var(--dark-color);
 	padding: 10px 20px;
 	color: white;
-	cursor: pointer;
-    transition: all .2s ease-out;    
+	cursor: pointer; 
     background-image: linear-gradient(var(--main-color),var(--main-color));
     background-repeat: no-repeat;
     background-position: 0px 67px;
@@ -315,6 +317,28 @@ input:focus {
     margin-right: 0;
 }
 
+.scroll-into-view {
+    padding: 0;
+    width: 0;
+    transition: all .7s cubic-bezier(0.93, 0, 0.09, 1);
+}
+
+.scrolled-into-view {
+    width: 50%;
+    padding: 40px;
+}
+
+.scroll-into-view-content {
+    transform: translateY(80px) rotateX(5deg);
+    transition: all 1s cubic-bezier(0.1, 0.63, 0.355, 1);
+    opacity: 0;
+}
+
+.scrolled-into-view-content {
+    transform: none;
+    opacity: 1;
+}
+
 
 
 
@@ -331,7 +355,6 @@ input:focus {
 }
 
 .hero-section > div:nth-child(1) {
-    
 }
 
 .hero-section > div:nth-child(2) {
@@ -339,6 +362,7 @@ input:focus {
     padding: 25vh 40px 40px 6.2vw;
     font-size: 2.5vw;
     display: inline;
+    z-index: 100;
 /*    opacity: 0;*/
 }
 
@@ -352,10 +376,12 @@ input:focus {
     background-image: linear-gradient(var(--main-color),var(--main-color));
     background-position: 0px 3.2vw;
     background-repeat: no-repeat;
+    transition: all .3s ease-out;
 }
 .main-text-block a:hover {
     color: white;
     background-position: 0px 0px;
+    background-image: linear-gradient(var(--dark-color),var(--dark-color));
     padding: 5px 10px;
 }
 
@@ -394,33 +420,36 @@ input:focus {
     left: 15vw;
     background-image: url("images/hero-image-ben.jpg");
     background-size: cover;
-    opacity: .8;
+    opacity: .2;
     padding: 0;
 }
 
 .benjamin-big-text-block {
     position: absolute;
     font-size: 8.5vw;
-    bottom: -50px;
+    bottom: -40px;
     left: 5%;
     font-weight: 900;
     line-height: 1em;
     color: white;
     mix-blend-mode: overlay;
     filter: drop-shadow(0 0 20px rgba(0,0,0,0.4));
+    padding: 40px;
 }
 
 .main-cta-button {
     font-size: 24px;
     padding: 15px 40px;
     margin-top: 20px;
+    background-color: var(--sec-color-1);
+    transition: all .3s ease-out;
+    background-image: linear-gradient(var(--dark-color),var(--dark-color));
 }
 
 .main-cta-button:hover {
-    background-image: linear-gradient(var(--main-color),var(--main-color));
+    background-image: linear-gradient(var(--dark-color),var(--dark-color));
     background-position: 0px 0px;
     background-repeat: no-repeat;
-    background-color: var(--dark-color);
 }
 
 
@@ -437,8 +466,42 @@ input:focus {
     
 }
 
+.my-work-section > div:nth-child(1) {
+	color: rgba(0,0,0,0.6);
+    align-items: flex-end;
+}
+
 .my-work-section > div:nth-child(2) {
-    background-color: var(--sec-color-1);
+    background-color: var(--sec-color-2);
+/*    width: 20%;*/
+}
+
+.my-work-section h2 {
+    text-align: right;
+    color: rgba(0,0,0,.8);
+}
+
+.my-work-section p {
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+/*############################################################# -- About Me -- */
+
+.about-me-section {
+    justify-content: flex-end;
+}
+
+.about-me-section > div:nth-child(1) {
+    background-color: var(--sec-color-3);
+/*    width: 20%;*/
 }
 
 

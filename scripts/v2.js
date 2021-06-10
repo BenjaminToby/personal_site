@@ -88,7 +88,7 @@ var scrollIntoViewItems = document.querySelectorAll(".scroll-into-view");
 var windowRect2 = {
     rootMargin: "0px 0px -200px 0px",
 };
-var scrollIntoView = new IntersectionObserver(function(entries, scrollIntoView) {
+var scrollIntoView = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
        if(entry.isIntersecting) {
            entry.target.classList.add("fade-in-bottom");
