@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '1e17252358281423e1fcad5533830c0f40cd7758',
+    'reference' => '4b5a19179745291bd3db18b1fc4fbbe52a772976',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '1e17252358281423e1fcad5533830c0f40cd7758',
+      'reference' => '4b5a19179745291bd3db18b1fc4fbbe52a772976',
     ),
     'phpmailer/phpmailer' => 
     array (
