@@ -1,63 +1,218 @@
-var faceWrapper = document.getElementById("my-face-wrapper");
-
-lottie.setQuality("low");
-        
-var myFaceContainer = document.getElementById("my-face");
-var morphShape1Container = document.getElementById("morph-shape-1");
-var morphShape2Container = document.getElementById("morph-shape-2");
-var morphShape3Container = document.getElementById("morph-shape-3");
-
-var myFace = lottie.loadAnimation({
-    container: myFaceContainer,
-    path: "scripts/face.json",
-    renderer: "svg",
-    loop: false,
-    autoplay: false,
-});
-
-var morphShape1 = lottie.loadAnimation({
-    container: morphShape1Container,
-    path: "scripts/morphing-shape-1.json",
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-});
-
-var morphShape2 = lottie.loadAnimation({
-    container: morphShape2Container,
-    path: "scripts/morphing-shape-1.json",
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-});
-
-morphShape1.setSpeed(1.5);
-
-var morphShape3 = lottie.loadAnimation({
-    container: morphShape3Container,
-    path: "scripts/morphing-shape-1.json",
-    renderer: "svg",
-    loop: true,
-    autoplay: true,
-});
-
-morphShape3.setSpeed(2);
 
 
 
 
-function steadyState() {
-    myFace.playSegments([44, 205], true);
-    myFace.loop = true;
+
+//############################################# -- Intro Animations
+
+const heroTextSection = document.querySelector(".hero-section > div:nth-child(2)");
+const myImageBlock = document.querySelector(".benjamin-image-block");
+const myBigTextBlock = document.querySelector(".benjamin-big-text-block");
+const mainTextBlock = document.querySelector(".main-text-block");
+const mainCTA = document.querySelector(".main-cta-button");
+const allHeaderElements = document.querySelectorAll("header *");
+const mountains = document.querySelectorAll("#mountains");
+const clouds = document.querySelectorAll("#clouds");
+
+
+function intro() {
+    
+    anime({
+        targets: heroTextSection,
+        width: [0, "50%"],
+        translateX: [200, 0],
+        easing: "cubicBezier( 0.93, 0, 0.09, 1 )",
+        duration: 1500,
+        delay: 1000,
+    });
+    
+    anime({
+        targets: allHeaderElements,
+        translateX: [-20, 0],
+//        rotateY: [50, 0],
+        opacity: [0, 1],
+        easing: "easeOutQuad",
+        duration: 800,
+        delay: anime.stagger(100, {start: 1000}/* , {easing: 'easeOutQuad'} */),
+    });
+    
+    anime({
+        targets: myBigTextBlock,
+        translateY: [100, 0],
+        opacity: [0, 1],
+        easing: "cubicBezier( 0.1, 0.63, 0.355, 1 )",
+        duration: 1200,
+        delay: 2000,
+    });
+    
+    anime({
+        targets: myImageBlock,
+        translateY: [100, 0],
+        opacity: [0, 0.8],
+        easing: "cubicBezier( 0.1, 0.63, 0.355, 1 )",
+        duration: 1500,
+        delay: 2200,
+    });
+    
+    anime({
+        targets: mainTextBlock,
+        translateX: [-50, 0],
+        opacity: [0, 1],
+        easing: "cubicBezier( 0.1, 0.63, 0.355, 1 )",
+        duration: 1200,
+        delay: 2500,
+    });
+    
+    anime({
+        targets: mainCTA,
+        translateX: [-50, 0],
+        opacity: [0, 1],
+        easing: "cubicBezier( 0.1, 0.63, 0.355, 1 )",
+        duration: 1200,
+        delay: 2600,
+    });
+    
+    anime({
+        targets: mountains,
+        translateY: [200, 0],
+        opacity: [0, 1],
+        easing: "cubicBezier(0.1, 0.63, 0.355, 1)",
+        duration: 1500,
+        delay: 1000,
+    });
+    
+    anime({
+        targets: clouds,
+        opacity: [0.2, 1],
+        easing: "easeOutQuad",
+        duration: 1200,
+        delay: 800,
+    });
+    
 }
 
-var startSteadyState;
+// Intro Initialization
 
+function introInit() {
+    
+    anime({
+        targets: heroTextSection,
+        width: [0],
+        translateX: 200,
+        duration: 0
+    });
+    
+    anime({
+        targets: allHeaderElements,
+        translateX: [-20],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: myBigTextBlock,
+        translateY: [100],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: myImageBlock,
+        translateY: [100],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: mainTextBlock,
+        translateX: [-50],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: mainCTA,
+        translateX: [-50],
+        opacity: [0],
+        duration: 0
+    });
+    
+    anime({
+        targets: mountains,
+        opacity: 0,
+        duration: 0
+    });
+    
+}
+
+introInit();
+
+
+
+
+
+//############################################# -- Header Scroll interactions
+
+var headerController = document.querySelector("#header-controller");
+var windowRect = {
+    rootMargin: "0px",
+};
+
+var headerObserver = new IntersectionObserver(changeHeader, windowRect);
+
+function changeHeader(entry) {
+    
+    if(entry[0].isIntersecting) {
+        document.querySelector("header").className = "none";
+        anime({
+            targets: "header img",
+            width: 40,
+            height: 100,
+            top: 0,
+            duration: 400,
+            easing: "easeOutCubic",
+        });
+        
+        anime({
+            targets: "header > a > div",
+            translateX: 0,
+            opacity: 1,
+            duration: 1000,
+        });
+        
+    } else {
+        document.querySelector("header").classList.add("scrolled");
+        anime({
+            targets: "header img",
+            width: 60,
+            height: 130,
+            top: 20,
+            duration: 400,
+            easing: "easeOutCubic",
+        });
+        
+        anime({
+            targets: "header > a > div",
+            translateX: -50,
+            opacity: 0,
+            duration: 1000,
+        });
+    }
+}
+
+
+
+
+//############################################# -- Window Load
+
+setTimeout(() => {
+    headerObserver.observe(headerController);
+}, 3000);
 
 
 window.addEventListener("load", () => {
-    myFace.playSegments([0, 50], true);
-    startSteadyState = setTimeout(() => {steadyState();}, 1000);    
+    setTimeout(() => {intro();}, 1000);
+
 });
 
 
@@ -66,110 +221,142 @@ window.addEventListener("load", () => {
 
 
 
-//--------------------------------------------------------------------------- Services mouseover
-document.querySelectorAll(".hero-content-link").forEach(item => {
-   item.addEventListener("mouseover", () => {
-       
-       clearTimeout(startSteadyState);
-       myFace.loop = false;
-       myFace.playSegments([210, 249], true);
-       faceWrapper.style.transform = "rotate3d(20,-20,0,20deg) translateZ(-50px)";
-       document.getElementById("bg-circle").style.transform = "rotate3d(20,-20,0,20deg) translate3d(-50%,-55%,-300px)";
-       myFaceContainer.style.mixBlendMode = "screen";
-       
-   }); 
-});
+//############################################# -- Secitons intersection Observer
 
-document.getElementById("ui-ux-design").addEventListener("mouseover", () => {
+var sections = document.querySelectorAll(".scroll-into-view");
+//var sectionContainer = document.querySelector(".my-work-section > div:nth-child(2)");
+
+var windowRect2 = {
+    rootMargin: "0px 0px -200px 0px",
+};
+
+var sectionsIO = new IntersectionObserver(sectionsObserverFn, windowRect2);
+
+function sectionsObserverFn(entries) {
     
-    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#A5E6BA";}, 400);
-});
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("scrolled-into-view");
+            
+//            anime({
+//                targets: contents[entry.target.firstElementChild],
+//                width: [0, "50%"],
+//                easing: "cubicBezier( 0.93, 0, 0.09, 1 )",
+//                opacity: [0, 1],
+//                duration: 1200,
+//            });
+       } 
+    });
+   
+}
 
-document.getElementById("web-design").addEventListener("mouseover", () => {
-    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#5B2A86";}, 400);    
-});
-
-document.getElementById("frontend-dev").addEventListener("mouseover", () => {
-    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#7785AC";}, 400);    
-});
-
-document.getElementById("graphic-design").addEventListener("mouseover", () => {
-    setTimeout(() => {document.getElementById("color-overlay").style.backgroundColor = "#9AC6C5";}, 400);    
-});
 
 
-//--------------------------------------------------------------------------- Services mouseout
-document.querySelectorAll(".hero-content-link").forEach(item => {
-   item.addEventListener("mouseout", () => {
-       
-       startSteadyState = setTimeout(() => {
-           
-           steadyState();
-           faceWrapper.style.transform = "none";
-           document.getElementById("color-overlay").style.backgroundColor = "transparent";
-           document.getElementById("bg-circle").style.transform = "translate3d(-50%,-55%,-300px)";
-           myFaceContainer.style.mixBlendMode = "normal";
-                                        
-       }, 500);
-       
-   }); 
+sections.forEach(item => {
+    sectionsIO.observe(item);
 });
 
 
-/*
-//--------------------------------------------------------------------------- UI UX
-uiUXLink.addEventListener("mouseover", () => {
-    clearTimeout(startSteadyState);
-    myFace.loop = false;
-    myFace.playSegments([210, 249], true);
-    faceWrapper.style.transform = "rotate3d(20,-20,0,20deg) translateZ(-50px)";
+
+//############################################# -- Content intersection Observer
+
+const contents = document.querySelectorAll(".scroll-into-view-content");
+
+const contentsIO = new IntersectionObserver(contentsObserverFn, windowRect2);
+
+function contentsObserverFn(entries) {
+    
+    entries.forEach(entry => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add("scrolled-into-view-content");
+       } 
+    });
+   
+}
+
+
+
+contents.forEach(item => {
+    contentsIO.observe(item);
 });
 
-uiUXLink.addEventListener("mouseout", () => {
-    startSteadyState = setTimeout(() => {steadyState();}, 500);
-    faceWrapper.style.transform = "none";
+
+
+
+const myToolsIcons = document.querySelectorAll(".my-specialties-section > div > div");
+const myToolsHeader = document.querySelectorAll(".my-specialties-section h2");
+const myToolsParagraph = document.querySelector(".my-specialties-section p");
+
+let myToolsIO = new IntersectionObserver(myToolsFn, windowRect2);
+
+const myToolsIconsAnimated = anime({
+    targets: myToolsIcons,
+    translateX: [-20, 0],
+    translateY: [-20, 0],
+//        rotateY: [50, 0],
+    opacity: [0, 1],
+    easing: "easeOutQuad",
+    duration: 1200,
+    delay: anime.stagger(150, {start: 200}),
+    loop: false,
+    autoplay: false,
+    complete: function() { myToolsIconsAnimated.remove(myToolsIcons); },
 });
 
-//--------------------------------------------------------------------------- Web Design
-webDesignLink.addEventListener("mouseover", () => {
-    clearTimeout(startSteadyState);
-    myFace.loop = false;
-    myFace.playSegments([210, 249], true);
-    faceWrapper.style.transform = "rotate3d(20,-20,0,20deg) translateZ(-50px)";
-});
+function myToolsFn(entries) {
+    
+    if(entries[0].isIntersecting) {
+        myToolsIconsAnimated.play();
+    }
+   
+}
 
-webDesignLink.addEventListener("mouseout", () => {
-    startSteadyState = setTimeout(() => {steadyState();}, 500);
-    faceWrapper.style.transform = "none";
-});
 
-//--------------------------------------------------------------------------- Frontend Dev
-frontentDevLink.addEventListener("mouseover", () => {
-    clearTimeout(startSteadyState);
-    myFace.loop = false;
-    myFace.playSegments([210, 249], true);
-    faceWrapper.style.transform = "rotate3d(20,-20,0,20deg) translateZ(-50px)";
-});
+myToolsIO.observe(myToolsParagraph);
 
-frontentDevLink.addEventListener("mouseout", () => {
-    startSteadyState = setTimeout(() => {steadyState();}, 500);
-    faceWrapper.style.transform = "none";
-});
 
-//--------------------------------------------------------------------------- Graphic and Animation Design
-graphicDesignLink.addEventListener("mouseover", () => {
-    clearTimeout(startSteadyState);
-    myFace.loop = false;
-    myFace.playSegments([210, 249], true);
-    faceWrapper.style.transform = "rotate3d(20,-20,0,20deg) translateZ(-50px)";
-});
 
-graphicDesignLink.addEventListener("mouseout", () => {
-    startSteadyState = setTimeout(() => {steadyState();}, 500);
-    faceWrapper.style.transform = "none";
-});
 
-*/
+
+
+
+
+
+
+
+//############################################# -- Contact Form
+
+//var form = document.getElementById("my-form");
+//    
+//    async function handleSubmit(event) {
+//      event.preventDefault();
+//      var status = document.getElementById("my-form-status");
+//      var data = new FormData(event.target);
+//      fetch(event.target.action, {
+//        method: form.method,
+//        body: data,
+//        headers: {
+//            'Accept': 'application/json'
+//        }
+//      }).then(response => {
+//        status.innerHTML = "Thanks for your submission!";
+//        form.reset()
+//      }).catch(error => {
+//        status.innerHTML = "Oops! There was a problem submitting your form"
+//      });
+//    }
+//    form.addEventListener("submit", handleSubmit)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
