@@ -260,9 +260,9 @@ sections.forEach(item => {
 
 //############################################# -- Content intersection Observer
 
-var contents = document.querySelectorAll(".scroll-into-view-content");
+const contents = document.querySelectorAll(".scroll-into-view-content");
 
-var contentsIO = new IntersectionObserver(contentsObserverFn, windowRect2);
+const contentsIO = new IntersectionObserver(contentsObserverFn, windowRect2);
 
 function contentsObserverFn(entries) {
     
@@ -279,6 +279,76 @@ function contentsObserverFn(entries) {
 contents.forEach(item => {
     contentsIO.observe(item);
 });
+
+
+
+
+const myToolsIcons = document.querySelectorAll(".my-specialties-section > div > div");
+const myToolsHeader = document.querySelectorAll(".my-specialties-section h2");
+const myToolsParagraph = document.querySelector(".my-specialties-section p");
+
+let myToolsIO = new IntersectionObserver(myToolsFn, windowRect2);
+
+const myToolsIconsAnimated = anime({
+    targets: myToolsIcons,
+    translateX: [-20, 0],
+    translateY: [-20, 0],
+//        rotateY: [50, 0],
+    opacity: [0, 1],
+    easing: "easeOutQuad",
+    duration: 1200,
+    delay: anime.stagger(150, {start: 200}),
+    loop: false,
+    autoplay: false,
+    complete: function() { myToolsIconsAnimated.remove(myToolsIcons); },
+});
+
+function myToolsFn(entries) {
+    
+    if(entries[0].isIntersecting) {
+        myToolsIconsAnimated.play();
+    }
+   
+}
+
+
+myToolsIO.observe(myToolsParagraph);
+
+
+
+
+
+
+
+
+
+
+
+//############################################# -- Contact Form
+
+//var form = document.getElementById("my-form");
+//    
+//    async function handleSubmit(event) {
+//      event.preventDefault();
+//      var status = document.getElementById("my-form-status");
+//      var data = new FormData(event.target);
+//      fetch(event.target.action, {
+//        method: form.method,
+//        body: data,
+//        headers: {
+//            'Accept': 'application/json'
+//        }
+//      }).then(response => {
+//        status.innerHTML = "Thanks for your submission!";
+//        form.reset()
+//      }).catch(error => {
+//        status.innerHTML = "Oops! There was a problem submitting your form"
+//      });
+//    }
+//    form.addEventListener("submit", handleSubmit)
+
+
+
 
 
 
