@@ -507,7 +507,7 @@ input:focus {
 
 
 
-/*############################################################# -- About Me -- */
+/*############################################################# -- My Specialties -- */
 
 .my-specialties-section {
     justify-content: flex-start;
@@ -544,6 +544,33 @@ input:focus {
     margin: 10px;
     border-radius: 50%;
     transform-style: preserve-3d;
+}
+
+
+
+
+
+
+
+
+
+/*############################################################# -- Contact Me -- */
+
+.contact-section {
+    position: relative;
+}
+
+.contact-section > div:nth-of-type(2) {
+    background-color: var(--sec-color-1);
+}
+
+.contact-section-controller {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0;
 }
 
 

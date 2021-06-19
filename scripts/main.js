@@ -13,10 +13,12 @@ const mainCTA = document.querySelector(".main-cta-button");
 const allHeaderElements = document.querySelectorAll("header *");
 const mountains = document.querySelectorAll("#mountains");
 const clouds = document.querySelectorAll("#clouds");
+const footerController = document.querySelector(".contact-section-controller");
+const header = document.querySelector("header");
 
 
 function intro() {
-    
+
     anime({
         targets: heroTextSection,
         width: [0, "50%"],
@@ -25,17 +27,17 @@ function intro() {
         duration: 1500,
         delay: 1000,
     });
-    
+
     anime({
         targets: allHeaderElements,
         translateX: [-20, 0],
-//        rotateY: [50, 0],
+        //        rotateY: [50, 0],
         opacity: [0, 1],
         easing: "easeOutQuad",
         duration: 800,
-        delay: anime.stagger(100, {start: 1000}/* , {easing: 'easeOutQuad'} */),
+        delay: anime.stagger(100, { start: 1000 }/* , {easing: 'easeOutQuad'} */),
     });
-    
+
     anime({
         targets: myBigTextBlock,
         translateY: [100, 0],
@@ -44,7 +46,7 @@ function intro() {
         duration: 1200,
         delay: 2000,
     });
-    
+
     anime({
         targets: myImageBlock,
         translateY: [100, 0],
@@ -53,7 +55,7 @@ function intro() {
         duration: 1500,
         delay: 2200,
     });
-    
+
     anime({
         targets: mainTextBlock,
         translateX: [-50, 0],
@@ -62,7 +64,7 @@ function intro() {
         duration: 1200,
         delay: 2500,
     });
-    
+
     anime({
         targets: mainCTA,
         translateX: [-50, 0],
@@ -71,7 +73,7 @@ function intro() {
         duration: 1200,
         delay: 2600,
     });
-    
+
     anime({
         targets: mountains,
         translateY: [200, 0],
@@ -80,7 +82,7 @@ function intro() {
         duration: 1500,
         delay: 1000,
     });
-    
+
     anime({
         targets: clouds,
         opacity: [0.2, 1],
@@ -88,61 +90,61 @@ function intro() {
         duration: 1200,
         delay: 800,
     });
-    
+
 }
 
 // Intro Initialization
 
 function introInit() {
-    
+
     anime({
         targets: heroTextSection,
         width: [0],
         translateX: 200,
         duration: 0
     });
-    
+
     anime({
         targets: allHeaderElements,
         translateX: [-20],
         opacity: [0],
         duration: 0
     });
-    
+
     anime({
         targets: myBigTextBlock,
         translateY: [100],
         opacity: [0],
         duration: 0
     });
-    
+
     anime({
         targets: myImageBlock,
         translateY: [100],
         opacity: [0],
         duration: 0
     });
-    
+
     anime({
         targets: mainTextBlock,
         translateX: [-50],
         opacity: [0],
         duration: 0
     });
-    
+
     anime({
         targets: mainCTA,
         translateX: [-50],
         opacity: [0],
         duration: 0
     });
-    
+
     anime({
         targets: mountains,
         opacity: 0,
         duration: 0
     });
-    
+
 }
 
 introInit();
@@ -161,9 +163,9 @@ var windowRect = {
 var headerObserver = new IntersectionObserver(changeHeader, windowRect);
 
 function changeHeader(entry) {
-    
-    if(entry[0].isIntersecting) {
-        document.querySelector("header").className = "none";
+
+    if (entry[0].isIntersecting) {
+        header.className = "none";
         anime({
             targets: "header img",
             width: 40,
@@ -172,16 +174,16 @@ function changeHeader(entry) {
             duration: 400,
             easing: "easeOutCubic",
         });
-        
+
         anime({
             targets: "header > a > div",
             translateX: 0,
             opacity: 1,
             duration: 1000,
         });
-        
+
     } else {
-        document.querySelector("header").classList.add("scrolled");
+        header.classList.add("scrolled");
         anime({
             targets: "header img",
             width: 60,
@@ -190,7 +192,7 @@ function changeHeader(entry) {
             duration: 400,
             easing: "easeOutCubic",
         });
-        
+
         anime({
             targets: "header > a > div",
             translateX: -50,
@@ -211,7 +213,7 @@ setTimeout(() => {
 
 
 window.addEventListener("load", () => {
-    setTimeout(() => {intro();}, 1000);
+    setTimeout(() => { intro(); }, 1000);
 
 });
 
@@ -233,21 +235,22 @@ var windowRect2 = {
 var sectionsIO = new IntersectionObserver(sectionsObserverFn, windowRect2);
 
 function sectionsObserverFn(entries) {
-    
+
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             entry.target.classList.add("scrolled-into-view");
-            
-//            anime({
-//                targets: contents[entry.target.firstElementChild],
-//                width: [0, "50%"],
-//                easing: "cubicBezier( 0.93, 0, 0.09, 1 )",
-//                opacity: [0, 1],
-//                duration: 1200,
-//            });
-       } 
+            headerObserver.observe(footerController);
+
+            //            anime({
+            //                targets: contents[entry.target.firstElementChild],
+            //                width: [0, "50%"],
+            //                easing: "cubicBezier( 0.93, 0, 0.09, 1 )",
+            //                opacity: [0, 1],
+            //                duration: 1200,
+            //            });
+        }
     });
-   
+
 }
 
 
@@ -265,13 +268,13 @@ const contents = document.querySelectorAll(".scroll-into-view-content");
 const contentsIO = new IntersectionObserver(contentsObserverFn, windowRect2);
 
 function contentsObserverFn(entries) {
-    
+
     entries.forEach(entry => {
-        if(entry.isIntersecting) {
+        if (entry.isIntersecting) {
             entry.target.classList.add("scrolled-into-view-content");
-       } 
+        }
     });
-   
+
 }
 
 
@@ -293,22 +296,22 @@ const myToolsIconsAnimated = anime({
     targets: myToolsIcons,
     translateX: [-20, 0],
     translateY: [-20, 0],
-//        rotateY: [50, 0],
+    //        rotateY: [50, 0],
     opacity: [0, 1],
     easing: "easeOutQuad",
     duration: 1200,
-    delay: anime.stagger(150, {start: 200}),
+    delay: anime.stagger(150, { start: 200 }),
     loop: false,
     autoplay: false,
-    complete: function() { myToolsIconsAnimated.remove(myToolsIcons); },
+    complete: function () { myToolsIconsAnimated.remove(myToolsIcons); },
 });
 
 function myToolsFn(entries) {
-    
-    if(entries[0].isIntersecting) {
+
+    if (entries[0].isIntersecting) {
         myToolsIconsAnimated.play();
     }
-   
+
 }
 
 
@@ -325,6 +328,8 @@ myToolsIO.observe(myToolsParagraph);
 
 
 //############################################# -- Contact Form
+
+
 
 //var form = document.getElementById("my-form");
 //    
