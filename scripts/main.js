@@ -225,7 +225,7 @@ window.addEventListener("load", () => {
 
 //############################################# -- Secitons intersection Observer
 
-var sections = document.querySelectorAll(".scroll-into-view");
+const sections = document.querySelectorAll(".scroll-into-view");
 //var sectionContainer = document.querySelector(".my-work-section > div:nth-child(2)");
 
 var windowRect2 = {
@@ -317,6 +317,73 @@ function myToolsFn(entries) {
 
 myToolsIO.observe(myToolsParagraph);
 
+
+
+
+
+
+
+
+
+//############################################# -- Scroll Navigations
+
+anime({
+    targets: ".hero-scroll-down-block",
+    translateY: [-5, 5],
+    easing: "easeInOutQuad",
+    duration: 1000,
+    loop: true,
+    direction: "alternate",
+})
+
+const navSections = document.querySelectorAll("section");
+const myWorkNavLink = document.querySelector("#my-work-link");
+const aboutMeNavLink = document.querySelector("#about-me-link");
+const resumeLink = document.querySelector("#resume-link");
+const contactMeNavLink = document.querySelector("#contact-me-link");
+
+const anchorLinksObserver = new IntersectionObserver(anchorLinksFn, { rootMargin: "0px", threshold: 0.75 });
+
+navSections.forEach(item => { anchorLinksObserver.observe(item); });
+
+function anchorLinksFn(entries) {
+
+    // console.log(entries[3]);
+
+    if (entries[3]) { return; }
+
+    entries.forEach(entry => {
+
+        console.log(entry.target);
+
+        // entry.target.className = "hero-section";
+
+        myWorkNavLink.classList.remove("active-anchor");
+        aboutMeNavLink.classList.remove("active-anchor");
+        resumeLink.classList.remove("active-anchor");
+        contactMeNavLink.classList.remove("active-anchor");
+
+        if (entry.target.className == "hero-section") {
+            return;
+        } else if (entry.target.className == "my-work-section") {
+            myWorkNavLink.classList.add("active-anchor");
+        } else if (entry.target.className == "about-me-section") {
+            aboutMeNavLink.classList.add("active-anchor");
+        } else if (entry.target.className == "my-specialties-section") {
+            resumeLink.classList.add("active-anchor");
+        } else if (entry.target.className == "contact-section") {
+            contactMeNavLink.classList.add("active-anchor");
+        } else {
+            myWorkNavLink.classList.remove("active-anchor");
+            aboutMeNavLink.classList.remove("active-anchor");
+            resumeLink.classList.remove("active-anchor");
+            contactMeNavLink.classList.remove("active-anchor");
+        }
+    });
+
+}
+
+// anchorLinksObserver.observe(navSections[2], navSections[3]);
 
 
 
