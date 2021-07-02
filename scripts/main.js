@@ -433,7 +433,7 @@ function contentsObserverAboutImg(entries) {
         myImageAbout.animate([
             {
                 transform: "none",
-                opacity: .5,
+                opacity: .8,
             }
         ], {
             duration: 1300,
@@ -656,40 +656,41 @@ const myImage = ben(".benjamin-image-block");
 const myImageOverlay = ben(".benjamin-image-block-overlay");
 const serviceDisplay = ben(".service-display-block");
 
-uiuxDesignerLinks.forEach(item => {
+if (window.innerWidth > 1200) {
 
-    item.addEventListener("mouseover", function (event) {
+    uiuxDesignerLinks.forEach(item => {
 
-        // myImage.style.transform = "rotateX(1deg) rotateY(2deg) rotateZ(-2deg) translateZ(20px) translateX(20px)";
-        myImage.style.width = "20vw";
+        item.addEventListener("mouseover", function (event) {
 
-        if (event.target.className == "uiux-designer-link") {
+            // myImage.style.transform = "rotateX(1deg) rotateY(2deg) rotateZ(-2deg) translateZ(20px) translateX(20px)";
+            myImage.style.width = "20vw";
 
-            myImageOverlay.style.backgroundColor = "rgba(237,125,113,0.8)";
+            if (event.target.className == "uiux-designer-link") {
 
-        } else if (event.target.className == "web-designer-link") {
+                myImageOverlay.style.backgroundColor = "rgba(237,125,113,0.8)";
 
-            myImageOverlay.style.backgroundColor = "rgba(117,240,230,0.8)";
-            // serviceDisplay.style.width = "300px";
-            // serviceDisplay.style.height = "250px";
+            } else if (event.target.className == "web-designer-link") {
 
-        } else if (event.target.className == "frontend-designer-link") {
+                myImageOverlay.style.backgroundColor = "rgba(117,240,230,0.8)";
+                // serviceDisplay.style.width = "300px";
+                // serviceDisplay.style.height = "250px";
 
-            myImageOverlay.style.backgroundColor = "rgba(116,123,239,0.8)";
-            // serviceDisplay.style.width = "250px";
-            // serviceDisplay.style.height = "200px";
+            } else if (event.target.className == "frontend-designer-link") {
 
-        } else if (event.target.className == "graphic-motion-designer-link") {
+                myImageOverlay.style.backgroundColor = "rgba(116,123,239,0.8)";
+                // serviceDisplay.style.width = "250px";
+                // serviceDisplay.style.height = "200px";
 
-            myImageOverlay.style.backgroundColor = "rgba(28,55,102,0.8)";
-            // serviceDisplay.style.width = "200px";
-            // serviceDisplay.style.height = "200px";
+            } else if (event.target.className == "graphic-motion-designer-link") {
 
-        }
+                myImageOverlay.style.backgroundColor = "rgba(28,55,102,0.8)";
+                // serviceDisplay.style.width = "200px";
+                // serviceDisplay.style.height = "200px";
 
+            }
+        });
     });
-
-});
+}
 
 uiuxDesignerLinks.forEach(item => {
 
