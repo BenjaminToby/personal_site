@@ -1,24 +1,44 @@
 
 
+function ben(element) {
+    return document.querySelector(element);
+};
 
+function benA(elements) {
+    return document.querySelectorAll(elements);
+};
 
 
 //############################################# -- Intro Animations
 
-const heroTextSection = document.querySelector(".hero-section > div:nth-child(2)");
-const myImageBlock = document.querySelector(".benjamin-image-block-wrapper");
-const myBigTextBlock = document.querySelector(".benjamin-big-text-block");
-const mainTextBlock = document.querySelector(".main-text-block");
-const mainCTA = document.querySelector(".main-cta-button");
-const allHeaderElements = document.querySelectorAll("header *:not(header > div)");
-const mountains = document.querySelector("#mountains");
-const clouds = document.querySelector("#clouds");
-const footerController = document.querySelector(".contact-section-controller");
-const header = document.querySelector("header");
-const heroTxtGraphic = document.querySelector(".hero-text-section-graphic");
+const preloader = ben("#preloader-container");
+const heroTextSection = ben(".hero-section > div:nth-child(2)");
+const myImageBlock = ben(".benjamin-image-block-wrapper");
+const myBigTextBlock = ben(".benjamin-big-text-block");
+const mainTextBlock = ben(".main-text-block");
+const mainCTA = ben(".main-cta-button");
+const allHeaderElements = benA("header *:not(header > div)");
+const mountains = ben("#mountains");
+const clouds = ben("#clouds");
+const footerController = ben(".contact-section-controller");
+const header = ben("header");
+const heroTxtGraphic = ben(".hero-text-section-graphic");
+const socialLinks = ben("header > div:nth-of-type(2)");
+// const heroTextGraphics = ben(".hero-text-section-graphic");
 
 
 function intro() {
+
+    preloader.style.pointerEvents = "none";
+
+    anime({
+        targets: preloader,
+        opacity: 0,
+        // pointerEvents: "none",
+        easing: "easeOutQuad",
+        duration: 1200,
+        delay: 800,
+    });
 
     if (window.innerWidth > 800) {
         anime({
@@ -110,32 +130,38 @@ function intro() {
         delay: 2600,
     });
 
-    if (window.innerWidth > 600) {
-
-        anime({
-            targets: mountains,
-            translateY: [200, 0],
-            opacity: [0, 1],
-            easing: "cubicBezier(0.1, 0.63, 0.355, 1)",
-            duration: 1500,
-            delay: 1000,
-        })
-
-        anime({
-            targets: mountains,
-            left: [0, -50],
-            easing: "easeOutQuad",
-            duration: 800,
-            delay: 1600,
-        });
-    }
+    anime({
+        targets: mountains,
+        translateY: [
+            { value: 200, duration: 0, delay: 0 },
+            { value: 0, duration: 1500, delay: 1000 }
+        ],
+        left: [
+            { value: 0, duration: 0, delay: 0 },
+            { value: -50, duration: 800, delay: 1600 },
+        ],
+        opacity: [
+            { value: 0, duration: 0, delay: 0 },
+            { value: 1, duration: 1500, delay: 1000 },
+        ],
+        easing: "cubicBezier(0.1, 0.63, 0.355, 1)",
+    });
 
     anime({
-        targets: clouds,
-        opacity: [0.2, 1],
+        targets: heroTxtGraphic,
+        opacity: [0, 1],
+        translateZ: [100, 10],
         easing: "easeOutQuad",
         duration: 1200,
-        delay: 800,
+        delay: 2000,
+    });
+
+    anime({
+        targets: benA(".hero-text-section-graphic *"),
+        opacity: [0, 1],
+        easing: "easeOutQuad",
+        duration: 800,
+        delay: anime.stagger(300, { start: 3000 }, { easing: 'easeOutQuad' }),
     });
 
 }
@@ -213,7 +239,7 @@ introInit();
 
 //############################################# -- Header Scroll interactions
 
-var headerController = document.querySelector("#header-controller");
+var headerController = ben("#header-controller");
 var windowRect = {
     rootMargin: "0px",
 };
@@ -225,9 +251,11 @@ function changeHeader(entry) {
     if (entry[0].isIntersecting) {
 
         if (window.innerWidth > 800) {
-            document.querySelectorAll(".nav-link").forEach(item => {
+            benA(".nav-link.footer-special").forEach(item => {
 
-                if (entry[0].target.className == "contact-section-controller") { item.style.color = "white"; }
+                if (entry[0].target.className == "contact-section-controller") {
+                    item.style.color = "white";
+                }
             });
 
             header.className = "none";
@@ -240,13 +268,21 @@ function changeHeader(entry) {
                 duration: 400,
                 easing: "easeOutCubic",
             });
+        }
 
+        anime({
+            targets: "header > a > div",
+            translateX: 0,
+            opacity: 1,
+            duration: 1000,
+        });
 
+        if (window.innerWidth < 801 && window.innerWidth > 450) {
             anime({
-                targets: "header > a > div",
-                translateX: 0,
+                targets: socialLinks,
                 opacity: 1,
-                duration: 1000,
+                easing: "easeOutCubic",
+                duration: 300,
             });
         }
 
@@ -256,7 +292,7 @@ function changeHeader(entry) {
 
             // if (entry[0].isIntersecting) {
 
-            document.querySelectorAll(".nav-link").forEach(item => {
+            benA(".nav-link.footer-special").forEach(item => {
 
                 if (entry[0].target.className == "contact-section-controller") { item.style.color = ""; }
             });
@@ -281,6 +317,15 @@ function changeHeader(entry) {
             opacity: 0,
             duration: 1000,
         });
+
+        if (window.innerWidth < 801 && window.innerWidth > 450) {
+            anime({
+                targets: socialLinks,
+                opacity: 0,
+                easing: "easeOutCubic",
+                duration: 300,
+            });
+        }
     }
 }
 
@@ -313,7 +358,7 @@ window.addEventListener("load", () => {
 
 //############################################# -- Secitons intersection Observer
 
-const sections = document.querySelectorAll(".scroll-into-view");
+const sections = benA(".scroll-into-view");
 //var sectionContainer = document.querySelector(".my-work-section > div:nth-child(2)");
 
 let footerHeaderFn = () => { headerObserver.observe(footerController); };
@@ -350,10 +395,10 @@ sections.forEach(item => {
 
 //############################################# -- Content intersection Observer
 
-const contents = document.querySelectorAll(".scroll-into-view-content");
+const contents = benA(".scroll-into-view-content");
 const contentsIO = new IntersectionObserver(contentsObserverFn, { rootMargin: "0px 0px -100px 0px" });
 
-const contentsAlt = document.querySelectorAll(".scroll-into-view-content-2");
+const contentsAlt = benA(".scroll-into-view-content-2");
 const contentsIOAlt = new IntersectionObserver(contentsObserverFn, { rootMargin: "0px" });
 
 function contentsObserverFn(entries) {
@@ -378,6 +423,31 @@ function contentsObserverFn(entries) {
     });
 
 }
+
+const myImageAboutSectionObserver = new IntersectionObserver(contentsObserverAboutImg, { rootMargin: "0px 0px -200px 0px", });
+const myImageAbout = ben(".about-me-section img");
+
+function contentsObserverAboutImg(entries) {
+
+    if (entries[0].isIntersecting) {
+        myImageAbout.animate([
+            {
+                transform: "none",
+                opacity: .5,
+            }
+        ], {
+            duration: 1300,
+            easing: "cubic-bezier(0.1, 0.63, 0.355, 1)",
+            fill: "forwards",
+            delay: 1000,
+        });
+
+        myImageAboutSectionObserver.unobserve(myImageAbout);
+    }
+
+}
+
+myImageAboutSectionObserver.observe(myImageAbout);
 
 
 
@@ -409,11 +479,11 @@ anime({
     direction: "alternate",
 });
 
-const navSections = document.querySelectorAll("section");
-const myWorkNavLink = document.querySelector("#my-work-link");
-const aboutMeNavLink = document.querySelector("#about-me-link");
-const resumeLink = document.querySelector("#resume-link");
-const contactMeNavLink = document.querySelector("#contact-me-link");
+const navSections = benA("section");
+const myWorkNavLink = ben("#my-work-link");
+const aboutMeNavLink = ben("#about-me-link");
+const resumeLink = ben("#resume-link");
+const contactMeNavLink = ben("#contact-me-link");
 
 const anchorLinksObserver = new IntersectionObserver(anchorLinksFn, { rootMargin: "0px", threshold: 0.75 });
 
@@ -472,64 +542,126 @@ function parralaxMouse(event) {
 
     // mountains.style.transition = "all .7s ease";
 
-    clouds.animate([{
-        transform: `translateX(${xPos * -10}px) translateY(${yPos * -10}px)`,
-    }], {
-        easing: "ease",
-        fill: "forwards",
+    // let items = [clouds, mountains, myImageBlock, mainTextBlock, heroTxtGraphic, myBigTextBlock];
+
+    // items.forEach(item => { item.style.transition = "all 1s ease" });
+
+    // clouds.animate([{
+    //     transform: `translateX(${xPos * -10}px) translateY(${yPos * -10}px)`,
+    // }], {
+    //     easing: "ease",
+    //     fill: "forwards",
+    // });
+
+    // mountains.animate([{
+    //     transform: `translateX(${xPos * -100}px) translateY(${yPos * -20}px)`,
+    // }], {
+    //     easing: "ease",
+    //     fill: "forwards",
+    //     direction: "normal"
+    // });
+
+    // myImageBlock.animate([{
+    //     transform: `translateX(${xPos * -30}px) translateY(${yPos * -10}px) rotateX(${yPos * 4}deg) rotateY(${xPos * -3}deg)`,
+    // }], {
+    //     easing: "ease",
+    //     fill: "forwards",
+    // });
+
+    // mainTextBlock.animate([{
+    //     transform: `translateZ(15px) rotateX(${yPos * 2}deg) rotateY(${xPos * -2}deg)`,
+    // }], {
+    //     easing: "ease-out",
+    //     fill: "forwards",
+    // });
+
+    // heroTxtGraphic.animate([{
+    //     transform: `translateX(${xPos * -5}px) translateY(${yPos * -5}px) translateZ(10px) rotateX(${yPos * 2}deg) rotateY(${xPos * -2}deg)`,
+    // }], {
+    //     easing: "ease",
+    //     fill: "forwards",
+    // });
+
+    // myBigTextBlock.animate([{
+    //     transform: `translateX(${xPos * -40}px) translateY(${yPos * -20}px) translateZ(50px) rotateX(${yPos * 4}deg) rotateY(${xPos * -3}deg)`,
+    // }], {
+    //     easing: "ease",
+    //     fill: "forwards",
+    // });
+
+
+    anime({
+        targets: mountains,
+        translateX: xPos * -100,
+        translateY: yPos * -20,
+        easing: "easeOutQuad",
+        duration: 700,
     });
 
-    mountains.animate([{
-        transform: `translateX(${xPos * -100}px) translateY(${yPos * -20}px)`,
-    }], {
-        easing: "ease",
-        fill: "forwards",
-        direction: "normal"
+    anime({
+        targets: clouds,
+        translateX: xPos * -10,
+        translateY: yPos * -10,
+        easing: "easeOutQuad",
+        duration: 500,
     });
 
-    myImageBlock.animate([{
-        transform: `translateX(${xPos * -30}px) translateY(${yPos * -10}px) rotateX(${yPos * 4}deg) rotateY(${xPos * -3}deg)`,
-    }], {
-        easing: "ease",
-        fill: "forwards",
+    anime({
+        targets: myImageBlock,
+        translateX: xPos * -30,
+        translateY: yPos * -10,
+        easing: "easeOutQuad",
+        duration: 500,
+        rotateX: yPos * 4,
+        rotateY: xPos * -3
     });
 
-    mainTextBlock.animate([{
-        transform: `translateZ(15px) rotateX(${yPos * 2}deg) rotateY(${xPos * -2}deg)`,
-    }], {
-        easing: "ease-out",
-        fill: "forwards",
+    anime({
+        targets: myBigTextBlock,
+        translateX: xPos * -40,
+        translateY: yPos * -20,
+        translateZ: 50,
+        rotateX: yPos * 4,
+        rotateY: xPos * -3,
+        easing: "easeOutQuad",
+        duration: 500,
     });
 
-    heroTxtGraphic.animate([{
-        transform: `translateX(${xPos * -5}px) translateY(${yPos * -5}px) translateZ(10px) rotateX(${yPos * 2}deg) rotateY(${xPos * -2}deg)`,
-    }], {
-        easing: "ease",
-        fill: "forwards",
+    anime({
+        targets: mainTextBlock,
+        translateZ: 15,
+        rotateX: yPos * 2,
+        rotateY: xPos * -2,
+        easing: "easeOutQuad",
+        duration: 300,
     });
 
-    myBigTextBlock.animate([{
-        transform: `translateX(${xPos * -40}px) translateY(${yPos * -20}px) translateZ(50px) rotateX(${yPos * 4}deg) rotateY(${xPos * -3}deg)`,
-    }], {
-        easing: "ease",
-        fill: "forwards",
+    anime({
+        targets: heroTxtGraphic,
+        translateX: xPos * -5,
+        translateY: yPos * -5,
+        translateZ: 10,
+        rotateX: yPos * 2,
+        rotateY: xPos * -2,
+        easing: "easeOutQuad",
+        duration: 300,
     });
 
 }
 
 
 
-const uiuxDesignerLinks = document.querySelectorAll(".main-hero-text a");
-const myImage = document.querySelector(".benjamin-image-block");
-const myImageOverlay = document.querySelector(".benjamin-image-block-overlay");
-const serviceDisplay = document.querySelector(".service-display-block");
+const uiuxDesignerLinks = benA(".main-hero-text a");
+const myImage = ben(".benjamin-image-block");
+const myImageOverlay = ben(".benjamin-image-block-overlay");
+const serviceDisplay = ben(".service-display-block");
 
 uiuxDesignerLinks.forEach(item => {
 
     item.addEventListener("mouseover", function (event) {
 
         // myImage.style.transform = "rotateX(1deg) rotateY(2deg) rotateZ(-2deg) translateZ(20px) translateX(20px)";
-        myImage.style.width = "23vw";
+        myImage.style.width = "20vw";
 
         if (event.target.className == "uiux-designer-link") {
 
@@ -584,51 +716,111 @@ uiuxDesignerLinks.forEach(item => {
 
 //############################################# -- Mobile hamburger interactrions
 
-const hamburgerButton = document.querySelector(".hamburger-button");
-const mobileNavWrapper = document.querySelector("header > div:nth-of-type(1)");
+const hamburgerButton = ben(".hamburger-button");
+const mobileNavWrapper = ben("header > div:nth-of-type(1)");
 let a = 0;
 
 hamburgerButton.addEventListener("click", () => {
 
     if (a == 0) {
 
-        mobileNavWrapper.animate([
-            {
-                opacity: 0,
-                height: "0px",
-                pointerEvents: "none",
-                transform: "translateZ(50px) translateY(-50px)"
-            },
-            {
-                opacity: 1,
-                height: "450px",
-                pointerEvents: "visible",
-                transform: "translateZ(0px) translateY(0px)"
-            }
-        ], {
-            fill: "both",
-            duration: 600,
-            easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
-        });
-    } else {
-        mobileNavWrapper.animate([
-            {
-                opacity: 1,
-                height: "450px",
-                pointerEvents: "visible",
-                transform: "translateZ(0px) translateY(0px)"
+        if (window.innerWidth > 449) {
 
-            },
-            {
-                opacity: 0,
-                height: "0px",
-                pointerEvents: "none",
-                transform: "translateZ(50px) translateY(-50px)"
-            }
-        ], {
-            fill: "both",
-            duration: 600,
-            easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+            mobileNavWrapper.animate([
+                {
+                    opacity: 0,
+                    height: "0px",
+                    pointerEvents: "none",
+                    transform: "translateZ(50px) translateY(-50px)"
+                },
+                {
+                    opacity: 1,
+                    height: "350px",
+                    pointerEvents: "visible",
+                    transform: "translateZ(0px) translateY(0px)"
+                }
+            ], {
+                fill: "both",
+                duration: 300,
+                easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+            });
+        } else {
+            mobileNavWrapper.animate([
+                {
+                    opacity: 0,
+                    height: "0px",
+                    pointerEvents: "none",
+                    transform: "translateZ(50px) translateY(-50px)"
+                },
+                {
+                    opacity: 1,
+                    height: "420px",
+                    pointerEvents: "visible",
+                    transform: "translateZ(0px) translateY(0px)"
+                }
+            ], {
+                fill: "both",
+                duration: 300,
+                easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+            });
+        }
+
+        anime({
+            targets: socialLinks,
+            opacity: 1,
+            easing: "easeOutCubic",
+            duration: 300,
+        });
+
+    } else {
+
+        if (window.innerWidth > 449) {
+            mobileNavWrapper.animate([
+                {
+                    opacity: 1,
+                    height: "350px",
+                    pointerEvents: "visible",
+                    transform: "translateZ(0px) translateY(0px)"
+
+                },
+                {
+                    opacity: 0,
+                    height: "0px",
+                    pointerEvents: "none",
+                    transform: "translateZ(50px) translateY(-50px)"
+                }
+            ], {
+                fill: "both",
+                duration: 300,
+                easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+            });
+        } else {
+            mobileNavWrapper.animate([
+                {
+                    opacity: 1,
+                    height: "420px",
+                    pointerEvents: "visible",
+                    transform: "translateZ(0px) translateY(0px)"
+
+                },
+                {
+                    opacity: 0,
+                    height: "0px",
+                    pointerEvents: "none",
+                    transform: "translateZ(50px) translateY(-50px)"
+                }
+            ], {
+                fill: "both",
+                duration: 300,
+                easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+            });
+        }
+
+        anime({
+            targets: socialLinks,
+            opacity: 0,
+            easing: "easeOutCubic",
+            duration: 300,
         });
 
         a = -1;
@@ -642,32 +834,183 @@ hamburgerButton.addEventListener("click", () => {
 
 hamburgerButton.addEventListener("blur", () => {
 
-    mobileNavWrapper.animate([
-        {
-            opacity: 1,
-            height: "450px",
-            pointerEvents: "visible",
-            transform: "translateZ(0px) translateY(0px)"
+    if (a == 1) {
 
-        },
-        {
-            opacity: 0,
-            height: "0px",
-            pointerEvents: "none",
-            transform: "translateZ(50px) translateY(-50px)"
+        if (window.innerWidth > 449) {
+
+            mobileNavWrapper.animate([
+                {
+                    opacity: 1,
+                    height: "350px",
+                    pointerEvents: "visible",
+                    transform: "translateZ(0px) translateY(0px)"
+
+                },
+                {
+                    opacity: 0,
+                    height: "0px",
+                    pointerEvents: "none",
+                    transform: "translateZ(50px) translateY(-50px)"
+                }
+            ], {
+                fill: "both",
+                duration: 600,
+                easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+            });
+
+        } else {
+            mobileNavWrapper.animate([
+                {
+                    opacity: 1,
+                    height: "420px",
+                    pointerEvents: "visible",
+                    transform: "translateZ(0px) translateY(0px)"
+
+                },
+                {
+                    opacity: 0,
+                    height: "0px",
+                    pointerEvents: "none",
+                    transform: "translateZ(50px) translateY(-50px)"
+                }
+            ], {
+                fill: "both",
+                duration: 600,
+                easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+            });
         }
-    ], {
-        fill: "both",
-        duration: 600,
-        easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
-    });
 
-    a = 0;
+        anime({
+            targets: socialLinks,
+            opacity: 0,
+            easing: "easeOutCubic",
+            duration: 300,
+        });
+
+        a = 0;
+    }
 
     // mobileNavWrapper.style.opacity = "1"
 });
 
 
+
+
+
+
+
+
+
+ben(".my-specialties-section button").addEventListener("click", () => {
+    window.location = "docs/Benjamin-Toby-CV.pdf";
+});
+
+
+
+
+//############################################# -- My Work Slider
+
+const portfolioContainter = ben(".portfolio-items-container");
+const portfolioEntries = benA(".portfolio-entry");
+const portfolioLeftButton = ben(".portfolio-left-button");
+const portfolioRightButton = ben(".portfolio-right-button");
+
+let p = 0;
+
+function portfolioClickEvents() {
+
+    // anime({
+    //     targets: portfolioEntries,
+    //     opacity: [1, 0],
+    //     translateZ: [0, -50],
+    //     duration: 300,
+    //     easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+    // });
+
+    if (p == 0) {
+        portfolioLeftButton.style.opacity = ".2";
+    } else if (p == (portfolioEntries.length - 1)) {
+        portfolioRightButton.style.opacity = ".2";
+    }
+
+
+    portfolioEntries.forEach(entry => {
+        // entry.style.opacity = "0";
+
+        entry.animate([
+            { opacity: 0, transform: "translateZ(-50px)", pointerEvents: "none" }
+        ], {
+            duration: 500,
+            fill: "both",
+            easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+        });
+    });
+
+    // portfolioEntries[p].style.opacity = "1";
+    // anime({
+    //     targets: (portfolioEntries[p]),
+    //     opacity: [0, 1],
+    //     translateZ: [-50, 0],
+    //     duration: 300,
+    //     easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )",
+    //     delay: 200,
+    // });
+
+    portfolioEntries[p].animate([
+        { opacity: 1, transform: "translateZ(0px)", pointerEvents: "visible" }
+    ], {
+        duration: 500,
+        fill: "both",
+        delay: 200,
+        easing: "cubic-bezier( 0.1, 0.63, 0.355, 1 )"
+    });
+}
+
+portfolioClickEvents();
+portfolioLeftButton.style.opacity = ".2";
+
+portfolioRightButton.addEventListener("click", () => {
+    if (p == (portfolioEntries.length - 1)) { return; };
+    p++;
+    portfolioClickEvents();
+    portfolioLeftButton.style.opacity = "1";
+});
+
+portfolioLeftButton.addEventListener("click", () => {
+    if (p == 0) { return; };
+    p--;
+    portfolioClickEvents();
+    portfolioRightButton.style.opacity = "1";
+});
+
+
+
+
+
+
+
+
+
+//############################################# -- Lottie Animations
+
+const portfolioEntry1 = ben("#transcend-barriers");
+const portfolioEntry2 = ben("#github-to-asana-animation");
+
+const portfolioEntry1Animation = lottie.loadAnimation({
+    container: portfolioEntry1,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: "scripts/portfolio-item-1.json"
+});
+
+const portfolioEntry2Animation = lottie.loadAnimation({
+    container: portfolioEntry2,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: "scripts/portfolio-item-2.json"
+});
 
 
 

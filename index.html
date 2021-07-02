@@ -16,7 +16,7 @@
         rel="stylesheet">
 
 
-    <link rel="stylesheet" href="main.min.css">
+    <link rel="stylesheet" href="main.css">
 
 </head>
 
@@ -44,15 +44,15 @@
             <nav>
                 <a href="#my-work" id="my-work-link" class="nav-link">My Work</a>
                 <a href="#about-me" id="about-me-link" class="nav-link">About Me</a>
-                <a href="#my-specialties" id="resume-link" class="nav-link">Resume</a>
-                <a href="#contact-me" id="contact-me-link" class="nav-link">Contact Me</a>
-                <div style="display: flex;align-items: center;">
-                    <a href="mailto:benoti.san@gmail.com" class="social-media-links material-icons" id="mail">mail</a>
-                    <a href="#" class="social-media-links material-icons" id="linkedin"><img src="images/linkedin.svg"
-                            alt=""></a>
-                </div>
-
+                <a href="#my-specialties" id="resume-link" class="nav-link footer-special">Resume</a>
+                <a href="#contact-me" id="contact-me-link" class="nav-link footer-special">Contact Me</a>
             </nav>
+        </div>
+
+        <div style="display: flex;align-items: center;">
+            <a href="mailto:benoti.san@gmail.com" class="social-media-links material-icons" id="mail">mail</a>
+            <a href="https://linkedin.com/in/benjamin-toby" class="social-media-links material-icons" id="linkedin"
+                target="_blank"><img src="images/linkedin.svg" alt=""></a>
         </div>
 
         <button class="hamburger-button">
@@ -72,6 +72,19 @@
 
 
 
+    <!-- #################################################################################-- Preloader -->
+
+    <div id="preloader-container">
+        <img src="images/clouds.jpg" alt="">
+        <img src="images/logo-v3.svg" alt="">
+    </div>
+
+
+
+
+
+
+
 
     <!-- #################################################################################-- Hero -->
 
@@ -82,10 +95,10 @@
             <div class="main-text-block">
                 Hi. I’m a
                 <h1 class="main-hero-text">
-                    <a href="" class="uiux-designer-link">UI UX Designer</a>,
-                    <a href="" class="web-designer-link">Web Designer</a>,
-                    <a href="" class="frontend-designer-link">Frontend Web Developer</a>,
-                    <a href="" class="graphic-motion-designer-link">Graphic and motion Designer</a>.
+                    <a href="#" class="uiux-designer-link">UI UX Designer</a>,
+                    <a href="#" class="web-designer-link">Web Designer</a>,
+                    <a href="#" class="frontend-designer-link">Frontend Web Developer</a>,
+                    <a href="#" class="graphic-motion-designer-link">Graphic and motion Designer</a>.
                 </h1> <br>
                 <button class="main-cta-button"><a href="#contact-me">Let's Talk</a></button>
             </div>
@@ -103,6 +116,10 @@
                 <a href="#my-work">
                     <img src="images/down-arrow.svg" alt="">
                 </a>
+
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
 
@@ -131,13 +148,76 @@
     <section class="my-work-section" id="my-work">
         <div>
             <h2 class="scroll-into-view-content" data-delay="200">Some of My Work</h2>
-            <p class="scroll-into-view-content" data-delay="400">Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-                gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+            <p class="scroll-into-view-content" data-delay="400">Here are a few of my works: you can find more of my
+                work on my <a href="https://99designs.com/profiles/2220588" target="_blank">99designs</a> profile.</p>
+            <div class="portfolio-buttons-container">
+                <button class="portfolio-left-button"><img src="images/white-arrow.svg" alt=""></button>
+                <button class="portfolio-right-button"><img src="images/white-arrow.svg" alt=""></button>
+            </div>
         </div>
 
         <div class="scroll-into-view">
-            <div class="portfolio-items-container scroll-into-view-content" data-delay="800"></div>
+            <div class="portfolio-items-container scroll-into-view-content" data-delay="800">
+
+                <!-- Porfolio entry -->
+                <div class="portfolio-entry" id="transcend-barriers">
+                    <!-- <img src="images/my-image-large.jpg" alt=""> -->
+                    <div>
+                        <h3>Transcend Barriers Animation</h3>
+                        <p>This animations was made for web view. I used aftereffects and bodymoving to accomplish this:
+                            the result? High definition svg anmimation that looks crisp on any resolution and maintains
+                            a relatively light weight</p>
+                    </div>
+                    <div>
+                        <div class="specialty-skill">
+                            <div>Adobe Illustrator</div><img src="images/illustrator.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>Adobe After Effects</div><img src="images/aftereffects.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>javascript</div><img src="images/javascript.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Porfolio entry -->
+                <div class="portfolio-entry" id="github-to-asana">
+                    <!-- <img src="images/mountains.png" alt=""> -->
+                    <div>
+                        <h3>Github to Asana</h3>
+                        <p>This project is an ongoing webapp that connects github to asana. In this project I'm focusing
+                            on the UI/UX, together with frontend functionality.</p>
+                    </div>
+                    <div>
+                        <div class="specialty-skill">
+                            <div>Adobe Photoshop</div><img src="images/photoshop.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>Adobe Illustrator</div><img src="images/illustrator.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>Adobe After Effects</div><img src="images/aftereffects.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>HTML5</div><img src="images/html5.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>CSS3</div><img src="images/css3.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>javascript</div><img src="images/javascript.svg" alt="">
+                        </div>
+                        <div class="specialty-skill">
+                            <div>Git version control</div><img src="images/git-version-control.svg" alt="">
+                        </div>
+                    </div>
+
+                    <img src="images/Project_GitToAsana_LandingPage_002.jpg" alt="">
+                    <div id="github-to-asana-animation"></div>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -153,13 +233,15 @@
 
     <section class="about-me-section" id="about-me">
         <div class="scroll-into-view">
+            <img src="images/my-image-large.jpg" alt="">
         </div>
 
         <div>
             <h2 class="scroll-into-view-content">About Me</h2>
-            <p class="scroll-into-view-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus
-                commodo viverra maecenas accumsan lacus vel facilisis. </p>
+            <p class="scroll-into-view-content">I've traversed multiple fields over the past decade: from engineering
+                studies, to solar power constructions, to web design, graphic design, 2d animations, and code. Over the
+                years I've learnt the best skill: which is learnability and adaptability: hence I aim to cut across many
+                different fields: the world changes fast, and I think this is the only skill that matters.</p>
         </div>
     </section>
 
@@ -175,68 +257,67 @@
 
     <section class="my-specialties-section" id="my-specialties">
         <h2 class="scroll-into-view-content">My Tools For Creating Awesomeness</h2>
-        <p class="scroll-into-view-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
-            viverra maecenas accumsan lacus vel facilisis. </p>
+        <p class="scroll-into-view-content">Ever expanding and ever improving, I have proffesional grade understanding
+            of the tools below. But I don't plan to stop here.</p>
 
         <div>
-            <div class="scroll-into-view-content" data-delay="0">
+            <div class="specialty-skill scroll-into-view-content" data-delay="0">
                 <div>Adobe Photoshop</div><img src="images/photoshop.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="100">
+            <div class="specialty-skill scroll-into-view-content" data-delay="100">
                 <div>Adobe Illustrator</div><img src="images/illustrator.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="200">
+            <div class="specialty-skill scroll-into-view-content" data-delay="200">
                 <div>Adobe After Effects</div><img src="images/aftereffects.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="300">
+            <div class="specialty-skill scroll-into-view-content" data-delay="300">
                 <div>HTML 5</div><img src="images/html5.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="400">
+            <div class="specialty-skill scroll-into-view-content" data-delay="400">
                 <div>CSS3</div><img src="images/css3.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="500">
+            <div class="specialty-skill scroll-into-view-content" data-delay="500">
                 <div>javascript</div><img src="images/javascript.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="600">
+            <div class="specialty-skill scroll-into-view-content" data-delay="600">
                 <div>Git Version Control</div><img src="images/git-version-control.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="700">
+            <div class="specialty-skill scroll-into-view-content" data-delay="700">
                 <div>Figma</div><img src="images/figma.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content" data-delay="800">
+            <div class="specialty-skill scroll-into-view-content" data-delay="800">
                 <div>Wordpress</div><img src="images/wordpress.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content-2" data-delay="900">
+            <div class="specialty-skill scroll-into-view-content-2" data-delay="900">
                 <div>Webflow</div><img src="images/webflow.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content-2" data-delay="1000">
+            <div class="specialty-skill scroll-into-view-content-2" data-delay="1000">
                 <div>Adobe XD</div><img src="images/adobe-xd.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content-2" data-delay="1100">
+            <div class="specialty-skill scroll-into-view-content-2" data-delay="1100">
                 <div>Visual Studio Code</div><img src="images/vs-code.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content-2" data-delay="1200">
+            <div class="specialty-skill scroll-into-view-content-2" data-delay="1200">
                 <div>Dreamweaver</div><img src="images/dreamweaver.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content-2" data-delay="1300">
+            <div class="specialty-skill scroll-into-view-content-2" data-delay="1300">
                 <div>Adobe Animate</div><img src="images/adobe animate.svg" alt="">
             </div>
 
-            <div class="scroll-into-view-content-2" data-delay="1400">
+            <div class="specialty-skill scroll-into-view-content-2" data-delay="1400">
                 <div>Affinity Photo and Affinity Designer</div><img src="images/affinity.svg" alt="">
             </div>
         </div>
@@ -258,8 +339,9 @@
         <div>
             <h2 class="scroll-into-view-content">So. Let's talk</h2>
 
-            <p class="scroll-into-view-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. </p>
+            <p class="scroll-into-view-content">Your business is my business as soon as you hit that contact button. I'm
+                ready
+                to attend to your needs as soon as possible. Just drop a line.</p>
             <a href="mailto:benoti.san@gmail.com" class="scroll-into-view-content-2" data-delay="500">
                 Email Address&nbsp;<span class="material-icons">mail</span>
             </a>
@@ -303,7 +385,8 @@
     <!-- #################################################################################-- Scripts -->
 
     <script src="scripts/anime.min.js"></script>
-    <script src="scripts/main.min.js"></script>
+    <script src="scripts/lottie.min.js"></script>
+    <script src="scripts/main.js"></script>
 
 </body>
 
