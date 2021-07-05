@@ -9,7 +9,7 @@
   "name": "tben-design",
   "description": "My personal site",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
     "doc": "docs"
   },

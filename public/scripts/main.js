@@ -624,7 +624,7 @@ function parralaxMouse(event) {
         targets: myBigTextBlock,
         translateX: xPos * -40,
         translateY: yPos * -20,
-        translateZ: 50,
+        // translateZ: 50,
         rotateX: yPos * 4,
         rotateY: xPos * -3,
         easing: "easeOutQuad",
@@ -907,7 +907,7 @@ hamburgerButton.addEventListener("blur", () => {
 
 
 ben(".my-specialties-section button").addEventListener("click", () => {
-    window.location = "docs/Benjamin-Toby-CV.pdf";
+    window.location = "public/docs/Benjamin-Toby-CV.pdf";
 });
 
 
@@ -1006,7 +1006,7 @@ const portfolioEntry1Animation = lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: "scripts/portfolio-item-1.json"
+    path: "public/scripts/portfolio-item-1.json"
 });
 
 const portfolioEntry2Animation = lottie.loadAnimation({
@@ -1014,7 +1014,7 @@ const portfolioEntry2Animation = lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: "scripts/portfolio-item-2.json"
+    path: "public/scripts/portfolio-item-2.json"
 });
 
 
@@ -1026,23 +1026,23 @@ const portfolioEntry2Animation = lottie.loadAnimation({
 
 //Form
 
-const myForm = document.querySelector("#contact-form");
+// const myForm = document.querySelector("#contact-form");
 
-let formInput = {
-    name: "",
-    email: "",
-    message: "",
-}
+// let formInput = {
+//     name: "",
+//     email: "",
+//     message: "",
+// }
 
-let formMessage = "";
+// let formMessage = "";
 
-myForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+// myForm.addEventListener("submit", (e) => {
+//     e.preventDefault();
 
-    formInput.name = myForm[0].value;
-    formInput.email = myForm[1].value;
-    formInput.message = myForm[2].value;
+//     formInput.name = myForm[0].value;
+//     formInput.email = myForm[1].value;
+//     formInput.message = myForm[2].value;
 
-    formMessage = `Name: ${formInput.name} , Email: ${formInput.email}, Message: ${formInput.message},`;
-    console.log(formMessage);
-});
+//     formMessage = `Name: ${formInput.name} , Email: ${formInput.email}, Message: ${formInput.message},`;
+//     console.log(formMessage);
+// });
