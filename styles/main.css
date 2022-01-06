@@ -28,6 +28,7 @@ body {
     width: 100%;
     margin: 0px;
     padding: 40px;
+    padding-bottom: 100px;
     top: 0;
     justify-content: center;
     background-color: var(--dark-color);
@@ -310,6 +311,7 @@ textarea {
 
     body {
         padding: 20px;
+        padding-bottom: 80px;
     }
 
     .hero-ctas-section {
