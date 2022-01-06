@@ -25,6 +25,9 @@ export default async function submitContactForm(e, setSuccess) {
 
     if (data.msg === "Success") {
         setSuccess("Success");
+        setTimeout(() => {
+            window.location.reload();
+        }, 1000);
     } else {
         setSuccess("Failed");
     }
