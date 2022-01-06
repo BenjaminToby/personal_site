@@ -55,7 +55,7 @@ export default async function handler(req, res) {
                 to: "benoti.san@gmail.com, benoti.sanchez@gmail.com", // list of receivers
                 subject: "Tben.me | Client Message", // Subject line
                 text: "Hello from tben",
-                html: `<h1>Message from ${name} | ${email}</h1><h4>Name:<p>${name}</p></h4><h4>Email:<p>${email}</p></h4><h4>Message:</h4><p>${message}</p>`, // html body
+                html: `<h1>Message from ${name} | ${email}</h1><h4>Name:</h4><p>${name}</p><h4>Email:</h4><p>${email}</p><h4>Message:</h4><p>${message}</p>`, // html body
             });
 
             console.log("Message sent: %s", info.messageId);
