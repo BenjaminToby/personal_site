@@ -52,10 +52,10 @@ export default async function handler(req, res) {
             // send mail with defined transport object
             let info = await transporter.sendMail({
                 from: email, // sender address
-                to: "benoti.san@gmail.com", // list of receivers
-                subject: "Tben Client Request", // Subject line
+                to: "benoti.san@gmail.com, benoti.sanchez@gmail.com", // list of receivers
+                subject: "Tben.me | Client Message", // Subject line
                 text: "Hello from tben",
-                html: `<h1>Message from ${name}</h1><p>${message}</p>`, // html body
+                html: `<h1>Message from ${name}</h1><h4>Name: ${name}</h4><h4>Email: ${email}</h4><h4>Message:</h4><p>${message}</p>`, // html body
             });
 
             console.log("Message sent: %s", info.messageId);
