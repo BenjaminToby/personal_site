@@ -299,6 +299,22 @@ textarea {
 }
 
 @media (max-width: 800px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    body {
+        padding: 20px;
+    }
+
+    .hero-ctas-section {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 600px) {
