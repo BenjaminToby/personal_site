@@ -9,17 +9,6 @@ const fs = require("fs");
 const nodemailer = require("nodemailer");
 
 /** ********************* Functions and Other API Imports */
-
-// let transporter = nodemailer.createTransport({
-//     host: "smtp.dreamhost.com",
-//     port: 465,
-//     secure: true, // true for 465, false for other ports
-//     auth: {
-//         user: "info@tben.design",
-//         pass: "tobybenoti",
-//     },
-// });
-
 let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 465,
