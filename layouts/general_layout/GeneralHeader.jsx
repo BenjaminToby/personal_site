@@ -7,6 +7,7 @@ const GeneralHeader = () => {
             <nav>
                 <a href="/">Home</a>
                 <a href="/about">About Me</a>
+                <a href="/work">My Work</a>
                 <a href='/documents/Benjamin_Toby_CV.pdf' target="_blank">My Resume</a>
                 <a href="/contact">Contact Me</a>
             </nav>

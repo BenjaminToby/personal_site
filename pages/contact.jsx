@@ -20,13 +20,13 @@ const contact = () => {
                 <TextShuffler textInput="Let's talk" />
             </span>
 
-            <form autoComplete='on' onSubmit={(e) => { submitContactForm(e, setSuccess) }}>
+            <form autoComplete='on' onSubmit={ (e) => { submitContactForm(e, setSuccess) } }>
                 <input type="text" placeholder='Your Name' autoComplete='name' required />
                 <input type="email" placeholder='Your Email Address' autoComplete='email' required />
                 <textarea name="message" id="contact-form-message" cols="30" rows="10" placeholder='Message'></textarea>
                 <button type="submit">Submit</button>
-                {success === "Success" && <div className='message-response'>Success!!! <button onClick={() => { window.location.reload() }}>Reload</button></div>}
-                {success === "Failed" && <div className='message-response failed'>Failed <button onClick={() => { window.location.reload() }}>Reload</button></div>}
+                { success === "Success" && <div className='message-response'>Success!!! <button onClick={ () => { window.location.reload() } }>Reload</button></div> }
+                { success === "Failed" && <div className='message-response failed'>Failed <button onClick={ () => { window.location.reload() } }>Reload</button></div> }
             </form>
         </GeneralLayout>
     )
