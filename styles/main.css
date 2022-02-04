@@ -262,6 +262,7 @@ nav a:hover {
     height: 300px;
     object-fit: contain;
     object-position: left top;
+    margin-bottom: 20px;
 }
 /*############################################# -- Contact Forms */
 form {
@@ -341,6 +342,10 @@ textarea {
 }
 
 @media (max-width: 600px) {
+    .portfolio-entry-block img {
+        object-fit: cover;
+        height: 200px;
+    }
 }
 
 @media (max-width: 450px) {
