@@ -245,10 +245,10 @@ nav a:hover {
 
 /*############################################# -- Portfolio page */
 .portfolio-entries-block {
-    display: flex;
-    align-items: flex-start;
+    display: grid;
     gap: 40px;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
 }
 
 .portfolio-entry-block {
@@ -319,6 +319,9 @@ textarea {
 }
 
 @media (max-width: 990px) {
+    .portfolio-entries-block {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 800px) {

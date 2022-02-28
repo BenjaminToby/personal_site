@@ -1,5 +1,17 @@
 [
     {
+        "title": "Stirrmedia Social webapp",
+        "description": "A new social media experience without censorship",
+        "url": "https://stirrmedia.com",
+        "image": "/images/stirrmediascreenshot.png"
+    },
+    {
+        "title": "Traderhub",
+        "description": "A marketplace for traders of all kinds in Nigeria",
+        "url": "https://traderhub.ng",
+        "image": "/images/traderhubscreenshot.png"
+    },
+    {
         "title": "Next 7 Web Engine",
         "description": "Next 7 is an all-in-one web engine featuring a web page builder and a content management system",
         "url": "https://next7.io",

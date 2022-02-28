@@ -36,7 +36,17 @@ export default function PortfolioEntry({ title, description, url, image }) {
     return (
         <div className="portfolio-entry-block">
             <h2 style={ { marginTop: "0" } }><TextShuffler textInput={ title } /></h2>
-            <img src={ image } alt="" />
+            <div style={ {
+                width: "100%",
+                height: "300px",
+                marginBottom: "15px"
+            } }>
+                <img src={ image } alt="" style={ {
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover"
+                } } />
+            </div>
             <span>
                 <TextShuffler textInput={ description } />
             </span>
