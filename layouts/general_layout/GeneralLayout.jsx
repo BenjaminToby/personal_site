@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react'
-import GeneralHeader from './GeneralHeader'
+import React, { Fragment } from 'react';
+import GeneralHeader from './GeneralHeader';
 
-const GeneralLayout = ({children}) => {
+const GeneralLayout = ({ children }) => {
     return (
         <Fragment>
-            <GeneralHeader/>
-            {children}
+            <GeneralHeader />
+            { children }
         </Fragment>
     )
 }

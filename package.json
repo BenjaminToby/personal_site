@@ -1,32 +1,37 @@
 {
-  "name": "personal_site",
-  "version": "1.0.0",
-  "description": "My personal site",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "dev": "next dev -p 5000",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BenjaminToby/personal_site.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BenjaminToby/personal_site/issues"
-  },
-  "homepage": "https://github.com/BenjaminToby/personal_site#readme",
-  "dependencies": {
-    "next": "^12.0.4",
-    "nodemailer": "^6.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  }
+    "name": "personal_site",
+    "version": "1.0.0",
+    "description": "My personal site",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "dev": "next dev -p 5000",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "tailwind": "npx tailwindcss -i ./tailwind/tw_main.css -o ./styles/tw_main.css --watch"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BenjaminToby/personal_site.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BenjaminToby/personal_site/issues"
+    },
+    "homepage": "https://github.com/BenjaminToby/personal_site#readme",
+    "dependencies": {
+        "next": "^12.0.4",
+        "nodemailer": "^6.7.2",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "three": "^0.138.3"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.0.23"
+    }
 }

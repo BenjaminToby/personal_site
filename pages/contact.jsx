@@ -3,10 +3,16 @@ import Head from 'next/head'
 import TextShuffler from '../components/actions/TextShuffler'
 import submitContactForm from '../functions/frontend/submitContactForm'
 import GeneralLayout from '../layouts/general_layout/GeneralLayout'
+import threeJsAnimations from '../functions/frontend/threeJsAnimations'
 
 const contact = () => {
 
     let [success, setSuccess] = React.useState(false);
+
+
+    React.useEffect(() => {
+        threeJsAnimations()
+    }, [])
 
     return (
         <GeneralLayout>
@@ -28,6 +34,7 @@ const contact = () => {
                 { success === "Success" && <div className='message-response'>Success!!! <button onClick={ () => { window.location.reload() } }>Reload</button></div> }
                 { success === "Failed" && <div className='message-response failed'>Failed <button onClick={ () => { window.location.reload() } }>Reload</button></div> }
             </form>
+            <div className='fixed top-0 left-0 -z-10' id='homepage-animation-wrapper'></div>
         </GeneralLayout>
     )
 }

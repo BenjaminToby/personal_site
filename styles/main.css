@@ -1,11 +1,14 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+
 html {
     width: 100%;
     /* overflow-x: hidden; */
     scroll-behavior: smooth;
-    font-family: Helvetica;
+    font-family: "Source Code Pro", Helvetica;
     font-size: 16px;
     line-height: 1.5;
     color: #222;
+    letter-spacing: -0.8px;
 }
 
 * {
@@ -21,6 +24,7 @@ html {
     --sec-color-4: #adb2d3;
     --sec-color-5: #c2a878;
     --light-color-1: #ddd;
+    --test-color: rgb(224, 64, 64);
     --transparent-white: rgba(255, 255, 255, 0.2);
 }
 
@@ -213,7 +217,7 @@ nav a:hover {
 .hero-ctas-section {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
     gap: 20px;
 }
 
@@ -303,6 +307,12 @@ textarea {
 
 .message-response.failed {
     border: 2px solid #d42222;
+}
+
+#homepage-animation-wrapper {
+    width: 150%;
+    height: 100%;
+    background-color: var(--dark-color);
 }
 
 /* ###############################################################################################
