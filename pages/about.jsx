@@ -33,7 +33,7 @@ const about = () => {
                 <li>
                     <h3 className="tech-stack-header"><TextShuffler textInput="React JS" /></h3>
                     <span className='opacity-50'>
-                        <TextShuffler textInput="JavaScript library for high-performance web applications" />
+                        <TextShuffler textInput=" JavaScript library for high-performance web applications" />
                     </span>
                 </li>
                 <li>

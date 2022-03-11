@@ -11,8 +11,8 @@ const index = () => {
     return (
         <GeneralLayout>
             <Head>
-                <title>Benjamin Toby</title>
-                <meta name="description" content="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, Next JS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer" />
+                <title>Benjamin Toby | Fullstack developer, UI UX designer</title>
+                <meta name="description" content="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, Next JS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer, Freelancer" />
             </Head>
             <h1><TextShuffler textInput="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer" /></h1>
             <span className='hero-sub-text'>
