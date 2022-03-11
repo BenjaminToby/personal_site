@@ -21,6 +21,11 @@ const index = () => {
             <div className="hero-ctas-section">
                 <a href='/documents/Benjamin_Toby_CV.pdf' download={ true }>See my resume</a>
                 <a href='https://www.linkedin.com/in/benjamin-toby/' target="_blank">Linkedin</a>
+                <a href='/contact' style={ {
+                    backgroundColor: "transparent",
+                    color: "white",
+                    border: "2px solid white"
+                } }>Contact Me</a>
             </div>
             <div className='fixed top-0 left-0 -z-10' id='homepage-animation-wrapper'></div>
         </GeneralLayout>
