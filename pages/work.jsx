@@ -19,11 +19,11 @@ const about = () => {
                 <meta name="description" content="Some of my Work" />
             </Head>
             <h1><TextShuffler textInput="My Work" /></h1>
-            <span className='hero-sub-text' style={ { marginTop: "-30px", marginBottom: "20px", display: "block" } }>
+            <span className='hero-sub-text'>
                 <TextShuffler textInput="Some of my work ..." />
             </span>
 
-            <div className='portfolio-entries-block'>
+            <div className='portfolio-entries-block mt-4'>
                 { portfolioEntries.map(entry => <PortfolioEntry key={ entry.title } title={ entry.title } description={ entry.description } url={ entry.url } image={ entry.image } />) }
             </div>
             <div className='fixed top-0 left-0 -z-10' id='homepage-animation-wrapper'></div>

@@ -22,7 +22,7 @@ const about = () => {
 
             <div className='w-full h-6'></div>
 
-            <article>
+            <section>
                 <h2><TextShuffler textInput="My Web Dev Stack" /></h2>
                 <ul style={ { maxWidth: "800px" } }>
                     <li>
@@ -80,9 +80,9 @@ const about = () => {
                         </span>
                     </li>
                 </ul>
-            </article>
+            </section>
 
-            <article>
+            <section>
                 <h2><TextShuffler textInput="My UI/UX Stack" /></h2>
                 <ul style={ { maxWidth: "800px" } }>
                     <li>
@@ -128,7 +128,7 @@ const about = () => {
                         </span>
                     </li>
                 </ul>
-            </article>
+            </section>
 
 
             <div className="hero-ctas-section">
