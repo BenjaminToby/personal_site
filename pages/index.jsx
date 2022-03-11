@@ -19,7 +19,7 @@ const index = () => {
                 <TextShuffler textInput="Hi, I'm Benjamin Toby, a fullstack web developer and UI/UX expert." />
             </span>
             <div className="hero-ctas-section">
-                <a href='/documents/Benjamin_Toby_CV.pdf' download={ true }>See my resume</a>
+                <a href='/documents/Benjamin_Toby_CV-min.pdf' download={ true }>See my resume</a>
                 <a href='https://www.linkedin.com/in/benjamin-toby/' target="_blank">Linkedin</a>
                 <a href='/contact' style={ {
                     backgroundColor: "transparent",
