@@ -73,6 +73,12 @@ const about = () => {
                             <TextShuffler textInput="Tried and tested data storage, querying, and management." />
                         </span>
                     </li>
+                    <li>
+                        <h3 className="tech-stack-header"><TextShuffler textInput="Git and Github" /></h3>
+                        <span className='opacity-50'>
+                            <TextShuffler textInput="Version control" />
+                        </span>
+                    </li>
                 </ul>
             </article>
 
