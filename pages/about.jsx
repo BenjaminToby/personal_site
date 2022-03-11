@@ -23,7 +23,7 @@ const about = () => {
             <div className='w-full h-6'></div>
 
             <section>
-                <h2><TextShuffler textInput="My Web Dev Stack" /></h2>
+                <h2><TextShuffler textInput="Web Dev Tech Stack" /></h2>
                 <ul style={ { maxWidth: "800px" } }>
                     <li>
                         <h3 className="tech-stack-header"><TextShuffler textInput="HTML, CSS, Javascript" /></h3>
@@ -83,7 +83,7 @@ const about = () => {
             </section>
 
             <section>
-                <h2><TextShuffler textInput="My UI/UX Stack" /></h2>
+                <h2><TextShuffler textInput="UI/UX tech Stack" /></h2>
                 <ul style={ { maxWidth: "800px" } }>
                     <li>
                         <h3 className="tech-stack-header"><TextShuffler textInput="Adobe Photoshop" /></h3>
