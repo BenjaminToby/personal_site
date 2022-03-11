@@ -12,11 +12,11 @@ const index = () => {
         <GeneralLayout>
             <Head>
                 <title>Benjamin Toby</title>
-                <meta name="description" content="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer" />
+                <meta name="description" content="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, Next JS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer" />
             </Head>
             <h1><TextShuffler textInput="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer" /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Hi, I'm Benjamin Toby, a highly talented fullstack web developer with extensive enxperience in web design, frontend and backend development." />
+                <TextShuffler textInput="Hi, I'm Benjamin Toby, a fullstack web developer and UI/UX expert." />
             </span>
             <div className="hero-ctas-section">
                 <a href='/documents/Benjamin_Toby_CV.pdf' download={ true }>See my resume</a>

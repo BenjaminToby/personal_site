@@ -23,8 +23,8 @@ html {
     --sec-color-3: #688e26;
     --sec-color-4: #adb2d3;
     --sec-color-5: #c2a878;
-    --light-color-1: #ddd;
-    --test-color: rgb(224, 64, 64);
+    --light-color-1: rgb(64, 37, 216);
+    --test-color: rgb(113, 116, 255);
     --transparent-white: rgba(255, 255, 255, 0.2);
 }
 
@@ -81,6 +81,7 @@ header {
 h1 {
     font-size: 52px;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
 /* ################################################# -- Sliders */
@@ -313,6 +314,11 @@ textarea {
     width: 150%;
     height: 100%;
     background-color: var(--dark-color);
+}
+
+.tech-stack-header {
+    color: rgb(113, 116, 255);
+    margin-bottom: 3px;
 }
 
 /* ###############################################################################################
