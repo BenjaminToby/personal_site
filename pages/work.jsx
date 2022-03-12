@@ -5,7 +5,7 @@ import GeneralLayout from '../layouts/general_layout/GeneralLayout'
 import PortfolioEntry from '../components/PortfolioEntry'
 import threeJsAnimations from '../functions/frontend/threeJsAnimations'
 
-const about = () => {
+const myWork = () => {
     const portfolioEntries = require("../components/portfolioEntries.json");
 
     React.useEffect(() => {
@@ -31,4 +31,11 @@ const about = () => {
     )
 }
 
-export default about
+export default myWork
+
+// {
+//     "title": "Stirrmedia Social webapp",
+//     "description": "A new social media experience without censorship",
+//     "url": "https://stirrmedia.com",
+//     "image": "/images/stirrmediascreenshot.png"
+// },
