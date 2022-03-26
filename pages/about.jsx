@@ -17,7 +17,7 @@ const about = () => {
             </Head>
             <h1><TextShuffler textInput="Ben of all trade, master of all!" /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="So the thing about me is: I want to know it all, I want to master it all: hence I've dug deep into almost every aspect of web design and development. In the process I've developed my most valuable skill: learnabiltiy: there are so many languages and libraries out there: about a dozen different ways to achieve the same result: even in my quest to master it all, it is not possible to master all the available languages, libraries and other web technologies: but whichever knowledge is needed at any given time, I adapt and learn: very quickly." />
+                <TextShuffler textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. There's no problem too great to be unsolved: My motto is simple: you have a goal, I have a target: and I get the job done impeccably, everytime." />
             </span>
 
             <div className='w-full h-6'></div>
