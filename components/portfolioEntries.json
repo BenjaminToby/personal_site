@@ -1,5 +1,17 @@
 [
     {
+        "title": "Renition",
+        "description": "Curated top quality Apparel",
+        "url": "https://renition.com",
+        "image": "/images/renition-graphic.jpg"
+    },
+    {
+        "title": "Castcord",
+        "description": "Social Media web app",
+        "url": "https://cast-cord.com",
+        "image": "/images/castcord-graphic.jpg"
+    },
+    {
         "title": "Traderhub",
         "description": "A marketplace for traders of all kinds in Nigeria",
         "url": "https://traderhub.ng",
