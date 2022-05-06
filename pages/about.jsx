@@ -17,7 +17,7 @@ const about = () => {
             </Head>
             <h1><TextShuffler textInput="Ben of all trade, master of all!" /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. There's no problem too great: no knowledge too vast: no logic too complex." />
+                <TextShuffler textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. There's no problem too great: no knowledge too vast: no logic too complex. I thrive in difficult situations and complex problems: problem solving is now second nature to me: if you can think it, it can be done." />
             </span>
 
             <div className='w-full h-6'></div>
