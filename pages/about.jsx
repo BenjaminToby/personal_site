@@ -132,7 +132,7 @@ const about = () => {
 
 
             <div className="hero-ctas-section">
-                <a href='/documents/Benjamin_Toby_CV-min.pdf' download={ true }>See my resume</a>
+                <a href='/documents/Benjamin_Toby_CV-updated.pdf' download={ true }>See my resume</a>
                 <a href='https://www.linkedin.com/in/benjamin-toby/' target="_blank">Linkedin</a>
             </div>
             <div className='fixed top-0 left-0 -z-10' id='homepage-animation-wrapper'></div>
