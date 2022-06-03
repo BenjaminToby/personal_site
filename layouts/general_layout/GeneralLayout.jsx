@@ -46,7 +46,6 @@ const GeneralLayout = ({ children, pageName }) => {
         gsap.to("#main-content-wrapper", {
             opacity: 1,
             duration: 2,
-            delay: 1
         })
 
         // gsap.to("#page-loader", {
