@@ -5,19 +5,16 @@ import GeneralLayout from '../layouts/general_layout/GeneralLayout'
 import threeJsAnimations from '../functions/frontend/threeJsAnimations'
 
 const about = () => {
-    React.useEffect(() => {
-        threeJsAnimations()
-    }, [])
 
     return (
-        <GeneralLayout>
+        <GeneralLayout pageName="about">
             <Head>
                 <title>About Me</title>
                 <meta name="description" content="Ben of all trade, master of all! Learn more about me" />
             </Head>
-            <h1><TextShuffler textInput="Ben of all trade, master of all!" /></h1>
+            <h1><TextShuffler textInput="Ben of all trade, master of all!" delay={ 1000 } /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. There's no problem too great: no knowledge too vast: no logic too complex. I thrive in difficult situations and complex problems: problem solving is now second nature to me: if you can think it, it can be done." />
+                <TextShuffler textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. There's no problem too great: no knowledge too vast: no logic too complex. I thrive in difficult situations and complex problems: problem solving is now second nature to me: if you can think it, it can be done." delay={ 1500 } />
             </span>
 
             <div className='w-full h-6'></div>

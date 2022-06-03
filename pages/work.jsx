@@ -8,19 +8,15 @@ import threeJsAnimations from '../functions/frontend/threeJsAnimations'
 const myWork = () => {
     const portfolioEntries = require("../components/portfolioEntries.json");
 
-    React.useEffect(() => {
-        threeJsAnimations()
-    }, [])
-
     return (
         <GeneralLayout>
             <Head>
                 <title>My Work | Tben</title>
                 <meta name="description" content="Some of my Work" />
             </Head>
-            <h1><TextShuffler textInput="My Work" /></h1>
+            <h1><TextShuffler textInput="My Work" delay={ 1000 } /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Some of my work ..." />
+                <TextShuffler textInput="Some of my work ..." delay={ 1500 } />
             </span>
 
             <div className='portfolio-entries-block mt-4'>

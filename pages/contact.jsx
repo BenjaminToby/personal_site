@@ -9,11 +9,6 @@ const contact = () => {
 
     let [success, setSuccess] = React.useState(false);
 
-
-    React.useEffect(() => {
-        threeJsAnimations()
-    }, [])
-
     return (
         <GeneralLayout>
             <Head>
@@ -21,9 +16,9 @@ const contact = () => {
                 <meta name="description" content="Get in touch" />
             </Head>
 
-            <h1><TextShuffler textInput="Great things await ..." /></h1>
+            <h1><TextShuffler textInput="Great things await ..." delay={ 1000 } /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Let's talk" />
+                <TextShuffler textInput="Let's talk" delay={ 1500 } />
             </span>
 
             <form autoComplete='on' onSubmit={ (e) => { submitContactForm(e, setSuccess) } }>

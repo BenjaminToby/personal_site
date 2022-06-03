@@ -5,18 +5,16 @@ import threeJsAnimations from '../functions/frontend/threeJsAnimations'
 import GeneralLayout from '../layouts/general_layout/GeneralLayout'
 
 const index = () => {
-    React.useEffect(() => {
-        threeJsAnimations()
-    }, [])
+
     return (
-        <GeneralLayout>
+        <GeneralLayout pageName="home">
             <Head>
                 <title>Benjamin Toby | Fullstack developer, UI UX designer</title>
                 <meta name="description" content="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, Next JS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer, Freelancer" />
             </Head>
-            <h1><TextShuffler textInput="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer" /></h1>
+            <h1><TextShuffler textInput="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer" delay={ 1000 } /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Hi, I'm Benjamin Toby, a fullstack web developer and UI/UX expert." />
+                <TextShuffler textInput="Hi, I'm Benjamin Toby, a fullstack web developer and UI/UX expert." delay={ 2000 } />
             </span>
             <div className="hero-ctas-section">
                 <a href='/documents/Benjamin_Toby_CV-updated.pdf' download={ true }>See my resume</a>
