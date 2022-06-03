@@ -43,18 +43,20 @@ const GeneralLayout = ({ children, pageName }) => {
             }
         });
 
-        // gsap.to("#main-content-wrapper", {
-        //     opacity: 1,
-        //     duration: 2,
-        //     delay: 1
+        gsap.to("#main-content-wrapper", {
+            opacity: 1,
+            duration: 2,
+            delay: 1
+        })
+
+        // gsap.to("#page-loader", {
+        //     opacity: 0,
+        //     duration: 0.5,
+        //     delay: 1,
+        //     pointerEvents: "none"
         // })
 
-        gsap.to("#page-loader", {
-            opacity: 0,
-            duration: 0.5,
-            delay: 1,
-            pointerEvents: "none"
-        })
+        // document.getElementById("page-loader").style.opacity
 
         threeJsAnimations();
     }, [])
