@@ -5,9 +5,14 @@ import GeneralFooter from './GeneralFooter';
 import { gsap } from "gsap";
 import threeJsAnimations from '../../functions/frontend/threeJsAnimations';
 
-const GeneralLayout = ({ children, pageName }) => {
+export const SiteContext = React.createContext();
 
-    const [readyState, setReadyState] = React.useState(false)
+const GeneralLayout = ({ children, pageName }) => {
+    const [readyState, setReadyState] = React.useState(false);
+
+    // React.useEffect(() => {
+    //     setReadyState(true);
+    // }, [readyState]);
 
     React.useEffect(() => {
         // barba.init({
@@ -38,7 +43,7 @@ const GeneralLayout = ({ children, pageName }) => {
 
         document.querySelectorAll("nav a").forEach((link) => {
             let locationRegex = new RegExp(`${window.location.pathname}.*?`);
-            if (link.pathname === window.location.pathname) {
+            if (link.dataset.href === window.location.pathname) {
                 link.classList.add("active-page");
             }
         });
@@ -58,18 +63,18 @@ const GeneralLayout = ({ children, pageName }) => {
         // document.getElementById("page-loader").style.opacity
 
         threeJsAnimations();
+
+        // setReadyState(true);
     }, [])
 
 
+
+
     return (
-        <Fragment>
+        <SiteContext.Provider value={ { readyState, setReadyState } }>
             <Head>
                 <meta name="keywords" content="UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, NextJS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer, Freelancer" />
             </Head>
-
-            {/* <div id='page-loader' className='fixed w-screen h-screen bg-black flex items-center justify-center top-0 left-0' style={ { zIndex: 2000 } }>
-                <span className='text-xl'>Tben Loading ...</span>
-            </div> */}
 
             <div id='main-content-wrapper' style={ { opacity: 0 } }>
                 <GeneralHeader />
@@ -79,7 +84,7 @@ const GeneralLayout = ({ children, pageName }) => {
                 <GeneralFooter />
             </div>
 
-        </Fragment>
+        </SiteContext.Provider>
     )
 }
 

@@ -12,9 +12,9 @@ const about = () => {
                 <title>About Me</title>
                 <meta name="description" content="Ben of all trade, master of all! Learn more about me" />
             </Head>
-            <h1><TextShuffler textInput="Ben of all trade, master of all!" delay={ 500 } /></h1>
+            <h1><TextShuffler textInput="Ben of all trade, master of all!" /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. There's no problem too great: no knowledge too vast: no logic too complex. I thrive in difficult situations and complex problems: problem solving is now second nature to me: if you can think it, it can be done." delay={ 1000 } />
+                <TextShuffler textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. My credo is: no problem too great, no knowledge too vast, no logic too complex. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me: if you can think it, it can be done." delay={ 500 } />
             </span>
 
             <div className='w-full h-6'></div>

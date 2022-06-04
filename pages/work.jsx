@@ -14,9 +14,9 @@ const myWork = () => {
                 <title>My Work | Tben</title>
                 <meta name="description" content="Some of my Work" />
             </Head>
-            <h1><TextShuffler textInput="My Work" delay={ 500 } /></h1>
+            <h1><TextShuffler textInput="My Work" /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Some of my work ..." delay={ 1000 } />
+                <TextShuffler textInput="Some of my work ..." delay={ 500 } />
             </span>
 
             <div className='portfolio-entries-block mt-4'>

@@ -169,6 +169,7 @@ nav {
 
 nav a {
     opacity: 0.5;
+    cursor: pointer;
 }
 
 nav a:hover {
@@ -193,11 +194,11 @@ nav a:hover {
     animation-fill-mode: forwards;
 }
 
-.shuffled-text-span span {
+/* .shuffled-text-span span {
     animation-name: shuffle;
     animation-timing-function: ease-out;
     animation-delay: 0.5s;
-}
+} */
 
 @keyframes shuffle {
     0% {

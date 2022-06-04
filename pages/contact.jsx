@@ -16,9 +16,9 @@ const contact = () => {
                 <meta name="description" content="Get in touch" />
             </Head>
 
-            <h1><TextShuffler textInput="Great things await ..." delay={ 500 } /></h1>
+            <h1><TextShuffler textInput="Great things await ..." /></h1>
             <span className='hero-sub-text'>
-                <TextShuffler textInput="Let's talk" delay={ 1000 } />
+                <TextShuffler textInput="Let's talk" delay={ 500 } />
             </span>
 
             <form autoComplete='on' onSubmit={ (e) => { submitContactForm(e, setSuccess) } }>
