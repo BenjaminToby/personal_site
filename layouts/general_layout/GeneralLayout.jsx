@@ -46,6 +46,10 @@ const GeneralLayout = ({ children, pageName }) => {
             if (link.dataset.href === window.location.pathname) {
                 link.classList.add("active-page");
             }
+
+            if (window.location.pathname.match(new RegExp(`${link.dataset.href}\\/.*`))) {
+                link.classList.add("active-page");
+            }
         });
 
         gsap.to("#main-content-wrapper", {
