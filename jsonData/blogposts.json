@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "title": "Choosing your stack",
+        "slug": "choosing-your-tech-stack",
+        "description": "So many technologies, so little time to vet all",
+        "date": "Fri Jun 10 2022 06:34:08 GMT+0100 (West Africa Standard Time)",
+        "body": [
+            {
+                "tag": "p",
+                "content": "The tech pool is an ever growing trojan horse. JavaScript libraries alone are getting out of hand: we seem to be getting a new one every 6 months. Hell even I have a javascript library of my own. Trying to pick from this pool can easily turn into mission impossible: understandably so: there's just too many of them"
+            },
+            {
+                "tag": "p",
+                "content": "The thing is, each of these libraries and frameworks end up doing essentially the same thing in thier respective categories: react creates reuseable javascript components: same with vue, same with angular, svelte. And for the most part, you won't be using every single feature provided by these libraries: just the ones that suit your project."
+            },
+            {
+                "tag": "p",
+                "content": "In truth, the tech stack you choose doesn't mean much: you can get 10 different options which achieve the same goal. Really, all that matters is the developer you pick: because a masterful developer can create great products using any stack of his/her choosing."
+            },
+            {
+                "tag": "p",
+                "children": [
+                    {
+                        "tag": "span",
+                        "content": "If you're just starting off, perhaps the best step is to evaluate the stacks and get a recommendation from an expert in the field: you may be surprised to find out you don't need as many technologies as you think: you may even be surprised that using a traditional framework like ruby on rails is actually a lot easier than wordpress. "
+                    },
+                    {
+                        "tag": "a",
+                        "href": "/contact",
+                        "class": "text-blue-300",
+                        "content": "Reach out"
+                    },
+                    {
+                        "tag": "span",
+                        "content": " to find out more."
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Find your perfect framework",
+        "slug": "find-your-perfect-framework",
+        "description": "How much can a web framework affect your project?",
+        "date": "Fri Jun 10 2022 06:34:08 GMT+0100 (West Africa Standard Time)",
+        "body": [
+            {
+                "tag": "p",
+                "content": "Web frameworks are a great way to get the best out of multiple technologies while keeping your development time short and reliability high. But just like it is with every aspect of web development, there's a dilemma of \"Which framework should I go with\"."
+            },
+            {
+                "tag": "p",
+                "content": "Different frameworks come with different structures and different selections of languages and packages. In truth, you don't necessarily need a framework: nearly all major programming languages can handle applications on thier own: but as you build more projects, you keep encountering more repetitions, and you end up abstracting those repetitions into reuseable components: you now have a framework of your own. Now this isn't bad at all: infact, this is the end goal of a truly performant app: frameworks often come with a lot of packages you may not need: which end up bugging down your application: if you can develop a framework of your own, you can eliminate this downside: but, you have to be prepared to spend a lot of time on your project: if you have the time, then go for it: else, go for a framework."
+            },
+            {
+                "tag": "p",
+                "content": "Haven said this, there are lots of frameworks you can choose from: depending on your time and budget: here are some great picks you should consider:"
+            },
+            {
+                "tag": "h2",
+                "content": "1. Next JS"
+            },
+            {
+                "tag": "img",
+                "src": "https://miro.medium.com/max/1400/1*htbUdWgFQ3a94PMEvBr_hQ.png",
+                "class": "w-full",
+                "style": {
+                    "border": "1px solid #ffffff40"
+                }
+            },
+            {
+                "tag": "p",
+                "content": "Next JS is slowly becoming the household name for web development frameworks: it features an immensely paowerful and efficient structure, based on React JS: which enables server side rendering of pages: as opposed to the traditional SPA(single page application) model React was created for. Next JS handles the heavilifting of routing, apis, frontend and backend components, module bundling, and linting, leaving you with a relatively easy platform to integrate your project. Next JS is growing very quick and in no time, it will become the most used framework for enterprise applications"
+            }
+        ]
+    }
+]

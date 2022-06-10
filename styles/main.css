@@ -19,6 +19,7 @@ html {
 
 :root {
     --main-color: #1668e4;
+    --main-color-lighter: #5698fc;
     --dark-color: #201e1e;
     --sec-color-3: #688e26;
     --sec-color-4: #adb2d3;
@@ -81,6 +82,25 @@ h1 {
     font-size: 52px;
     margin-top: 0;
     margin-bottom: 10px;
+}
+
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+
+p a,
+span a {
+    color: var(--main-color-lighter);
+    /* border-bottom: 1px solid var(--main-color-lighter); */
+}
+
+p a:hover,
+span a:hover {
+    color: var(--main-color);
 }
 
 /* ################################################# -- Sliders */
@@ -329,6 +349,24 @@ textarea {
     object-position: left top;
     margin-bottom: 20px;
 }
+
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+/* * */
+
+/* .transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+} */
 
 /* ###############################################################################################
 ##################################################################################################

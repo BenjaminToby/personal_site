@@ -63,8 +63,6 @@ const GeneralLayout = ({ children, pageName }) => {
         // document.getElementById("page-loader").style.opacity
 
         threeJsAnimations();
-
-        // setReadyState(true);
     }, [])
 
 
@@ -82,6 +80,7 @@ const GeneralLayout = ({ children, pageName }) => {
                     { children }
                 </main>
                 <GeneralFooter />
+                <div className='fixed top-0 left-0 -z-10' id='homepage-animation-wrapper'></div>
             </div>
 
         </SiteContext.Provider>

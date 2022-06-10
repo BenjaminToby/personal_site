@@ -25,7 +25,6 @@ const index = () => {
                     border: "2px solid white"
                 } }>Contact Me</a>
             </div>
-            <div className='fixed top-0 left-0 -z-10' id='homepage-animation-wrapper'></div>
         </GeneralLayout>
     )
 }
