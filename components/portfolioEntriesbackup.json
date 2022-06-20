@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Showme Rebates",
+        "description": "Property rebates in Utah",
+        "url": "https://dev.showmerebates.com/",
+        "image": "/images/showmerebates.jpg"
+    },
+    {
+        "title": "Guaranteed software",
+        "description": "software development agency",
+        "url": "https://guaranteed.software/",
+        "image": "/images/guaranteed.jpg"
+    },
+    {
+        "title": "Renition",
+        "description": "Curated top quality Apparel",
+        "url": "https://renition.com",
+        "image": "/images/renition-graphic.jpg"
+    },
+    {
+        "title": "Castcord",
+        "description": "Social Media web app",
+        "url": "https://cast-cord.com",
+        "image": "/images/castcord-graphic.jpg"
+    },
+    {
+        "title": "Next 7 Web Engine",
+        "description": "Next 7 is an all-in-one web engine featuring a web page builder and a content management system",
+        "url": "https://next7.io",
+        "image": "/images/next-7-graphic-min.jpg"
+    }
+]

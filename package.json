@@ -26,6 +26,7 @@
     "homepage": "https://github.com/BenjaminToby/personal_site#readme",
     "dependencies": {
         "@barba/core": "^2.9.7",
+        "contentful": "^9.1.32",
         "gsap": "^3.10.4",
         "next": "^12.0.4",
         "nodemailer": "^6.7.2",

@@ -5,7 +5,9 @@
  */
 import React from "react";
 import Head from "next/head";
-const fs = require("fs");
+
+
+const contentful = require('contentful');
 
 /** ********************************************** */
 /** ********************************************** */
@@ -13,6 +15,7 @@ const fs = require("fs");
 
 import GeneralLayout from "../../layouts/general_layout/GeneralLayout";
 import TextShuffler from "../../components/actions/TextShuffler";
+import httpFetch from "../../functions/backend/httpFetch";
 
 /** ****************************************************************************** */
 /** ****************************************************************************** */
@@ -28,31 +31,35 @@ import TextShuffler from "../../components/actions/TextShuffler";
  * @param {Object} props - Server props
  */
 export default function BlogIndex(props) {
-    // ## Get Contexts
+    /**
+     * Get Contexts
+     *
+     * @abstract { React.useContext }
+     */
 
     /** ********************************************** */
-    /** ********************************************** */
-    /** ********************************************** */
 
-    // ## Javascript Variables
-    // const blogPosts = require("../../jsonData/blogposts.json");
-
-    /** ********************************************** */
-    /** ********************************************** */
-    /** ********************************************** */
-
+    /**
+     * Javascript Variables
+     *
+     * @abstract Non hook variables and functions
+     */
 
     /** ********************************************** */
-    /** ********************************************** */
+
+    /**
+     * React Hooks
+     *
+     * @abstract { useState, useEffect, useRef, etc ... }
+     */
+
     /** ********************************************** */
 
-    // ## React Hooks { useState, useEffect, useRef, etc ... }
-
-    /** ********************************************** */
-    /** ********************************************** */
-    /** ********************************************** */
-
-    // ## Function Return
+    /**
+     * Function Return
+     *
+     * @abstract Main Function Return
+     */
     return (
         <React.Fragment>
             <Head>
@@ -77,8 +84,7 @@ export default function BlogIndex(props) {
             </GeneralLayout>
         </React.Fragment>
     );
-    /** ********************************************** */
-    /** ********************************************** */
+
     /** ********************************************** */
 };
 
@@ -97,22 +103,37 @@ export default function BlogIndex(props) {
  * @param {Object} res - http response object
  * @param {Object} query - queries attached to the url
  */
-export async function getServerSideProps({ req, res, query }) {
-    // ## Environment processes
+export async function getStaticProps({ req, res, query }) {
+    /**
+     * User Auth
+     *
+     * @abstract grab user
+     */
+    // const contentfulClient = contentful.createClient({
+    //     space: process.env.CONTENTFUL_SPACE_ID,
+    //     accessToken: process.env.CONTENTFUL_API_KEY,
+    // });
 
+    // const posts = await contentfulClient.getEntries()
+
+    // console.log(posts);
 
     /** ********************************************** */
-    /** ********************************************** */
-    /** ********************************************** */
 
-    // ## User Authentication
+    /**
+     * Data fetching
+     *
+     * @abstract fetch date from the server or externnal source
+     */
+    // let blogPosts = await httpFetch({
+    //     options: {
+    //         method:"DELETE",
+    //         path: "/api/tben-blogs"
+    //     },
+    //     paradigm:"https"
+    // })
 
-    /** ********************************************** */
-    /** ********************************************** */
-    /** ********************************************** */
-
-    // ## Page/Site Data Data Fetching
-    const blogPosts = fs.readFileSync("./jsonData/blogposts.json", "utf8");
+    // console.log(blogPosts.data);
 
     /** ********************************************** */
     /** ********************************************** */
@@ -121,7 +142,7 @@ export async function getServerSideProps({ req, res, query }) {
     // ## Server Props Return
     return {
         props: {
-            blogPosts: JSON.parse(blogPosts).reverse(),
+            blogPosts: [],
         },
     };
 
