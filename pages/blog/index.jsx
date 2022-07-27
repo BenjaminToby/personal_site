@@ -16,7 +16,7 @@ const fs = require("fs")
 
 import GeneralLayout from "../../layouts/general_layout/GeneralLayout";
 import TextShuffler from "../../components/actions/TextShuffler";
-import httpFetch from "../../functions/backend/httpFetch";
+// import httpFetch from "../../functions/backend/httpFetch";
 
 /** ****************************************************************************** */
 /** ****************************************************************************** */
