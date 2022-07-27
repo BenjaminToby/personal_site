@@ -32,7 +32,7 @@ const GeneralHeader = () => {
                     pushRouter(e)
                 } }>Blog</a>
 
-                <a data-href="#" href='/documents/Benjamin_Toby_CV-updated.pdf' target="_blank">My Resume</a>
+                <a data-href="#" href='/documents/Benjamin-Toby-CV-7-27-2022.pdf' target="_blank">My Resume</a>
 
                 <a href='/contact' data-href="/contact" onClick={ (e) => {
                     pushRouter(e)
