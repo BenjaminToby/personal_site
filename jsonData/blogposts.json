@@ -72,7 +72,7 @@
             },
             {
                 "tag": "p",
-                "content": "Next JS is slowly becoming the household name for web development frameworks: it features an immensely paowerful and efficient structure, based on React JS: which enables server side rendering of pages: as opposed to the traditional SPA(single page application) model React was created for. Next JS handles the heavilifting of routing, apis, frontend and backend components, module bundling, and linting, leaving you with a relatively easy platform to integrate your project. Next JS is growing very quick and in no time, it will become the most used framework for enterprise applications"
+                "content": "Next JS is slowly becoming the household name for web development frameworks: it features an immensely powerful and efficient structure, based on React JS: which enables server side rendering of pages: as opposed to the traditional SPA(single page application) model React was created for. Next JS handles the heavilifting of routing, apis, frontend and backend components, module bundling, and linting, leaving you with a relatively easy platform to integrate your project. Next JS is growing very quick and in no time, it will become the most used framework for enterprise applications"
             }
         ]
     }

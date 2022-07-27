@@ -82,6 +82,7 @@ export default function BlogIndex({ blogPost }) {
 
                         if (element.tag.match(/img/i)) {
                             return <img
+                                key={ reactKey }
                                 src={ element.src }
                                 width={ element.width }
                                 height={ element.height }

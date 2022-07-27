@@ -8,6 +8,7 @@ import Head from "next/head";
 
 
 // const contentful = require('contentful');
+const fs = require("fs")
 
 /** ********************************************** */
 /** ********************************************** */
@@ -134,6 +135,7 @@ export async function getStaticProps({ req, res, query }) {
     // })
 
     // console.log(blogPosts.data);
+    const posts = JSON.parse(fs.readFileSync("./jsonData/blogposts.json", "utf8"))
 
     /** ********************************************** */
     /** ********************************************** */
@@ -142,7 +144,7 @@ export async function getStaticProps({ req, res, query }) {
     // ## Server Props Return
     return {
         props: {
-            blogPosts: [],
+            blogPosts: posts,
         },
     };
 
