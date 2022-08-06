@@ -146,14 +146,14 @@ export async function getStaticProps({ params }) {
             .end();
     });
 
-    if (!postsResponse.success || !postsResponse.payload[0]) {
-        return {
-            redirect: {
-                destination: "/blog",
-                permanent: false
-            }
-        }
-    }
+    // if (!postsResponse.success || !postsResponse.payload[0]) {
+    //     return {
+    //         redirect: {
+    //             destination: "/blog",
+    //             permanent: false
+    //         }
+    //     }
+    // }
 
     const post = postsResponse.payload[0];
 
@@ -232,14 +232,14 @@ export async function getStaticPaths() {
             .end();
     });
 
-    if (!postsResponse.success) {
-        return {
-            redirect: {
-                destination: "/blog",
-                permanent: false
-            }
-        }
-    }
+    // if (!postsResponse.success) {
+    //     return {
+    //         redirect: {
+    //             destination: "/blog",
+    //             permanent: false
+    //         }
+    //     }
+    // }
 
     const posts = postsResponse.payload;
 
