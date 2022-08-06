@@ -8,7 +8,7 @@ import Head from "next/head";
 
 
 // const contentful = require('contentful');
-const fs = require("fs")
+const https = require("https")
 
 /** ********************************************** */
 /** ********************************************** */
@@ -74,11 +74,11 @@ export default function BlogIndex(props) {
                         <a
                             href={ `/blog/${post.slug}` }
                             className="flex flex-col items-start gap-2 w-full hover:bg-blue-600 border border-solid border-white/20 p-8 transition-all"
-                            key={ post.id }
+                            key={ post.slug }
                         >
                             <h2 className="m-0"><TextShuffler textInput={ post.title } /></h2>
-                            <span className="opacity-80"><TextShuffler textInput={ post.description } /></span>
-                            <span className="text-sm opacity-50"><TextShuffler textInput={ post.date.substring(0, 24) } /></span>
+                            <span className="opacity-80"><TextShuffler textInput={ post.excerpt } /></span>
+                            <span className="text-sm opacity-50"><TextShuffler textInput={ post.date_created.substring(0, 24) } /></span>
                         </a>
                     ) }
                 </div>
@@ -135,7 +135,53 @@ export async function getStaticProps({ req, res, query }) {
     // })
 
     // console.log(blogPosts.data);
-    const posts = JSON.parse(fs.readFileSync("./jsonData/blogposts.json", "utf8"))
+    const postsResponse = await new Promise((resolve, reject) => {
+        https
+            .get(
+                /** ********************* Get Options object */
+                {
+                    host: "datasquirel.tben.me",
+                    path: `/api/query/get?db=tbenme&query=select+title,slug,excerpt,date_created+from+blog_posts+limit+10`,
+                    headers: {
+                        Authorization: process.env.DATASQUIREL_API_KEY,
+                    },
+                },
+                /** ********************************************** */
+                /** ********************************************** */
+                /** ********************************************** */
+
+                /** ********************* Callback function */
+                (response) => {
+                    var str = "";
+
+                    // ## another chunk of data has been received, so append it to `str`
+                    response.on("data", function (chunk) {
+                        str += chunk;
+                    });
+
+                    // ## the whole response has been received, so we just print it out here
+                    response.on("end", function () {
+                        resolve(JSON.parse(str))
+                    });
+
+                    response.on("error", (err) => {
+                        console.log(err);
+                    });
+                }
+            )
+            .end();
+    });
+
+    if (!postsResponse.success) {
+        return {
+            redirect: {
+                destination: "/",
+                permanent: false
+            }
+        }
+    }
+
+    const posts = postsResponse.payload;
 
     /** ********************************************** */
     /** ********************************************** */
@@ -146,6 +192,7 @@ export async function getStaticProps({ req, res, query }) {
         props: {
             blogPosts: posts,
         },
+        revalidate: 1000
     };
 
     /** ********************************************** */

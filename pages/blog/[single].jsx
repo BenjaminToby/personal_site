@@ -5,7 +5,7 @@
  */
 import React from "react";
 import Head from "next/head";
-const fs = require("fs");
+const https = require("https");
 
 /** ********************************************** */
 /** ********************************************** */
@@ -57,7 +57,7 @@ export default function BlogIndex({ blogPost }) {
         <React.Fragment>
             <Head>
                 <title>{ blogPost.title } | Tben.me Blog</title>
-                <meta name="description" content={ blogPost.description } />
+                <meta name="description" content={ blogPost.excerpt } />
             </Head>
             <GeneralLayout>
                 <div className="flex flex-col items-start gap-2 mb-8 max-w-3xl">
@@ -69,58 +69,14 @@ export default function BlogIndex({ blogPost }) {
                     >Back</button>
                     <h1 className="m-0"><TextShuffler textInput={ blogPost.title } /></h1>
                     <span className="text-lg">
-                        <TextShuffler textInput={ blogPost.description } />
+                        <TextShuffler textInput={ blogPost.excerpt } />
                     </span>
                     <span className="text-base opacity-50">
-                        <TextShuffler textInput={ blogPost.date.substring(0, 24) } />
+                        <TextShuffler textInput={ blogPost.date_created.substring(0, 24) } />
                     </span>
                 </div>
 
-                <div className="flex flex-col items-start max-w-3xl w-full gap-4 text-lg">
-                    { blogPost.body.map((element) => {
-                        reactKey++;
-
-                        if (element.tag.match(/img/i)) {
-                            return <img
-                                key={ reactKey }
-                                src={ element.src }
-                                width={ element.width }
-                                height={ element.height }
-                                className={ element.class }
-                                alt={ element.alt }
-                                style={ element.style }
-                            />
-                        }
-
-                        function construtElement(elementEntry) {
-                            if (elementEntry.children) {
-                                return (
-                                    <elementEntry.tag
-                                        key={ reactKey }
-                                        className={ elementEntry.class ? elementEntry.class : null }
-                                        href={ elementEntry.href }
-                                        style={ element.style }
-                                    >
-                                        { elementEntry.children.map(child => construtElement(child)) }
-                                    </elementEntry.tag>
-                                )
-                            }
-
-                            return (
-                                <elementEntry.tag
-                                    key={ reactKey }
-                                    className={ elementEntry.class ? elementEntry.class : null }
-                                    href={ elementEntry.href }
-                                >
-                                    { elementEntry.content }
-                                </elementEntry.tag>
-                            )
-                        }
-
-                        return construtElement(element);
-                    }
-                    ) }
-                </div>
+                <span className="flex flex-col items-start max-w-3xl w-full gap-4 text-lg" dangerouslySetInnerHTML={ { __html: blogPost.body } }></span>
             </GeneralLayout>
         </React.Fragment>
     );
@@ -144,7 +100,7 @@ export default function BlogIndex({ blogPost }) {
  * @param {Object} res - http response object
  * @param {Object} query - queries attached to the url
  */
-export async function getServerSideProps({ req, res, query }) {
+export async function getStaticProps({ params }) {
     // ## Environment processes
 
 
@@ -159,16 +115,53 @@ export async function getServerSideProps({ req, res, query }) {
     /** ********************************************** */
 
     // ## Page/Site Data Data Fetching
-    const blogPosts = JSON.parse(fs.readFileSync("./jsonData/blogposts.json", "utf8"));
+    const postsResponse = await new Promise((resolve, reject) => {
+        https
+            .get(
+                /** ********************* Get Options object */
+                {
+                    host: "datasquirel.tben.me",
+                    path: `/api/query/get?db=tbenme&query=select+*+from+blog_posts+where+slug='${params.single}'`,
+                    headers: {
+                        Authorization: process.env.DATASQUIREL_API_KEY,
+                    },
+                },
+                /** ********************************************** */
+                /** ********************************************** */
+                /** ********************************************** */
 
-    let foundPost = blogPosts.filter(post => post.slug === query.single);
+                /** ********************* Callback function */
+                (response) => {
+                    var str = "";
 
-    if (!foundPost || !foundPost[0]) return {
-        redirect: {
-            destination: "/blog",
-            permanent: false
+                    // ## another chunk of data has been received, so append it to `str`
+                    response.on("data", function (chunk) {
+                        str += chunk;
+                    });
+
+                    // ## the whole response has been received, so we just print it out here
+                    response.on("end", function () {
+                        resolve(JSON.parse(str))
+                    });
+
+                    response.on("error", (err) => {
+                        console.log(err);
+                    });
+                }
+            )
+            .end();
+    });
+
+    if (!postsResponse.success) {
+        return {
+            redirect: {
+                destination: "/blog",
+                permanent: false
+            }
         }
     }
+
+    const post = postsResponse.payload[0];
 
     /** ********************************************** */
     /** ********************************************** */
@@ -177,11 +170,138 @@ export async function getServerSideProps({ req, res, query }) {
     // ## Server Props Return
     return {
         props: {
-            blogPost: foundPost[0],
+            blogPost: post,
         },
     };
 
     /** ********************************************** */
     /** ********************************************** */
     /** ********************************************** */
-}   
+}
+
+/** ****************************************************************************** */
+/** ****************************************************************************** */
+/** ****************************************************************************** */
+/** ****************************************************************************** */
+/** ****************************************************************************** */
+/** ****************************************************************************** */
+
+/**
+ * ==============================================================================
+ * Server Side Props or Static Props
+ * ==============================================================================
+ * @param {Object} req - http incoming request object
+ * @param {Object} res - http response object
+ * @param {Object} query - queries attached to the url
+ */
+export async function getStaticPaths() {
+    /**
+     * Data fetching
+     *
+     * @abstract fetch date from the server or externnal source
+     */
+    const postsResponse = await new Promise((resolve, reject) => {
+        https
+            .get(
+                /** ********************* Get Options object */
+                {
+                    host: "datasquirel.tben.me",
+                    path: `/api/query/get?db=tbenme&query=select+slug+from+blog_posts`,
+                    headers: {
+                        Authorization: process.env.DATASQUIREL_API_KEY,
+                    },
+                },
+                /** ********************************************** */
+                /** ********************************************** */
+                /** ********************************************** */
+
+                /** ********************* Callback function */
+                (response) => {
+                    var str = "";
+
+                    // ## another chunk of data has been received, so append it to `str`
+                    response.on("data", function (chunk) {
+                        str += chunk;
+                    });
+
+                    // ## the whole response has been received, so we just print it out here
+                    response.on("end", function () {
+                        resolve(JSON.parse(str))
+                    });
+
+                    response.on("error", (err) => {
+                        console.log(err);
+                    });
+                }
+            )
+            .end();
+    });
+
+    if (!postsResponse.success) {
+        return {
+            redirect: {
+                destination: "/blog",
+                permanent: false
+            }
+        }
+    }
+
+    const posts = postsResponse.payload;
+
+    const paths = posts.map((entry) => {
+        return {
+            params: { single: entry.slug }
+        }
+    })
+
+    return {
+        paths: paths,
+        fallback: true,
+    }
+}
+
+// Legacy
+
+// { blogPost.body.map((element) => {
+//     reactKey++;
+
+//     if (element.tag.match(/img/i)) {
+//         return <img
+//             key={ reactKey }
+//             src={ element.src }
+//             width={ element.width }
+//             height={ element.height }
+//             className={ element.class }
+//             alt={ element.alt }
+//             style={ element.style }
+//         />
+//     }
+
+//     function construtElement(elementEntry) {
+//         if (elementEntry.children) {
+//             return (
+//                 <elementEntry.tag
+//                     key={ reactKey }
+//                     className={ elementEntry.class ? elementEntry.class : null }
+//                     href={ elementEntry.href }
+//                     style={ element.style }
+//                 >
+//                     { elementEntry.children.map(child => construtElement(child)) }
+//                 </elementEntry.tag>
+//             )
+//         }
+
+//         return (
+//             <elementEntry.tag
+//                 key={ reactKey }
+//                 className={ elementEntry.class ? elementEntry.class : null }
+//                 href={ elementEntry.href }
+//             >
+//                 { elementEntry.content }
+//             </elementEntry.tag>
+//         )
+//     }
+
+//     return construtElement(element);
+// }
+// ) }
