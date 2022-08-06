@@ -35,12 +35,6 @@ export default function BlogIndex({ blogPost }) {
     /** ********************************************** */
 
     // ## Javascript Variables
-    let reactKey = 0;
-
-    /** ********************************************** */
-    /** ********************************************** */
-    /** ********************************************** */
-
 
     /** ********************************************** */
     /** ********************************************** */
@@ -152,7 +146,7 @@ export async function getStaticProps({ params }) {
             .end();
     });
 
-    if (!postsResponse.success) {
+    if (!postsResponse.success || !postsResponse.payload[0]) {
         return {
             redirect: {
                 destination: "/blog",
@@ -172,6 +166,7 @@ export async function getStaticProps({ params }) {
         props: {
             blogPost: post,
         },
+        revalidate: 1000
     };
 
     /** ********************************************** */
@@ -256,7 +251,7 @@ export async function getStaticPaths() {
 
     return {
         paths: paths,
-        fallback: true,
+        fallback: "blocking",
     }
 }
 
