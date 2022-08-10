@@ -114,7 +114,7 @@ export async function getStaticProps({ params }) {
             .get(
                 /** ********************* Get Options object */
                 {
-                    host: "datasquirel.tben.me",
+                    host: "datasquirel.com",
                     path: `/api/query/get?db=tbenme&query=select+*+from+blog_posts+where+slug='${params.single}'`,
                     headers: {
                         Authorization: process.env.DATASQUIREL_API_KEY,
@@ -200,7 +200,7 @@ export async function getStaticPaths() {
             .get(
                 /** ********************* Get Options object */
                 {
-                    host: "datasquirel.tben.me",
+                    host: "datasquirel.com",
                     path: `/api/query/get?db=tbenme&query=select+slug+from+blog_posts`,
                     headers: {
                         Authorization: process.env.DATASQUIREL_API_KEY,

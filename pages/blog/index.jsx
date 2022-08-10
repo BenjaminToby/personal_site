@@ -140,7 +140,7 @@ export async function getStaticProps({ req, res, query }) {
             .get(
                 /** ********************* Get Options object */
                 {
-                    host: "datasquirel.tben.me",
+                    host: "datasquirel.com",
                     path: `/api/query/get?db=tbenme&query=select+title,slug,excerpt,date_created+from+blog_posts+limit+10`,
                     headers: {
                         Authorization: process.env.DATASQUIREL_API_KEY,
@@ -171,6 +171,10 @@ export async function getStaticProps({ req, res, query }) {
             )
             .end();
     });
+
+    console.log('====================================');
+    console.log(postsResponse);
+    console.log('====================================');
 
     if (!postsResponse.success) {
         return {
