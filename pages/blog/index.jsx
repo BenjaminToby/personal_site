@@ -196,7 +196,7 @@ export async function getStaticProps({ req, res, query }) {
         props: {
             blogPosts: posts,
         },
-        revalidate: 1000
+        revalidate: 3600
     };
 
     /** ********************************************** */
