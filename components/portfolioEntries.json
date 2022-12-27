@@ -6,6 +6,12 @@
         "image": "/images/showmerebates.jpg"
     },
     {
+        "title": "Datasquirel",
+        "description": "Datasquirel is a fast and efficient cloud-based SQL data management system",
+        "url": "https://datasquirel.com",
+        "image": "/images/datasquirel-img.jpg"
+    },
+    {
         "title": "Homeruntoken",
         "description": "Real Estate Investing Made Easy",
         "url": "https://homeruntoken.vercel.app/",

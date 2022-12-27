@@ -172,10 +172,6 @@ export async function getStaticProps({ req, res, query }) {
             .end();
     });
 
-    console.log('====================================');
-    console.log(postsResponse);
-    console.log('====================================');
-
     if (!postsResponse.success) {
         return {
             redirect: {
