@@ -1,9 +1,15 @@
 [
     {
         "title": "Showme Rebates",
-        "description": "Property rebates in Utah",
+        "description": "Showmerebates curates agents' rebates/cashback on properties in Utah, Texas, Florida, and Kansas states",
         "url": "https://showmerebates.com/",
         "image": "/images/showmerebates.jpg"
+    },
+    {
+        "title": "Summit Lending",
+        "description": "Summit Lending is a mortgage broker offering competitive rates for home loans of all sorts",
+        "url": "https://summitlending.com",
+        "image": "/images/summit-lending.jpg"
     },
     {
         "title": "Datasquirel",
@@ -16,11 +22,5 @@
         "description": "Real Estate Investing Made Easy",
         "url": "https://homeruntoken.vercel.app/",
         "image": "/images/Homeruntoken-graphic.jpg"
-    },
-    {
-        "title": "Next 7 Web Engine",
-        "description": "Next 7 is an all-in-one web engine featuring a web page builder and a content management system",
-        "url": "https://next7.io",
-        "image": "/images/next-7-graphic-min.jpg"
     }
 ]
