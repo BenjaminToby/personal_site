@@ -1,5 +1,5 @@
 module.exports = {
-    content: ["./components/**/*.{html,js,jsx}", "./pages/**/*.jsx", , "./layouts/**/*.jsx"],
+    content: ["./components/**/*.{html,js,jsx}", "./pages/**/*.{jsx,tsx}", "./app/**/*.{html,js,jsx,tsx}", "./layouts/**/*.{jsx,tsx}"],
     theme: {
         screens: {
             xs: "350px",
@@ -9,7 +9,10 @@ module.exports = {
             lg: "976px",
             xl: "1200px",
         },
-        // colors: {},
+        colors: {
+            primary: "#7174ff",
+            "primary-light": "#9d9eff",
+        },
         fontFamily: {
             sans: ["Graphik", "sans-serif"],
             serif: ["Merriweather", "serif"],

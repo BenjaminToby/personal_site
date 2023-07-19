@@ -1,0 +1,42 @@
+[
+    {
+        "title": "HTML, CSS, Javascript",
+        "description": "The basics, the bedrock of all websites."
+    },
+    {
+        "title": "HTML, CSS, Javascript",
+        "description": "The basics, the bedrock of all websites."
+    },
+    {
+        "title": "React JS",
+        "description": "JavaScript library for high-performance web applications"
+    },
+    {
+        "title": "Next JS",
+        "description": "High performance React and Node js web framework for building blazing flast and performant web applications"
+    },
+    {
+        "title": "Tailwind CSS",
+        "description": "Lighting fast mobile first styling"
+    },
+    {
+        "title": "Node JS",
+        "description": "JavaScript runtime for the server. For creating backend architectures and APIs"
+    },
+    {
+        "title": "Ubuntu Linux",
+        "description": "Secure server management with ubuntu and Linux"
+    },
+    {
+        "title": "Nginx",
+        "description": "Super secure web server, reverse proxy and load balancer"
+    },
+    {
+        "title": "MySQL",
+        "description": "Tried and tested data storage, querying, and management."
+    },
+    {
+        "title": "Git and Github",
+        "description": "Version control"
+    }
+]

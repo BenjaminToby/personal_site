@@ -2,7 +2,6 @@ import * as THREE from "three";
 
 export default function threeJsAnimations() {
     const animationWrapper = document.getElementById("homepage-animation-wrapper");
-    console.log(THREE);
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, animationWrapper.clientWidth / animationWrapper.clientHeight, 0.1, 1000);
@@ -15,13 +14,6 @@ export default function threeJsAnimations() {
     pointLight.position.set(10, 10, 10);
     const sphereSize = 1;
     const pointLightHelper = new THREE.PointLightHelper(pointLight, sphereSize);
-
-    // const spotLight = new THREE.SpotLight(0xffffff);
-    // spotLight.position.set(10, 10, 10);
-    // scene.add(spotLight);
-
-    // const spotLightHelper = new THREE.SpotLightHelper(spotLight);
-    // scene.add(spotLightHelper);
 
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(animationWrapper.clientWidth, animationWrapper.clientHeight);
@@ -122,21 +114,10 @@ export default function threeJsAnimations() {
 
         relMouseX < 0 ? (cube3.position.x += 0.0007) : (cube3.position.x -= 0.0007);
         relMouseY > 0 ? (cube3.position.y += 0.0007) : (cube3.position.y -= 0.0007);
-
-        // relMouseX < 0 ? scene.rotateX(5) : scene.rotateX(-5);
-        // relMouseY > 0 ? scene.rotateX(5) : scene.rotateX(-5);
-        // relMouseX < 0 ? (scene.rotation.z += 0.005) : (scene.rotation.x += 0.005);
-        // relMouseY > 0 ? (scene.rotation.y += 0.005) : (scene.rotation.y += 0.005);
-        // cube.rotation.x += relMouseX / e.x;
-        // cube.rotation.y += relMouseY / e.y;
-
-        // scene.rotation.x;
     });
 
     window.addEventListener("resize", (e) => {
         renderer.setSize(animationWrapper.clientWidth, window.innerHeight);
-        // animationWrapper.querySelector("canvas").width = animationWrapper.clientWidth;
-        // animationWrapper.querySelector("canvas").height = animationWrapper.clientHeight;
     });
 
     window.addEventListener("scroll", (e) => {

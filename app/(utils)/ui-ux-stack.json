@@ -1,0 +1,30 @@
+[
+    {
+        "title": "Adobe Photoshop",
+        "description": "Web design, image manipulation, image compositing, and more."
+    },
+    {
+        "title": "Adobe Illustrator",
+        "description": "Vector graphic of all types"
+    },
+    {
+        "title": "Figma",
+        "description": "Web, UI, UX design."
+    },
+    {
+        "title": "Affinity Designer",
+        "description": "Vector graphics."
+    },
+    {
+        "title": "After Effects",
+        "description": "Motion graphics and animation"
+    },
+    {
+        "title": "Adobe XD",
+        "description": "UI/UX design"
+    },
+    {
+        "title": "Webflow",
+        "description": "Visual Web coding"
+    }
+]
