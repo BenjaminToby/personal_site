@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import TextShuffler from "../../components/actions/TextShuffler";
+// import TextShuffler from "../../components/actions/TextShuffler";
 import { hero } from "../(utils)/animate";
 
 export default function Hero() {
@@ -10,7 +10,7 @@ export default function Hero() {
 
     return (
         <div>
-            <div className="flex flex-col xl:flex-row items-center gap-0 justify-center -mt-[120px] xl:-mt-[160px] w-full relative pt-[450px] md:pt-0">
+            <div className="flex flex-col xl:flex-row items-center gap-0 justify-center -mt-[80px] xl:-mt-[160px] w-full relative pt-[500px] md:pt-0">
                 <div
                     className="rounded-full max-w-[450px] absolute md:relative top-0 flex items-center md:items-start justify-center mr-0 xl:-mr-14 bg-[#3e3f9c] overflow-hidden"
                     id="main-image"
@@ -31,29 +31,29 @@ export default function Hero() {
                     id="hero-text-section"
                 >
                     <h1
-                        className="text-5xl leading-snug"
+                        className="text-4xl md:text-5xl leading-snug"
                         id="hero-text"
                     >
-                        {/* Hi */}
+                        I'm Benjamin Toby, a Software Engineer and UI/UX expert
                         {/* Fullstack developer, UI/UX designer, Software Engineer, welcome */}
-                        <TextShuffler
+                        {/* <TextShuffler
                             textInput="I'm Benjamin Toby, a Software Engineer and UI/UX expert"
                             delay={500}
-                        />
+                        /> */}
                     </h1>
 
-                    <div className="gap-4 flex items-center">
+                    <div className="gap-4 flex items-center flex-wrap">
                         <a
                             href="/documents/Resume-Benjamin-Toby-Linkedin.pdf"
                             download={true}
-                            className="button"
+                            className="button grow"
                         >
                             See my resume
                         </a>
                         <a
                             href="https://www.linkedin.com/in/benjamin-toby/"
                             target="_blank"
-                            className="button"
+                            className="button grow"
                         >
                             Linkedin
                         </a>
@@ -64,7 +64,7 @@ export default function Hero() {
                                 color: "white",
                                 border: "2px solid white",
                             }}
-                            className="button"
+                            className="button grow"
                         >
                             Contact Me
                         </a>

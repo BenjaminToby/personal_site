@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TextShuffler from "../../../components/actions/TextShuffler";
+// import TextShuffler from "../../../components/actions/TextShuffler";
 import { appear, genericScroll } from "../../(utils)/animate";
 
 export default function Hero() {
@@ -15,19 +15,22 @@ export default function Hero() {
                 // id="hero-text-section"
             >
                 <span className="text-primary-light text-lg">
-                    <TextShuffler textInput="About Me" />
+                    About Me
+                    {/* <TextShuffler textInput="About Me" /> */}
                 </span>
                 <h1
                     className="text-5xl leading-snug"
                     id="hero-text"
                 >
-                    <TextShuffler textInput="Ben of All Trade, Master of All" />
+                    Ben of All Trade, Master of All
+                    {/* <TextShuffler textInput="Ben of All Trade, Master of All" /> */}
                 </h1>
                 <span className="hero-sub-text">
-                    <TextShuffler
+                    Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. My credo is: no problem too great, no knowledge too vast, no logic too complex. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me: if you can think it, it can be done.
+                    {/* <TextShuffler
                         textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. My credo is: no problem too great, no knowledge too vast, no logic too complex. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me: if you can think it, it can be done."
                         delay={1000}
-                    />
+                    /> */}
                 </span>
             </div>
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import TextShuffler from "../../components/actions/TextShuffler";
+// import TextShuffler from "../../components/actions/TextShuffler";
 import { about, genericScroll } from "../(utils)/animate";
 
 export default function AboutSection() {
@@ -29,7 +29,8 @@ export default function AboutSection() {
             <div className="flex flex-col xl:flex-row w-full gap-8">
                 <div className="w-full xl:w-[40%]">
                     <h2>
-                        <TextShuffler textInput="About Me" />
+                        About Me
+                        {/* <TextShuffler textInput="About Me" /> */}
                     </h2>
 
                     <div className="flex flex-col-reverse xl:flex-col items-start gap-4">
@@ -52,10 +53,11 @@ export default function AboutSection() {
                             </div>
                         </div>
                         <span className="hero-sub-text">
-                            <TextShuffler
+                            Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. My credo is: no problem too great, no knowledge too vast, no logic too complex. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me: if you can think it, it can be done.
+                            {/* <TextShuffler
                                 textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. My credo is: no problem too great, no knowledge too vast, no logic too complex. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me: if you can think it, it can be done."
                                 delay={500}
-                            />
+                            /> */}
                         </span>
 
                         <a
@@ -70,7 +72,8 @@ export default function AboutSection() {
                 <div className="w-full xl:w-[60%] bg-[#343680] px-4 md:px-6 py-2">
                     <section>
                         <h3>
-                            <TextShuffler textInput={targetStack?.match(/dev/i) ? "Web Dev Tech Stack" : "UI/UX tech stack"} />
+                            {targetStack?.match(/dev/i) ? "Web Dev Tech Stack" : "UI/UX tech stack"}
+                            {/* <TextShuffler textInput={targetStack?.match(/dev/i) ? "Web Dev Tech Stack" : "UI/UX tech stack"} /> */}
                         </h3>
                         <hr />
                         <ul style={{ maxWidth: "800px" }}>
@@ -82,10 +85,12 @@ export default function AboutSection() {
                                             className="mb-4"
                                         >
                                             <h4 className="m-0">
-                                                <TextShuffler textInput={item.title} />
+                                                {item.title}
+                                                {/* <TextShuffler textInput={item.title} /> */}
                                             </h4>
                                             <span className="opacity-80">
-                                                <TextShuffler textInput={item.description} />
+                                                {item.description}
+                                                {/* <TextShuffler textInput={item.description} /> */}
                                             </span>
                                         </li>
                                     ))}
@@ -98,10 +103,12 @@ export default function AboutSection() {
                                             className="mb-4"
                                         >
                                             <h4 className="m-0">
-                                                <TextShuffler textInput={item.title} />
+                                                {item.title}
+                                                {/* <TextShuffler textInput={item.title} /> */}
                                             </h4>
                                             <span className="opacity-80">
-                                                <TextShuffler textInput={item.description} />
+                                                {item.description}
+                                                {/* <TextShuffler textInput={item.description} /> */}
                                             </span>
                                         </li>
                                     ))}
