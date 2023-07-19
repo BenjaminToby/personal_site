@@ -2,10 +2,11 @@
 
 import React from "react";
 import TextShuffler from "../../components/actions/TextShuffler";
-import { about } from "../(utils)/animate";
+import { about, genericScroll } from "../(utils)/animate";
 
 export default function AboutSection() {
     React.useEffect(about, []);
+    React.useEffect(genericScroll, []);
 
     const webDevStack = require("../(utils)/web-dev-stack.json");
     const uiStack = require("../(utils)/ui-ux-stack.json");
@@ -14,8 +15,8 @@ export default function AboutSection() {
 
     return (
         <div
-            className="max-w-6xl w-full flex flex-col items-center pb-40"
-            id="about-section"
+            className="max-w-6xl w-full flex flex-col items-center pb-40 generic-scroll"
+            // id="about-section"
         >
             {/* <span
                 className="text-[300px] uppercase absolute whitespace-nowrap opacity-5 -mt-64 z-[-1]"

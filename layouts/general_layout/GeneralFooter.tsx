@@ -27,9 +27,14 @@ const GeneralFooter = () => {
                     <div className="flex-col flex items-start gap-1">
                         <span className="opacity-50">Contact Me</span>
                         <div className="flex gap-4">
-                            <a href="/">LinkedIn</a>
-                            <a href="/">Mail</a>
-                            <a href="/">Phone</a>
+                            <a
+                                href="https://www.linkedin.com/in/benjamin-toby/"
+                                target="_blank"
+                            >
+                                LinkedIn
+                            </a>
+                            <a href="mailto:benoti.san@gmail.com">Mail</a>
+                            <a href="tel:+2348123682346">Phone</a>
                         </div>
                     </div>
                     <span className="text-sm opacity-40">Copyright © {date.getFullYear()} Tben.me. All Rights Reserved.</span>
