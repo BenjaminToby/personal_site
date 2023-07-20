@@ -74,7 +74,7 @@ const GeneralHeader = (): React.ReactElement => {
             <HeaderNav />
 
             <button
-                className="p-2 w-14 h-14 rounded-full flex flex-col items-center justify-center gap-2 hover:bg-[white]/90 xl:hidden fixed top-[35px] right-10 z-10 -rotate-45 scale-90"
+                className="p-2 w-14 h-14 rounded-full flex flex-col items-center justify-center gap-2 hover:bg-[white]/90 xl:hidden fixed top-[35px] right-10 z-10 -rotate-45"
                 onClick={(e) => {
                     e.preventDefault();
                     setMobileNavOpen(!mobileNavOpen);
