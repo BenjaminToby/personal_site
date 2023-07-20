@@ -22,22 +22,24 @@ export default function homepageTimeline({ componentRef }: { componentRef: { cur
             /**
              * Origin
              */
-            if (scrollTop < 300) {
-                gsap.to("nav", {
-                    opacity: 1,
-                    pointerEvents: "visible",
-                });
-                gsap.to("header", {
-                    zIndex: 2000,
-                });
-            } else {
-                gsap.to("nav", {
-                    opacity: 0,
-                    pointerEvents: "none",
-                });
-                gsap.to("header", {
-                    zIndex: 0,
-                });
+            if (!isMobile) {
+                if (scrollTop < 300) {
+                    gsap.to("nav", {
+                        opacity: 1,
+                        pointerEvents: "visible",
+                    });
+                    gsap.to("header", {
+                        zIndex: 2000,
+                    });
+                } else {
+                    gsap.to("nav", {
+                        opacity: 0,
+                        pointerEvents: "none",
+                    });
+                    gsap.to("header", {
+                        zIndex: 0,
+                    });
+                }
             }
 
             /**
