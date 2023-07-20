@@ -1,12 +1,21 @@
 import React from "react";
-import Hero from "./(components)/Hero";
-import AboutSection from "./(components)/AboutSection";
+import HomepageComponent from "./(components)/HomepageComponent";
 
-export default function Homepage() {
-    return (
-        <React.Fragment>
-            <Hero />
-            <AboutSection />
-        </React.Fragment>
-    );
+const datasquirel = require("datasquirel");
+
+export const revalidate = 3600;
+
+type DsqlResponse = {
+    success: boolean;
+    payload: any;
+};
+
+export default async function Homepage() {
+    const projects: DsqlResponse = await datasquirel.get({
+        db: process.env.DB_NAME,
+        key: process.env.DATASQUIREL_API_KEY,
+        query: "SELECT * FROM portfolio ORDER BY project_order ASC",
+    });
+
+    return <HomepageComponent projects={projects.payload} />;
 }

@@ -6,7 +6,7 @@ import GeneralFooter from "./GeneralFooter";
 import { gsap } from "gsap";
 import BG from "./BG";
 
-export const SiteContext = React.createContext({});
+export const SiteContext: any = React.createContext({});
 
 type GeneralLayoutProps = {
     children: React.ReactNode;
@@ -46,9 +46,9 @@ const GeneralLayout = ({ children }: GeneralLayoutProps): ReactElement => {
                 <GeneralHeader />
                 <main
                     className="flex items-center flex-col w-full"
-                    style={{
-                        perspective: "800px",
-                    }}
+                    // style={{
+                    //     perspective: "800px",
+                    // }}
                 >
                     {children}
                 </main>

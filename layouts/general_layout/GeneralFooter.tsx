@@ -33,6 +33,12 @@ const GeneralFooter = () => {
                             >
                                 LinkedIn
                             </a>
+                            <a
+                                href="https://github.com/BenjaminToby"
+                                target="_blank"
+                            >
+                                Github
+                            </a>
                             <a href="mailto:benoti.san@gmail.com">Mail</a>
                             <a href="tel:+2348123682346">Phone</a>
                         </div>

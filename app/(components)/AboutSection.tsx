@@ -1,120 +1,51 @@
 "use client";
 
 import React from "react";
-// import TextShuffler from "../../components/actions/TextShuffler";
-import { about, genericScroll } from "../(utils)/animate";
 
 export default function AboutSection() {
-    React.useEffect(about, []);
-    React.useEffect(genericScroll, []);
-
-    const webDevStack = require("../(utils)/web-dev-stack.json");
-    const uiStack = require("../(utils)/ui-ux-stack.json");
-
-    const [targetStack, setTargetStack] = React.useState("dev");
-
     return (
         <div
-            className="max-w-6xl w-full flex flex-col items-center pb-40 generic-scroll"
-            // id="about-section"
+            className="max-w-6xl w-full flex flex-col items-center pb-40 generic-scroll page-section"
+            id="about-section"
         >
-            {/* <span
-                className="text-[300px] uppercase absolute whitespace-nowrap opacity-5 -mt-64 z-[-1]"
-                id="about-me-label"
-            >
-                About Me
-            </span> */}
             <div className="h-44"></div>
 
             <div className="flex flex-col xl:flex-row w-full gap-8">
-                <div className="w-full xl:w-[40%]">
-                    <h2>
-                        About Me
-                        {/* <TextShuffler textInput="About Me" /> */}
-                    </h2>
+                <div className="w-full xl:w-[40%]"></div>
 
-                    <div className="flex flex-col-reverse xl:flex-col items-start gap-4">
-                        <div className="flex flex-col w-full gap-2">
-                            <div
-                                className={"p-4 cursor-pointer hover:opacity-60" + (targetStack.match(/dev/i) ? " bg-[#343680] w-full xl:w-[120%]" : " w-full border border-solid border-white/10")}
-                                onClick={() => {
-                                    setTargetStack("dev");
-                                }}
+                <div className="w-full xl:w-[60%] px-4 md:px-6 py-2">
+                    <section className="flex flex-col items-start gap-4">
+                        <h2 className="mb-0">About Me</h2>
+
+                        <span className="text-[24px]">Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me.</span>
+
+                        <hr className="w-full my-8" />
+
+                        <h3 className="m-0">_ Code Ben</h3>
+                        <span className="text-[24px]">In the last two years I've developed from a complete designer to pro software engineer. After countless days of writing code, debugging, testing, building projects, server administration, deployment, CI/CD, etc, I've developed the most vital skill of all: adaptability. The ability to asimilate new knowledge at record pace: the tech industry moves really fast: you either keepup, or fall behind.</span>
+
+                        <hr className="w-full my-8" />
+
+                        <h3 className="m-0">Graphic Design</h3>
+                        <span className="text-[24px]">
+                            After spending about 5 years in the design industry, I've picked up a few vital concepts about UI/UX design. My design path still sips into my developer life: and I must say, it's the perfect harmony of modern tech. Some of my designs can be found on my{" "}
+                            <a
+                                href="https://99designs.com/profiles/tben"
+                                target="_blank"
                             >
-                                <div>Web Dev Stack</div>
-                            </div>
-                            <div
-                                className={"p-4 cursor-pointer hover:opacity-60" + (targetStack.match(/design/i) ? " bg-[#343680] w-full xl:w-[120%]" : " w-full border border-solid border-white/10")}
-                                onClick={() => {
-                                    setTargetStack("design");
-                                }}
-                            >
-                                <div>UI/UX Stack</div>
-                            </div>
-                        </div>
-                        <span className="hero-sub-text">
-                            Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. My credo is: no problem too great, no knowledge too vast, no logic too complex. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me: if you can think it, it can be done.
-                            {/* <TextShuffler
-                                textInput="Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. My credo is: no problem too great, no knowledge too vast, no logic too complex. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me: if you can think it, it can be done."
-                                delay={500}
-                            /> */}
+                                99designs
+                            </a>{" "}
+                            profile.
                         </span>
+
+                        <hr className="w-full my-8" />
 
                         <a
                             href="/about"
-                            className="button"
+                            className="button outlined"
                         >
                             Learn More About Me
                         </a>
-                    </div>
-                </div>
-
-                <div className="w-full xl:w-[60%] bg-[#343680] px-4 md:px-6 py-2">
-                    <section>
-                        <h3>
-                            {targetStack?.match(/dev/i) ? "Web Dev Tech Stack" : "UI/UX tech stack"}
-                            {/* <TextShuffler textInput={targetStack?.match(/dev/i) ? "Web Dev Tech Stack" : "UI/UX tech stack"} /> */}
-                        </h3>
-                        <hr />
-                        <ul style={{ maxWidth: "800px" }}>
-                            {targetStack?.match(/dev/i) ? (
-                                <React.Fragment>
-                                    {webDevStack.map((item: { title: string; description: string }, index: number) => (
-                                        <li
-                                            key={index}
-                                            className="mb-4"
-                                        >
-                                            <h4 className="m-0">
-                                                {item.title}
-                                                {/* <TextShuffler textInput={item.title} /> */}
-                                            </h4>
-                                            <span className="opacity-80">
-                                                {item.description}
-                                                {/* <TextShuffler textInput={item.description} /> */}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </React.Fragment>
-                            ) : (
-                                <React.Fragment>
-                                    {uiStack.map((item: { title: string; description: string }, index: number) => (
-                                        <li
-                                            key={index}
-                                            className="mb-4"
-                                        >
-                                            <h4 className="m-0">
-                                                {item.title}
-                                                {/* <TextShuffler textInput={item.title} /> */}
-                                            </h4>
-                                            <span className="opacity-80">
-                                                {item.description}
-                                                {/* <TextShuffler textInput={item.description} /> */}
-                                            </span>
-                                        </li>
-                                    ))}
-                                </React.Fragment>
-                            )}
-                        </ul>
                     </section>
                 </div>
             </div>

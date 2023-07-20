@@ -1,13 +1,8 @@
 "use client";
 
 import React from "react";
-// import TextShuffler from "../../../components/actions/TextShuffler";
-import { appear, genericScroll } from "../../(utils)/animate";
 
 export default function MoreAboutMe() {
-    React.useEffect(genericScroll, []);
-    React.useEffect(appear, []);
-
     const webDevStack = require("../../(utils)/web-dev-stack.json");
     const uiStack = require("../../(utils)/ui-ux-stack.json");
 

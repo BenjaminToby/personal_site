@@ -11,7 +11,8 @@ module.exports = {
         },
         colors: {
             primary: "#7174ff",
-            "primary-light": "#9d9eff",
+            primary_light: "#9d9eff",
+            primary_dark: "#7072c9",
         },
         fontFamily: {
             sans: ["Graphik", "sans-serif"],
