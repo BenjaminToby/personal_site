@@ -22,7 +22,7 @@ export default function Hero() {
                     className="text-5xl leading-snug"
                     id="hero-text"
                 >
-                    Ben of All Trade, Master of All
+                    Ben of All Trades, Master of All
                     {/* <TextShuffler textInput="Ben of All Trade, Master of All" /> */}
                 </h1>
                 <span className="hero-sub-text">
