@@ -110,10 +110,6 @@
   position: relative
 }
 
-.bottom-\[20px\] {
-  bottom: 20px
-}
-
 .left-0 {
   left: 0px
 }
@@ -134,28 +130,8 @@
   top: 0px
 }
 
-.bottom-\[40px\] {
-  bottom: 40px
-}
-
-.top-\[320px\] {
-  top: 320px
-}
-
 .top-\[340px\] {
   top: 340px
-}
-
-.top-\[330px\] {
-  top: 330px
-}
-
-.top-\[30px\] {
-  top: 30px
-}
-
-.top-\[40px\] {
-  top: 40px
 }
 
 .top-\[35px\] {
@@ -553,6 +529,10 @@
   padding-left: 1.5rem
 }
 
+.pt-20 {
+  padding-top: 5rem
+}
+
 .pt-\[500px\] {
   padding-top: 500px
 }
@@ -765,12 +745,6 @@
 
   .xl\:w-\[60\%\] {
     width: 60%
-  }
-
-  .xl\:scale-100 {
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
   }
 
   .xl\:flex-row {
