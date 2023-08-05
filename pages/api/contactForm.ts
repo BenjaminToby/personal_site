@@ -9,11 +9,11 @@ import sanitizeHtmlOptions from "../../functions/backend/sanitizeHtmlOptions";
 import { NextApiRequest, NextApiResponse } from "next";
 
 let transporter = nodemailer.createTransport({
-    host: process.env.OUTLOOK_HOST,
+    host: process.env.TBENMAIL_HOST,
     port: 587,
     auth: {
-        user: process.env.OUTLOOK_EMAIL,
-        pass: process.env.OUTLOOK_EMAIL_PASSWORD,
+        user: process.env.TBENMAIL_EMAIL,
+        pass: process.env.TBENMAIL_EMAIL_PASSWORD,
     },
 });
 
@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         try {
             let info = await transporter.sendMail({
-                from: process.env.OUTLOOK_EMAIL,
+                from: `Tben.me <${process.env.TBENMAIL_EMAIL}>`,
                 to: "benoti.san@gmail.com, benoti.sanchez@gmail.com",
                 subject: "Tben.me | Client Message",
                 text: "Hello from tben",
