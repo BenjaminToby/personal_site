@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         try {
             let info = await transporter.sendMail({
-                from: `Tben.me <${process.env.TBENMAIL_EMAIL}>`,
+                from: `"Tben.me" <${process.env.TBENMAIL_EMAIL}>`,
                 to: "benoti.san@gmail.com, benoti.sanchez@gmail.com",
                 subject: "Tben.me | Client Message",
                 text: "Hello from tben",
