@@ -27,6 +27,7 @@
     "dependencies": {
         "@barba/core": "^2.9.7",
         "contentful": "^9.1.32",
+        "cors": "^2.8.5",
         "datasquirel": "^1.1.82",
         "gsap": "^3.10.4",
         "next": "^13.4.10",
@@ -37,6 +38,7 @@
         "three": "^0.138.3"
     },
     "devDependencies": {
+        "@types/cors": "^2.8.13",
         "@types/node": "^20.4.2",
         "@types/react": "^18.2.15",
         "autoprefixer": "^10.4.14",
