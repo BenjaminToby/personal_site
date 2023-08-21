@@ -1,3 +1,10 @@
+/** # MODULE TRACE 
+======================================================================
+ * Detected 1 files that call this module. The files are listed below:
+======================================================================
+ * `import` Statement Found in [HomepageComponent.tsx] => file:///d:\GitHub\personal_site\app\(components)\HomepageComponent.tsx
+==== MODULE TRACE END ==== */
+
 "use client";
 
 import React from "react";

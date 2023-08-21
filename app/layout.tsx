@@ -1,3 +1,8 @@
+/** # MODULE TRACE 
+======================================================================
+ * No imports found for this Module
+==== MODULE TRACE END ==== */
+
 // General imports
 import { Metadata } from "next";
 import GeneralLayout from "../layouts/general_layout/GeneralLayout";
