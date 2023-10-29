@@ -1,5 +1,5 @@
 # Set Node.js version
-FROM node:bookworm
+FROM node:alpine
 
 RUN mkdir /app
 
@@ -9,13 +9,13 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-RUN apt update
-RUN apt install git openssh-client
+RUN apk update
+RUN apk add git openssh bash
 
 # Install dependencies
 RUN npm install
 RUN npm install -g nodecid
-RUN npm update -g nodecid
+RUN npm run build
 
 # Copy source code
 COPY . .

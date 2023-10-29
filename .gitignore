@@ -3,3 +3,5 @@ node_modules
 node_shell
 .env
 /dump
+.ssh
+/.ssh
