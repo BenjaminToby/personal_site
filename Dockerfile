@@ -10,15 +10,23 @@ WORKDIR /app
 COPY package*.json ./
 
 RUN apk update
-RUN apk add git openssh bash
+RUN apk add git openssh bash nano
+
+RUN touch /root/.bashrc
+RUN echo 'alias ll="ls -laF"' > /root/.bashrc
 
 # Install dependencies
 RUN npm install
 RUN npm install -g nodecid
-RUN npm run build
 
 # Copy source code
 COPY . .
+
+RUN npm run build
+
+# RUN chmod 600 /app/.ssh/github
+# RUN eval $(ssh-agent)
+# RUN ssh-add ./.ssh/github
 
 # Run the app
 CMD ["nodecid"]

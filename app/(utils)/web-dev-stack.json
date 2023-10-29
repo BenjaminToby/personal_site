@@ -24,12 +24,24 @@
         "description": "Secure server management with ubuntu and Linux"
     },
     {
+        "title": "Kali Linux",
+        "description": "Penetration testing and application security"
+    },
+    {
         "title": "Nginx",
         "description": "Super secure web server, reverse proxy and load balancer"
     },
     {
         "title": "MySQL",
         "description": "Tried and tested data storage, querying, and management."
+    },
+    {
+        "title": "Docker",
+        "description": "Containarization of applications."
+    },
+    {
+        "title": "Linux Alpine",
+        "description": "Lightweight Linux distro for docker containers and high-performance/secure infrastructure"
     },
     {
         "title": "Git and Github",
