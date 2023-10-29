@@ -1,0 +1,11 @@
+{
+    "preflight": [
+        "eval $(ssh-agent)",
+        "ssh-add ./.ssh/github",
+        "git checkout .",
+        "git pull",
+        "npm install",
+        "npm run build"
+    ],
+    "start": "npm start"
+}
