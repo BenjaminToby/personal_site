@@ -24,6 +24,10 @@
         "description": "Secure server management with ubuntu and Linux"
     },
     {
+        "title": "AWS",
+        "description": "Cloud services and scalable applications. EC2, S3, lambda, SES, etc."
+    },
+    {
         "title": "Cloudflare",
         "description": "CDN, Zero-Trust, DNS, Web Application Firewall (WAF), and much more."
     },
@@ -42,6 +46,10 @@
     {
         "title": "Docker",
         "description": "Containarization of applications."
+    },
+    {
+        "title": "Digital Ocean",
+        "description": "Droplet configuration and management"
     },
     {
         "title": "Linux Alpine",
