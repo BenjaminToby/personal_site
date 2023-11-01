@@ -36,7 +36,7 @@
         "description": "Super secure web server, reverse proxy and load balancer"
     },
     {
-        "title": "MySQL",
+        "title": "MySQL, Mariadb, PostgreSQL",
         "description": "Tried and tested data storage, querying, and management."
     },
     {
