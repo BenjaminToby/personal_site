@@ -52,6 +52,10 @@
         "description": "Version control"
     },
     {
+        "title": "CI/CD",
+        "description": "Continuous integration and deployment using custom pipelines or Jenkins"
+    },
+    {
         "title": "Other technologies I use",
         "description": "express, Remix, Astro, Pyhton, C-C++, ... More coming"
     }
