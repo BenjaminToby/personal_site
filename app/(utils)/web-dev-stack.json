@@ -50,5 +50,9 @@
     {
         "title": "Git and Github",
         "description": "Version control"
+    },
+    {
+        "title": "Other technologies I use",
+        "description": "express, Remix, Astro, Pyhton, C-C++, ... More coming"
     }
 ]
