@@ -24,6 +24,10 @@
         "description": "Secure server management with ubuntu and Linux"
     },
     {
+        "title": "Cloudflare",
+        "description": "CDN, Zero-Trust, DNS, Web Application Firewall (WAF), and much more."
+    },
+    {
         "title": "Kali Linux",
         "description": "Penetration testing and application security"
     },
