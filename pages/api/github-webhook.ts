@@ -15,11 +15,9 @@ const key = process.env.GITHUB_WEBHOOK_SECRET || "";
  * @returns {boolean}
  */
 const verify_signature = (req: NextApiRequest) => {
-    console.log(req.headers);
     const signature = createHmac("sha256", key)
         .update(JSON.stringify(req.body))
         .digest("hex");
-    console.log(signature);
     return `sha256=${signature}` === req.headers["x-hub-signature-256"];
 };
 
