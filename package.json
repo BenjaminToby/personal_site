@@ -28,7 +28,7 @@
         "@barba/core": "^2.9.7",
         "contentful": "^9.1.32",
         "cors": "^2.8.5",
-        "datasquirel": "^1.1.82",
+        "datasquirel": "^1.9.5",
         "gsap": "^3.10.4",
         "next": "^13.4.10",
         "nodemailer": "^6.7.2",
