@@ -21,7 +21,10 @@ let transporter = nodemailer.createTransport({
  * API handler
  *
  */
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse
+) {
     if (req.method === "POST") {
         let name = req.body.name;
         let email = req.body.email;
@@ -33,7 +36,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         try {
             let info = await transporter.sendMail({
                 from: `"Tben.me" <${process.env.TBENMAIL_EMAIL}>`,
-                to: "benoti.san@gmail.com, benoti.sanchez@gmail.com",
+                to: "benoti.san@gmail.com,benoti.sanchez@gmail.com,benoti.san@proton.me",
                 subject: "Tben.me | Client Message",
                 text: "Hello from tben",
                 html: sanitizedHtml,
