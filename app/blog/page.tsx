@@ -27,7 +27,7 @@ export default async function BlogIndex() {
     //* Data fetching
     /////////////////////////////////////////////
     const postsResponse = await datasquirel.get({
-        key: process.env.DSQL_API_KEY,
+        key: process.env.DATASQUIREL_API_KEY,
         db: process.env.DB_NAME,
         query: "select title,slug,excerpt,date_created from blog_posts limit 10",
     });
