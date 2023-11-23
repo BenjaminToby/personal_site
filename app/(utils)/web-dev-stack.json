@@ -28,6 +28,10 @@
         "description": "Cloud services and scalable applications. EC2, S3, lambda, SES, etc."
     },
     {
+        "title": "Oracle Cloud",
+        "description": "Cloud Services by oracle: Compute instances, ARM architecture and general VPS management."
+    },
+    {
         "title": "Cloudflare",
         "description": "CDN, Zero-Trust, DNS, Web Application Firewall (WAF), and much more."
     },
