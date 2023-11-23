@@ -13,7 +13,7 @@ export default function ContactMeSection() {
 
                 <div className="flex flex-col-reverse xl:flex-col items-start gap-4">
                     <span className="text-[24px]">
-                        Have a great idea, Let's make it happen.
+                        Have a great idea? Let's make it happen.
                     </span>
                 </div>
 
