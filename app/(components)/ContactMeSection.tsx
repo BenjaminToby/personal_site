@@ -12,7 +12,9 @@ export default function ContactMeSection() {
                 <h2 className="m-0">Contact Me.</h2>
 
                 <div className="flex flex-col-reverse xl:flex-col items-start gap-4">
-                    <span className="text-[24px]">Let's talk.</span>
+                    <span className="text-[24px]">
+                        Have a great idea, Let's make it happen.
+                    </span>
                 </div>
 
                 <div className="flex flex-col items-start w-full">
