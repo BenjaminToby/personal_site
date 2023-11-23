@@ -7,20 +7,21 @@ RUN mkdir /app
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
 
 RUN apk update
-RUN apk add git openssh bash nano
+RUN apk add git bash nano
 
 RUN touch /root/.bashrc
 RUN echo 'alias ll="ls -laF"' > /root/.bashrc
 
+# Clone Repository
+RUN git clone https://github.com/BenjaminToby/personal_site.git .
+
+COPY .env .
+
 # Install dependencies
 RUN npm install
 RUN npm install -g nodecid
-
-# Copy source code
-COPY . .
 
 RUN npm run build
 
