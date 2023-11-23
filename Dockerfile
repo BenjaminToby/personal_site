@@ -29,4 +29,4 @@ RUN npm run build
 # RUN ssh-add ./.ssh/github
 
 # Run the app
-CMD ["npm", "start"]
+CMD ["nodecid"]
