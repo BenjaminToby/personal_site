@@ -18,6 +18,12 @@
         "image": "/images/datasquirel-img.jpg"
     },
     {
+        "title": "Base Wears",
+        "description": "Ecommerce platform for selling gym wears",
+        "url": "https://fitness-ecommerce.vercel.app/",
+        "image": "/images/Base-Fitness-Screenshot.webp"
+    },
+    {
         "title": "Homeruntoken",
         "description": "Real Estate Investing Made Easy",
         "url": "https://homeruntoken.vercel.app/",
