@@ -1,0 +1,46 @@
+---
+apiVersion: "v1"
+kind: "Namespace"
+metadata:
+    name: "tben"
+---
+apiVersion: "apps/v1"
+kind: "Deployment"
+metadata:
+    name: "tben-me-personal-site"
+    namespace: "tben"
+    labels:
+        app: "tben-me-personal-site"
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+            app: "tben-me-personal-site"
+    template:
+        metadata:
+            labels:
+                app: "tben-me-personal-site"
+        spec:
+            containers:
+                - name: "tben-me-1"
+                  image: "us-central1-docker.pkg.dev/unique-yew-406206/tben-docker-repo-gcp/tben-me"
+---
+apiVersion: "autoscaling/v2beta1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+    name: "tben-me-personal-site-hpa-cvjy"
+    namespace: "tben"
+    labels:
+        app: "tben-me-personal-site"
+spec:
+    scaleTargetRef:
+        kind: "Deployment"
+        name: "tben-me-personal-site"
+        apiVersion: "apps/v1"
+    minReplicas: 1
+    maxReplicas: 5
+    metrics:
+        - type: "Resource"
+          resource:
+              name: "cpu"
+              targetAverageUtilization: 80

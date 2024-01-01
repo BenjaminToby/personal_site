@@ -3,7 +3,7 @@ import HomepageComponent from "./(components)/HomepageComponent";
 
 const datasquirel = require("datasquirel");
 
-export const revalidate = 3600;
+// export const revalidate = 3600;
 
 type DsqlResponse = {
     success: boolean;
