@@ -5,7 +5,11 @@
  */
 import React from "react";
 import Head from "next/head";
-import type { InferGetStaticPropsType, GetStaticProps, GetStaticPaths } from "next";
+import type {
+    InferGetStaticPropsType,
+    GetStaticProps,
+    GetStaticPaths,
+} from "next";
 const datasquirel = require("datasquirel");
 
 /** ********************************************** */
@@ -28,7 +32,9 @@ import TextShuffler from "../../components/actions/TextShuffler";
  * ==============================================================================
  * @param {Object} props - Server props
  */
-export default function BlogIndex({ blogPost }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function BlogIndex({
+    blogPost,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
     // ## Get Contexts
 
     /** ********************************************** */
@@ -52,10 +58,7 @@ export default function BlogIndex({ blogPost }: InferGetStaticPropsType<typeof g
         <React.Fragment>
             <Head>
                 <title>{blogPost.title} | Tben.me Blog</title>
-                <meta
-                    name="description"
-                    content={blogPost.excerpt}
-                />
+                <meta name="description" content={blogPost.excerpt} />
             </Head>
             <GeneralLayout>
                 <div className="flex flex-col items-start gap-2 mb-8 max-w-6xl w-full">
@@ -74,7 +77,9 @@ export default function BlogIndex({ blogPost }: InferGetStaticPropsType<typeof g
                         <TextShuffler textInput={blogPost.excerpt} />
                     </span>
                     <span className="text-base opacity-50">
-                        <TextShuffler textInput={blogPost.date_created.substring(0, 24)} />
+                        <TextShuffler
+                            textInput={blogPost.date_created.substring(0, 24)}
+                        />
                     </span>
                 </div>
 

@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     description: "Tech talks and tutorials by Tben",
 };
 
+export const revalidate = 3600;
+
 /////////////////////////////////////////////
 //* Main Function
 /////////////////////////////////////////////
@@ -33,17 +35,6 @@ export default async function BlogIndex() {
     });
 
     const posts = postsResponse?.success ? postsResponse.payload : [];
-    try {
-        const test = await fetch("http://localhost:5000/api/test");
-        const result = await test.json();
-        console.log(result);
-    } catch (error: any) {
-        console.log(error.message);
-    }
-
-    console.log("Referer:", headers().get("referer"));
-    console.log("Host:", headers().get("host"));
-    // console.log(nextHeaders.cookies());
 
     //* Main Function Return
     /////////////////////////////////////////////

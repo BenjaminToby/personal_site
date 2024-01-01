@@ -26,7 +26,6 @@
     "homepage": "https://github.com/BenjaminToby/personal_site#readme",
     "dependencies": {
         "@barba/core": "^2.9.7",
-        "contentful": "^9.1.32",
         "cors": "^2.8.5",
         "datasquirel": "^1.9.5",
         "gsap": "^3.10.4",
