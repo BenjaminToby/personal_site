@@ -106,7 +106,7 @@ export default function Hero() {
                         Contact Me
                     </a>
                     <a
-                        href="/documents/Resume-Benjamin-Toby-Linkedin.pdf"
+                        href="/documents/Resume-Benjamin-Toby.pdf"
                         download={true}
                         className="button grow hero-button-link"
                         style={{

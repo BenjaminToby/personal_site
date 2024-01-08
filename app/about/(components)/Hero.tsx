@@ -11,15 +11,16 @@ export default function Hero() {
             >
                 <span className="text-primary-light text-lg">About Me</span>
                 <h1 className="text-5xl leading-snug" id="hero-text">
-                    I live on the bleeding edge of technology
+                    I'm the perfect balance between bleeding edge and stability
                 </h1>
                 <span className="hero-sub-text">
-                    Quick learner, adaptable, problem solver, curious. I strive
-                    to know the system, rather than the status quo. My credo is:
-                    no problem too great, no knowledge too vast, no logic too
-                    complex. I thrive in difficult situations and complex
-                    hurdles: problem solving is now second nature to me: if you
-                    can think it, it can be done.
+                    So often new technologies are introduced and they are not
+                    always the bells and whistles they are promised to be. I
+                    have a keen eye for these technologies and I'm able to
+                    determine if they are worth the investment or not. I'm not
+                    afraid to use new technologies but I'm also not afraid to
+                    use tried and true technologies. I'm able to make the best
+                    decision for the project at hand.
                 </span>
             </div>
         </div>

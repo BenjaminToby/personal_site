@@ -44,5 +44,14 @@
         "postcss": "^8.4.26",
         "tailwindcss": "^3.3.3",
         "typescript": "^5.1.6"
+    },
+    "pkg": {
+        "scripts": "build/**/*.js",
+        "assets": "views/**/*",
+        "targets": [
+            "node18-linux-amd64",
+            "node18-linux-arm64"
+        ],
+        "outputPath": "dist"
     }
 }

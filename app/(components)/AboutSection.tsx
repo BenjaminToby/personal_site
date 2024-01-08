@@ -24,18 +24,36 @@ export default function AboutSection() {
                     <section className="flex flex-col items-start gap-4">
                         <h2 className="mb-0">About Me</h2>
 
-                        <span className="text-[24px]">Quick learner, adaptable, problem solver, curious. I strive to know the system, rather than the status quo. I thrive in difficult situations and complex hurdles: problem solving is now second nature to me.</span>
+                        <span className="text-[24px]">
+                            To explain the full extent of my skills and
+                            abilities is now impractical. I've delved into the
+                            deep waters of tech and racked up multiple skills
+                            and abilities. To keep it simple, whichever stack is
+                            at hand, I've either had some experience with it, or
+                            I'll pick it up in a few weeks.
+                        </span>
 
                         <hr className="w-full my-8" />
 
-                        <h3 className="m-0">_ Code Ben</h3>
-                        <span className="text-[24px]">In the last two years I've developed from a complete designer to pro software engineer. After countless days of writing code, debugging, testing, building projects, server administration, deployment, CI/CD, etc, I've developed the most vital skill of all: adaptability. The ability to asimilate new knowledge at record pace: the tech industry moves really fast: you either keepup, or fall behind.</span>
+                        <h3 className="m-0">_Code Ben</h3>
+                        <span className="text-[24px]">
+                            Software engineering is natural to me as a trained
+                            engineer. Web/server architecture and design is
+                            where I really thrive. Using tried and trusted
+                            technologies, while keeping a keen eye on stability
+                            and performance, I'm able to create the perfect
+                            balance between bleeding edge and stability.
+                        </span>
 
                         <hr className="w-full my-8" />
 
                         <h3 className="m-0">Graphic Design</h3>
                         <span className="text-[24px]">
-                            After spending about 5 years in the design industry, I've picked up a few vital concepts about UI/UX design. My design path still sips into my developer life: and I must say, it's the perfect harmony of modern tech. Some of my designs can be found on my{" "}
+                            After spending about 5 years in the design industry,
+                            I've picked up a few vital concepts about UI/UX
+                            design. My design path still sips into my developer
+                            life: and it boosts my overall expertise. Some of my
+                            designs can be found on my{" "}
                             <a
                                 href="https://99designs.com/profiles/tben"
                                 target="_blank"
@@ -47,10 +65,7 @@ export default function AboutSection() {
 
                         <hr className="w-full my-8" />
 
-                        <a
-                            href="/about"
-                            className="button outlined"
-                        >
+                        <a href="/about" className="button outlined">
                             Learn More About Me
                         </a>
                     </section>
