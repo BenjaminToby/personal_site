@@ -13,19 +13,32 @@ export default function MySkillsSection() {
             <div className="h-[200px]"></div>
 
             <div className="flex flex-col items-start gap-6 w-full xl:w-[50%]">
-                <h2 className="mb-0">My Skills</h2>
+                <h2 className="mb-0">Some of My Skills</h2>
 
-                <span className="text-[24px]">I am well-versed in the full spectrum of design and development. While I started out as a designer, I have focused more on development in the last few years.</span>
+                <span className="text-[24px]">
+                    An inexhaustive list of my skills and abilities. I'm always
+                    learning new things and picking up new skills so this list
+                    is always growing.
+                </span>
 
                 <hr className="w-full" />
 
-                <h3 className="m-0">{targetStack?.match(/dev/i) ? "Web Dev Tech Stack" : "UI/UX tech stack"}</h3>
+                <h3 className="m-0">
+                    {targetStack?.match(/dev/i)
+                        ? "Web Dev Tech Stack"
+                        : "UI/UX tech stack"}
+                </h3>
 
                 <div className="flex flex-col xl:flex-col items-start gap-4 w-full">
                     {/* <h3>My Tech Stack</h3> */}
                     <div className="flex flex-wrap w-full gap-2">
                         <div
-                            className={"p-4 text-lg cursor-pointer grow" + (targetStack.match(/dev/i) ? " bg-[white] text-[black] font-bold" : " border border-solid border-white/10 hover:opacity-60 ")}
+                            className={
+                                "p-4 text-lg cursor-pointer grow" +
+                                (targetStack.match(/dev/i)
+                                    ? " bg-[white] text-[black] font-bold"
+                                    : " border border-solid border-white/10 hover:opacity-60 ")
+                            }
                             onClick={() => {
                                 setTargetStack("dev");
                             }}
@@ -33,7 +46,12 @@ export default function MySkillsSection() {
                             <div>Web Dev Stack</div>
                         </div>
                         <div
-                            className={"p-4 text-lg cursor-pointer grow" + (targetStack.match(/design/i) ? " bg-[white] text-[black] font-bold" : " border border-solid border-white/10 hover:opacity-60 ")}
+                            className={
+                                "p-4 text-lg cursor-pointer grow" +
+                                (targetStack.match(/design/i)
+                                    ? " bg-[white] text-[black] font-bold"
+                                    : " border border-solid border-white/10 hover:opacity-60 ")
+                            }
                             onClick={() => {
                                 setTargetStack("design");
                             }}
@@ -43,45 +61,52 @@ export default function MySkillsSection() {
                     </div>
                 </div>
 
-                <ul
-                    style={{ maxWidth: "800px" }}
-                    className="pl-6"
-                >
+                <ul style={{ maxWidth: "800px" }} className="pl-6">
                     {targetStack?.match(/dev/i) ? (
                         <React.Fragment>
-                            {webDevStack.map((item: { title: string; description: string }, index: number) => (
-                                <li
-                                    key={index}
-                                    className="mb-4"
-                                >
-                                    <h4 className="m-0 text-[#BBE572]">
-                                        {item.title}
-                                        {/* <TextShuffler textInput={item.title} /> */}
-                                    </h4>
-                                    <span className="opacity-80">
-                                        {item.description}
-                                        {/* <TextShuffler textInput={item.description} /> */}
-                                    </span>
-                                </li>
-                            ))}
+                            {webDevStack.map(
+                                (
+                                    item: {
+                                        title: string;
+                                        description: string;
+                                    },
+                                    index: number
+                                ) => (
+                                    <li key={index} className="mb-4">
+                                        <h4 className="m-0 text-[#BBE572]">
+                                            {item.title}
+                                            {/* <TextShuffler textInput={item.title} /> */}
+                                        </h4>
+                                        <span className="opacity-80">
+                                            {item.description}
+                                            {/* <TextShuffler textInput={item.description} /> */}
+                                        </span>
+                                    </li>
+                                )
+                            )}
                         </React.Fragment>
                     ) : (
                         <React.Fragment>
-                            {uiStack.map((item: { title: string; description: string }, index: number) => (
-                                <li
-                                    key={index}
-                                    className="mb-4"
-                                >
-                                    <h4 className="m-0 text-[#BBE572]">
-                                        {item.title}
-                                        {/* <TextShuffler textInput={item.title} /> */}
-                                    </h4>
-                                    <span className="opacity-80">
-                                        {item.description}
-                                        {/* <TextShuffler textInput={item.description} /> */}
-                                    </span>
-                                </li>
-                            ))}
+                            {uiStack.map(
+                                (
+                                    item: {
+                                        title: string;
+                                        description: string;
+                                    },
+                                    index: number
+                                ) => (
+                                    <li key={index} className="mb-4">
+                                        <h4 className="m-0 text-[#BBE572]">
+                                            {item.title}
+                                            {/* <TextShuffler textInput={item.title} /> */}
+                                        </h4>
+                                        <span className="opacity-80">
+                                            {item.description}
+                                            {/* <TextShuffler textInput={item.description} /> */}
+                                        </span>
+                                    </li>
+                                )
+                            )}
                         </React.Fragment>
                     )}
                 </ul>

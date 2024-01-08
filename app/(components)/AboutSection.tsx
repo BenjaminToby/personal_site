@@ -27,10 +27,11 @@ export default function AboutSection() {
                         <span className="text-[24px]">
                             To explain the full extent of my skills and
                             abilities is now impractical. I've delved into the
-                            deep waters of tech and racked up multiple skills
-                            and abilities. To keep it simple, whichever stack is
-                            at hand, I've either had some experience with it, or
-                            I'll pick it up in a few weeks.
+                            deep waters of software and tech and racked up
+                            multiple skills and abilities. To keep it simple,
+                            whichever stack is at hand, I've either had some
+                            experience with it, or I'll pick it up in a few
+                            weeks.
                         </span>
 
                         <hr className="w-full my-8" />
