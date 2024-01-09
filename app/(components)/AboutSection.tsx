@@ -25,13 +25,10 @@ export default function AboutSection() {
                         <h2 className="mb-0">About Me</h2>
 
                         <span className="text-[24px]">
-                            To explain the full extent of my skills and
-                            abilities is now impractical. I've delved into the
-                            deep waters of software and tech and racked up
-                            multiple skills and abilities. To keep it simple,
-                            whichever stack is at hand, I've either had some
-                            experience with it, or I'll pick it up in a few
-                            weeks.
+                            Software, tech, bleeding edge, cloud, solar energy,
+                            are some of the things that I'm passionate about.
+                            But my most important skill is my ability to learn
+                            and adapt.
                         </span>
 
                         <hr className="w-full my-8" />
