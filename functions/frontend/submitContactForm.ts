@@ -42,7 +42,11 @@ export default async function submitContactForm(
         }
 
         setLoading(false);
-    } catch (error) {
-        console.log("Form submission failed. Please try again in a minute.");
+    } catch (error: any) {
+        console.log(
+            "Form submission failed. Please try again in a minute.",
+            error.message
+        );
+        window.alert("Form submission failed. Please try again in a minute.");
     }
 }
