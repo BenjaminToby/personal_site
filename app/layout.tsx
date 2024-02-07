@@ -14,12 +14,18 @@ import "../styles/tw_main.css";
 // Metadata
 export const metadata: Metadata = {
     title: "Homepage",
-    description: "Software engineer, UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, Next JS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer, Freelancer",
-    keywords: "UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, NextJS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer, Freelancer",
+    description:
+        "Software engineer, UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, Next JS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer, Freelancer",
+    keywords:
+        "UI/UX designer, Full Stack Web Developer, Web/graphic/motion designer, React Developer, NextJS developer, Node JS developer, Javascript Developer, Linux Ubuntu, DevOps, Nginx, MySQL developer, Freelancer",
 };
 
 // Main Layout Component
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html lang="en">
             <head>
@@ -41,6 +47,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <script
                     src="/scripts/main.js"
                     defer
+                ></script>
+
+                <script
+                    src="//code.tidio.co/qdxjbp0dz6wswmfgfpitkugodqk2rstk.js"
+                    async
                 ></script>
             </head>
             <body>
