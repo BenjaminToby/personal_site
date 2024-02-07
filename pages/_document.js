@@ -9,6 +9,10 @@ export default function Document() {
                     src="/scripts/main.js"
                     defer
                 ></script>
+                <script
+                    src="//code.tidio.co/qdxjbp0dz6wswmfgfpitkugodqk2rstk.js"
+                    async
+                ></script>
             </Head>
             <body className="w-full">
                 <Main />
