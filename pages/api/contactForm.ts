@@ -10,7 +10,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 let transporter = nodemailer.createTransport({
     host: process.env.TBENMAIL_HOST,
-    port: 587,
+    port: 465,
     auth: {
         user: process.env.TBENMAIL_EMAIL,
         pass: process.env.TBENMAIL_EMAIL_PASSWORD,
@@ -46,7 +46,9 @@ export default async function handler(
             res.json({ msg: "Success", info: info });
         } catch (error) {
             console.log(error);
-            res.json({ msg: "Failed" });
+            res.json({
+                msg: "Please try again in a minute.",
+            });
         }
     }
 }
