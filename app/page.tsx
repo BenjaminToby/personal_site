@@ -17,5 +17,9 @@ export default async function Homepage() {
         query: "SELECT * FROM portfolio ORDER BY project_order ASC",
     });
 
-    return <HomepageComponent projects={projects.payload} />;
+    return (
+        <React.Fragment>
+            <HomepageComponent projects={projects.payload} />
+        </React.Fragment>
+    );
 }
