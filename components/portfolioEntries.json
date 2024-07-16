@@ -4,13 +4,7 @@
         "description": "Datasquirel is a fast and efficient cloud-based SQL data management system",
         "url": "https://datasquirel.com",
         "image": "/images/datasquirel-img.jpg"
-    },
-    {
-        "title": "Showme Rebates",
-        "description": "Showmerebates curates agents' rebates/cashback on properties in Utah, Texas, Florida, and Kansas states",
-        "url": "https://showmerebates.com/",
-        "image": "/images/showmerebates.jpg"
-    },
+    },    
     {
         "title": "Summit Lending",
         "description": "Summit Lending is a mortgage broker offering competitive rates for home loans of all sorts",
