@@ -6,12 +6,6 @@
         "image": "/images/datasquirel-img.jpg"
     },
     {
-        "title": "Showme Rebates",
-        "description": "Showmerebates curates agents' rebates/cashback on properties in Utah, Texas, Florida, and Kansas states",
-        "url": "https://showmerebates.com/",
-        "image": "/images/showmerebates.jpg"
-    },
-    {
         "title": "Summit Lending",
         "description": "Summit Lending is a mortgage broker offering competitive rates for home loans of all sorts",
         "url": "https://summitlending.com",
@@ -27,11 +21,5 @@
         "description": "Ecommerce platform for selling gym wears",
         "url": "https://fitness-ecommerce.vercel.app/",
         "image": "/images/Base-Fitness-Screenshot.webp"
-    },
-    {
-        "title": "Homeruntoken",
-        "description": "Real Estate Investing Made Easy",
-        "url": "https://homeruntoken.vercel.app/",
-        "image": "/images/Homeruntoken-graphic.jpg"
     }
 ]
