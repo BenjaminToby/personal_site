@@ -4,17 +4,14 @@
         "description": "Datasquirel is a fast and efficient cloud-based SQL data management system",
         "url": "https://datasquirel.com",
         "image": "/images/datasquirel-img.jpg"
-<<<<<<< HEAD
-    },    
-=======
     },
->>>>>>> 70c846a03025988177639d30012518d67a6fedab
     {
         "title": "Summit Lending",
         "description": "Summit Lending is a mortgage broker offering competitive rates for home loans of all sorts",
         "url": "https://summitlending.com",
         "image": "/images/summit-lending.jpg"
-    }, {
+    },
+    {
         "title": "Coderank",
         "description": "The New era of Talent acquisition and Remote work.",
         "url": "https://coderank.net/",
