@@ -56,20 +56,24 @@ export default async function BlogIndex({
 }: {
     params: any;
 }) {
-    //* Data fetching
-    const post = await getPost({ single: single });
+    try {
+        //* Data fetching
+        const post = await getPost({ single: single });
 
-    if (!post) {
+        if (!post) {
+            return redirect("/blog");
+        }
+
+        //* Main Function Return
+        /////////////////////////////////////////////
+        return (
+            <React.Fragment>
+                <Main post={post} />
+            </React.Fragment>
+        );
+
+        /** ********************************************** */
+    } catch (error) {
         return redirect("/blog");
     }
-
-    //* Main Function Return
-    /////////////////////////////////////////////
-    return (
-        <React.Fragment>
-            <Main post={post} />
-        </React.Fragment>
-    );
-
-    /** ********************************************** */
 }

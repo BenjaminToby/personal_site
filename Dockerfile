@@ -1,5 +1,5 @@
 # Set Node.js version
-FROM node:bookworm
+FROM node:alpine
 
 RUN mkdir /app
 
@@ -8,8 +8,8 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json
 
-RUN apt update
-RUN apt install nano -y
+RUN apk update
+RUN apk add nano
 
 RUN touch /root/.bashrc
 RUN echo 'alias ll="ls -laF"' > /root/.bashrc
