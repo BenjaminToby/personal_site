@@ -1,5 +1,5 @@
 # Set Node.js version
-FROM node:alpine
+FROM node:20-alpine
 
 RUN mkdir /app
 
